@@ -10484,18 +10484,19 @@ VAR
 	ptrTAxisZ 							:POINTER TO ST_AXIS;			(* Achse für die Hubachse *)
 	ptrTAxisS 							:POINTER TO ST_AXIS;			(* Achse für die Werkzeugspindel *)
 	ptrTCylToolDeflection					:POINTER TO ST_CYLINDER;	(* Servoventil für das bestimmen der vertikalen Auslenkraft *)
-	ptrTCylToolTorqueHC 					:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung HC *)
-	ptrTCylToolTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung Überlast *)
+	ptrTCylToolTorqueHC 					:POINTER TO ST_CYLINDER;	(* Drehmomentueberwachung HC *)
+	ptrTCylToolTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Drehmomentueberwachung Ueberlast *)
 	ptrTTorqueSensorMeasRange			:POINTER TO ST_CYLINDER;	(* Controlling für den Drehmomentsensor, Einstellung des Drehmomentbereiches *)	(* IGS *)
-	ptrTTorqueSensorControl				:POINTER TO ST_CYLINDER;	(* Controlling für den Drehmomentsensor, Überprüfung auf Funktionalität *)			(* IGS *)
+	ptrTTorqueSensorControl				:POINTER TO ST_CYLINDER;	(* Controlling für den Drehmomentsensor, Ueberpruefung auf Funktionalitaet *)			(* IGS *)
 	ptrTSensorTorque 					:POINTER TO ST_CYLINDER;	(* Analoger Sensor für Drehmoment detektion *)
-	ptrTSensorTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Digitaler Sensor für Drehmoment Überlast detektion *)							(* IGS *)
+	ptrTSensorTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Digitaler Sensor für Drehmoment Ueberlast detektion *)							(* IGS *)
 	ptrTCylBrakeReleaseZAxis 				:POINTER TO ST_CYLINDER;	(* Zylinder für lösen der Bremse bei der Z Achse *)
-	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil für Werkstückfixierzylinder *)
-	ptrTValveAirTable						:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
-	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
-	ptrTAxisBubbler						:POINTER TO ST_DC_AXIS;	(* Rührwerk für Suspension *)												(* IGS3 *)
-	ptrTAxisFeedPump					:POINTER TO ST_DC_AXIS;	(* Förderpumpe für Suspension *)											(* IGS3 *)
+	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil fuer Werkstueckfixierzylinder *)
+	ptrTValveAirTable						:POINTER TO ST_CYLINDER;	(* Ventil fuer die Luft des Tisches *)
+	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil fuer die Luft des Tisches *)
+	ptrTValveCleanNozzle					:POINTER TO ST_CYLINDER;	(* Ventil fuer die Reinigungsduese *)											(* BEF *)
+	ptrTAxisBubbler						:POINTER TO ST_DC_AXIS;	(* Ruehrwerk fuer Suspension *)												(* IGS3 *)
+	ptrTAxisFeedPump					:POINTER TO ST_DC_AXIS;	(* Foerderpumpe fuer Suspension *)											(* IGS3 *)
 
 (* Functionblock axis *)
 	fbAxisZ:FBHW_AXIS_SINGLE;
@@ -10518,6 +10519,7 @@ VAR
 	fbCylWorkpieceClamp : FBHW_CYL_STANDARD_2WAY;
 	fbValveAirTable : FBHW_CYL_STANDARD;
 	fbValveVacuumTable : FBHW_CYL_STANDARD;
+	fbValveCleanNozzle : FBHW_CYL_STANDARD;
 	iStepResetHardware: INT;
 	xHardwareActive: BOOL;
 	TONWaitTimeOut: TON;
@@ -10742,6 +10744,7 @@ ELSE
 	ptrTCylWorkpieceClamp:=ADR(T_Station_Work.THWWorkStation.TCylWorkpieceClamp);
 	ptrTValveAirTable:=ADR(T_Station_Work.THWWorkStation.TValveAirTable);
 	ptrTValveVacuumTable:=ADR(T_Station_Work.THWWorkStation.TValveVacuumTable);
+	ptrTValveCleanNozzle:=ADR(T_Station_Work.THWWorkStation.TValveCleanNozzle);
 	ptrTAxisBubbler:=ADR(T_Station_Work.THWWorkStation.TAxisBubbler);
 	ptrTAxisFeedPump:=ADR(T_Station_Work.THWWorkStation.TAxisFeedPump);
 	xEnableMasterModul:=TRUE;
@@ -10770,6 +10773,7 @@ xCkeckAcitveMovement:=	(NOT(ptrTAxisZ^.T_CtrleSingle.xDone) AND NOT(ptrTAxisZ^.T
 						OR (NOT(ptrTCylWorkpieceClamp^.T_CtrleCyl.xDone) AND NOT(ptrTCylWorkpieceClamp^.T_CtrleCyl.xErr))
 						OR (NOT(ptrTValveAirTable^.T_CtrleCyl.xDone) AND NOT(ptrTValveAirTable^.T_CtrleCyl.xErr))
 						OR (NOT(ptrTValveVacuumTable^.T_CtrleCyl.xDone) AND NOT(ptrTValveVacuumTable^.T_CtrleCyl.xErr))
+						OR (NOT(ptrTValveCleanNozzle^.T_CtrleCyl.xDone) AND NOT(ptrTValveCleanNozzle^.T_CtrleCyl.xErr))
 						OR (NOT(ptrTAxisBubbler^.T_CtrleDCAxis.xDone) AND NOT(ptrTAxisBubbler^.T_CtrleDCAxis.xErr))
 						OR (NOT(ptrTAxisFeedPump^.T_CtrleDCAxis.xDone) AND NOT(ptrTAxisFeedPump^.T_CtrleDCAxis.xErr));
 IF NOT(xCkeckAcitveMovement) THEN
@@ -10806,6 +10810,7 @@ HW_CylBrakeReleaseZAxis;
 HW_CylWorkpieceClamp;
 HW_ValveAirTable;
 HW_ValveVacuumTable;
+HW_ValveCleanNozzle; 	(* BEF *)
 HW_TSensorToolSpindle_L_Connect;
 (******************************************************************************************************************************************)
 (****************************				                Reset Flags                                                           *****************************)
@@ -10840,6 +10845,8 @@ ptrTValveAirTable^.T_CtrleCyl.xReset:=FALSE;
 ptrTValveAirTable^.T_CtrleCyl.xExecute:=FALSE;
 ptrTValveVacuumTable^.T_CtrleCyl.xReset:=FALSE;
 ptrTValveVacuumTable^.T_CtrleCyl.xExecute:=FALSE;
+ptrTValveCleanNozzle^.T_CtrleCyl.xReset:=FALSE;
+ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=FALSE;
 ptrTAxisBubbler^.T_CtrleDCAxis.xReset:=FALSE;
 ptrTAxisBubbler^.T_CtrleDCAxis.xExecute:=FALSE;
 ptrTAxisFeedPump^.T_CtrleDCAxis.xReset:=FALSE;
@@ -11343,8 +11350,23 @@ ptrTValveVacuumTable^.T_CtrleCyl.T_Standard.tDelayActiv							:=T#0s;
 ptrTValveVacuumTable^.T_Config.tDelayPreOff									:=T#0s;
 ptrTValveVacuumTable^.T_Config.tDelayPreOn									:=T#0s;
 
+(* Config Valve Cleaning nozzle  *)
+ptrTValveCleanNozzle^.iCylinderTpye											:=8;
+ptrTValveCleanNozzle^.T_CtrleCyl.xFBActiv										:=T_Station_Work.TControl.xEnable;
+ptrTValveCleanNozzle^.T_Config.xActivState										:=TRUE;
+ptrTValveCleanNozzle^.T_Config.xCtrlePosOff										:=FALSE;
+ptrTValveCleanNozzle^.T_Config.xCtrlePosOn										:=FALSE;
+ptrTValveCleanNozzle^.T_Config.tTimeOut										:=ptrTValveCleanNozzle^.T_Config.tTimeOut;
+ptrTValveCleanNozzle^.T_Config.tDelayOff										:=ptrTValveCleanNozzle^.T_Config.tDelayOff;
+ptrTValveCleanNozzle^.T_Config.tDelayOn										:=ptrTValveCleanNozzle^.T_Config.tDelayOn;
+ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.tDelayAfterSensorOff					:=ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.tDelayAfterSensorOff;
+ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.tDelayAfterSensorOn					:=ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.tDelayAfterSensorOn;
+ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.tDelayActiv							:=T#0s;
+ptrTValveCleanNozzle^.T_Config.tDelayPreOff										:=T#0s;
+ptrTValveCleanNozzle^.T_Config.tDelayPreOn										:=T#0s;
+
 (* Config SensorTorque *)
-ptrTSensorTorque^.iCylinderTpye												:=8;
+ptrTSensorTorque^.iCylinderTpye												:=20;
 ptrTSensorTorque^.T_CtrleCyl.xFBActiv											:=T_Station_Work.TControl.xEnable;
 ptrTSensorTorque^.T_Config.xActivState											:=TRUE;
 ptrTSensorTorque^.T_Config.xCtrlePosOff											:=FALSE;
@@ -11359,7 +11381,7 @@ ptrTSensorTorque^.T_Config.tDelayPreOff										:=T#0s;
 ptrTSensorTorque^.T_Config.tDelayPreOn										:=T#0s;
 
 (* Config SensorTorqueOverload *)
-ptrTSensorTorqueOverload^.iCylinderTpye										:=9;
+ptrTSensorTorqueOverload^.iCylinderTpye										:=21;
 ptrTSensorTorqueOverload^.T_CtrleCyl.xFBActiv									:=T_Station_Work.TControl.xEnable;
 ptrTSensorTorqueOverload^.T_Config.xActivState									:=TRUE;
 ptrTSensorTorqueOverload^.T_Config.xCtrlePosOff									:=FALSE;
@@ -11374,7 +11396,7 @@ ptrTSensorTorqueOverload^.T_Config.tDelayPreOff								:=T#0s;
 ptrTSensorTorqueOverload^.T_Config.tDelayPreOn								:=T#0s;
 
 (* Config Sensor TorqueSensorMeasRange *)
-ptrTTorqueSensorMeasRange^.iCylinderTpye									:=10;
+ptrTTorqueSensorMeasRange^.iCylinderTpye									:=22;
 ptrTTorqueSensorMeasRange^.T_CtrleCyl.xFBActiv								:=T_Station_Work.TControl.xEnable;
 ptrTTorqueSensorMeasRange^.T_Config.xActivState								:=TRUE;
 ptrTTorqueSensorMeasRange^.T_Config.xCtrlePosOff								:=FALSE;
@@ -11389,7 +11411,7 @@ ptrTTorqueSensorMeasRange^.T_Config.tDelayPreOff								:=T#0s;
 ptrTTorqueSensorMeasRange^.T_Config.tDelayPreOn								:=T#0s;
 
 (* Config Sensor TorqueSensorControl *)
-ptrTTorqueSensorControl^.iCylinderTpye											:=11;
+ptrTTorqueSensorControl^.iCylinderTpye											:=23;
 ptrTTorqueSensorControl^.T_CtrleCyl.xFBActiv									:=T_Station_Work.TControl.xEnable;
 ptrTTorqueSensorControl^.T_Config.xActivState									:=TRUE;
 ptrTTorqueSensorControl^.T_Config.xCtrlePosOff									:=FALSE;
@@ -11402,8 +11424,6 @@ ptrTTorqueSensorControl^.T_CtrleCyl.T_Standard.tDelayAfterSensorOn				:=ptrTTorq
 ptrTTorqueSensorControl^.T_CtrleCyl.T_Standard.tDelayActiv						:=ptrTTorqueSensorControl^.T_CtrleCyl.T_Standard.tDelayActiv;
 ptrTTorqueSensorControl^.T_Config.tDelayPreOff									:=T#0s;
 ptrTTorqueSensorControl^.T_Config.tDelayPreOn									:=T#0s;
-
-
 
 (* Config Bubbler Axis *)
 ptrTAxisBubbler^.T_Config_Gen.iTyp:=5; (* Bubbler Axis-->DC-Achse für Rührwerk *)
@@ -11981,15 +12001,26 @@ fbValveAirTable(		xCtrlePosOn:= FALSE,
 QxAirTable:=fbValveAirTable.xCylinder;	(* Ventil QxAirTable-->Ventil für die Luft des Tisches *)
 END_ACTION
 
+ACTION	HW_ValveCleanNozzle:
+(******************************************************************************************************************************************)
+(******************************** 					 Ventil fuer die Reinigungsduese 			 ********************************)
+(******************************************************************************************************************************************)
+fbValveCleanNozzle(	xCtrlePosOn:= FALSE,
+					xCtrlePosOff:= FALSE,
+					T_Cylinder:= ptrTValveCleanNozzle^);
+QxValveCleanNozzle:=fbValveCleanNozzle.xCylinder;	(* Ventil QxValveCleanNozzle-->Ventil fuer die Reinigungsduese *)
+END_ACTION
+
 ACTION	HW_ValveVacuumTable:
 (******************************************************************************************************************************************)
-(********************************   		        Ventil für das Vakuum des Tisches                    ********************************)
+(********************************   		        Ventil fuer das Vakuum des Tisches                    ********************************)
 (******************************************************************************************************************************************)
 fbValveVacuumTable(		xCtrlePosOn:= FALSE,
 							xCtrlePosOff:= FALSE,
 							T_Cylinder:= ptrTValveVacuumTable^);
-QxVacuumTable:=fbValveVacuumTable.xCylinder;	(* Ventil QxVacuumTable-->Ventil für das Vakuum des Tisches *)
+QxVacuumTable:=fbValveVacuumTable.xCylinder;	(* Ventil QxVacuumTable-->Ventil fuer das Vakuum des Tisches *)
 END_ACTION
+
 
 
 
@@ -12961,18 +12992,19 @@ VAR
 	ptrTAxisZ 							:POINTER TO ST_AXIS;		(* Achse für die Hubachse *)
 	ptrTAxisS 							:POINTER TO ST_AXIS;		(* Achse für die Werkzeugspindel *)
 	ptrTCylToolDeflection					:POINTER TO ST_CYLINDER;	(* Servoventil für das bestimmen der vertikalen Auslenkraft *)
-	ptrTCylToolTorqueHC 					:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung HC *)
-	ptrTCylToolTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung Überlast *)
-	ptrTTorqueSensorMeasRange			:POINTER TO ST_CYLINDER;	(* Controlling für den Drehmomentsensor, Einstellung des Drehmomentbereiches *)	(* IGS *)
-	ptrTTorqueSensorControl				:POINTER TO ST_CYLINDER;	(* Controlling für den Drehmomentsensor, Überprüfung auf Funktionalität *)			(* IGS *)
+	ptrTCylToolTorqueHC 					:POINTER TO ST_CYLINDER;	(* Drehmomentueberwachung HC *)
+	ptrTCylToolTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Drehmomentueberwachung Ueberlast *)
+	ptrTTorqueSensorMeasRange			:POINTER TO ST_CYLINDER;	(* Controlling fuer den Drehmomentsensor, Einstellung des Drehmomentbereiches *)	(* IGS *)
+	ptrTTorqueSensorControl				:POINTER TO ST_CYLINDER;	(* Controlling fuer den Drehmomentsensor, Ueberprüfung auf Funktionalitaet *)			(* IGS *)
 	ptrTSensorTorque 					:POINTER TO ST_CYLINDER;	(* Analoger Sensor für Drehmoment detektion *)								(* IGS *)
-	ptrTSensorTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Digitaler Sensor für Drehmoment Überlast detektion *)							(* IGS *)
+	ptrTSensorTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Digitaler Sensor für Drehmoment Ueberlast detektion *)							(* IGS *)
 	ptrTCylBrakeReleaseZAxis 				:POINTER TO ST_CYLINDER;	(* Zylinder für lösen der Bremse bei der Z Achse *)
-	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil für Werkstückfixierzylinder *)
-	ptrTValveAirTable						:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
-	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
-	ptrTAxisBubbler						:POINTER TO ST_DC_AXIS;	(* Rührwerk für Suspension *)												(* IGS3 *)
-	ptrTAxisFeedPump					:POINTER TO ST_DC_AXIS;	(* Förderpumpe für Suspension *)											(* IGS3 *)
+	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil fuer Werkstueckfixierzylinder *)
+	ptrTValveAirTable						:POINTER TO ST_CYLINDER;	(* Ventil fuer die Luft des Tisches *)
+	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil fuer Vacuum des Tisches *)
+	ptrTValveCleanNozzle					:POINTER TO ST_CYLINDER;	(* Ventil fuer die Reinigungsduese*)											(* BEF *)
+	ptrTAxisBubbler						:POINTER TO ST_DC_AXIS;	(* Ruehrwerk fuer Suspension *)												(* IGS3 *)
+	ptrTAxisFeedPump					:POINTER TO ST_DC_AXIS;	(* Foerderpumpe fuer Suspension *)											(* IGS3 *)
 
 	TDeleteStationStruct : ST_STATION;
 	xTmpStopFunction: BOOL := FALSE;
@@ -13229,6 +13261,7 @@ ELSE
 	ptrTCylWorkpieceClamp:=ADR(T_Station_Work.THWWorkStation.TCylWorkpieceClamp);
 	ptrTValveAirTable:=ADR(T_Station_Work.THWWorkStation.TValveAirTable);
 	ptrTValveVacuumTable:=ADR(T_Station_Work.THWWorkStation.TValveVacuumTable);
+	ptrTValveCleanNozzle:=ADR(T_Station_Work.THWWorkStation.TValveCleanNozzle);
 	ptrTAxisBubbler:=ADR(T_Station_Work.THWWorkStation.TAxisBubbler);
 	ptrTAxisFeedPump:=ADR(T_Station_Work.THWWorkStation.TAxisFeedPump);
 END_IF;
@@ -13849,6 +13882,7 @@ IF (fbRTrig.Q OR xInitSetEnable) THEN
 				ptrTCylWorkpieceClamp^.T_CtrleCyl.xReset:=TRUE;
 				ptrTValveAirTable^.T_CtrleCyl.xReset:=TRUE;
 				ptrTValveVacuumTable^.T_CtrleCyl.xReset:=TRUE;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xReset:=TRUE;
 				ptrTCylBrakeReleaseZAxis^.T_CtrleCyl.xReset:=TRUE;
 				ptrTAxisZ^.T_CtrleSingle.xReset:=TRUE;
 				ptrTAxisS^.T_CtrleSingle.xReset:=TRUE;
@@ -13859,7 +13893,7 @@ IF (fbRTrig.Q OR xInitSetEnable) THEN
 			AND NOT(ptrTCylToolTorqueOverload^.T_CtrleCyl.xReset) AND NOT(ptrTCylBrakeReleaseZAxis^.T_CtrleCyl.xReset)
 			AND NOT(ptrTTorqueSensorMeasRange^.T_CtrleCyl.xReset) AND NOT(ptrTTorqueSensorControl^.T_CtrleCyl.xReset)
 			AND NOT(ptrTCylWorkpieceClamp^.T_CtrleCyl.xReset) AND NOT(ptrTValveAirTable^.T_CtrleCyl.xReset)
-			AND NOT(ptrTValveVacuumTable^.T_CtrleCyl.xReset)
+			AND NOT(ptrTValveVacuumTable^.T_CtrleCyl.xReset)  AND NOT(ptrTValveCleanNozzle^.T_CtrleCyl.xReset)
 			AND NOT(ptrTAxisZ^.T_CtrleSingle.xReset) AND ptrTAxisZ^.T_CtrleSingle.xDone
 			AND NOT(ptrTAxisS^.T_CtrleSingle.xReset) AND ptrTAxisS^.T_CtrleSingle.xDone
 			AND NOT(ptrTAxisBubbler^.T_CtrleDCAxis.xReset) AND ptrTAxisBubbler^.T_CtrleDCAxis.xDone
@@ -21654,14 +21688,14 @@ VAR
 	ptrTAxisS_St1 : POINTER TO ST_AXIS;								(* Achse für die Spindel *)
 
 	ptrTCylToolDeflection_St1				:POINTER TO ST_CYLINDER;	(* Servoventil für das bestimmen der vertikalen Auslenkraft *)
-	ptrTSensorTorque_St1 					:POINTER TO ST_CYLINDER;	(* Analoger Sensor für Drehmoment detektion *)
+	ptrTSensorTorque_St1 				:POINTER TO ST_CYLINDER;	(* Analoger Sensor für Drehmoment detektion *)
 	ptrTCylToolTorqueHC_St1 				:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung HC *)
-	ptrTCylToolTorqueOverload_St1 			:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung Überlast *)
+	ptrTCylToolTorqueOverload_St1 		:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung Überlast *)
 	ptrTCylBrakeReleaseZAxis_St1 			:POINTER TO ST_CYLINDER;	(* Zylinder für lösen der Bremse bei der Z Achse *)
-
-	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil für Werkstückfixierzylinder *)
-	ptrTValveAirTable					:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
-	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
+	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil fuer Werkstückfixierzylinder *)
+	ptrTValveAirTable						:POINTER TO ST_CYLINDER;	(* Ventil fuer die Luft des Tisches *)
+	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil fuer Vacuum des Tisches *)
+	ptrTValveCleanNozzle					:POINTER TO ST_CYLINDER;	(* Ventil fuer die Reinigungsduese *)
 
 	ptrTCommonAxis : POINTER TO ST_AXIS;
 	ptrTCommonAxisActive		: POINTER TO ST_AXIS;
@@ -22022,10 +22056,11 @@ ACTION	ActivateFB:
 		ptrTCylBrakeReleaseZAxis_St1 				:=ADR(TStation_Work_St1.THWWorkStation.TCylBrakeReleaseZAxis);
 
 		ptrTCylToolTorqueHC_St1					:=ADR(TStation_Work_St1.THWWorkStation.TCylToolTorqueHC);
-		ptrTCylToolTorqueOverload_St1				:=ADR(TStation_Work_St1.THWWorkStation.TCylToolTorqueOverload);
-		ptrTCylWorkpieceClamp						:=ADR(TStation_Work_St1.THWWorkStation.TCylWorkpieceClamp);
+		ptrTCylToolTorqueOverload_St1			:=ADR(TStation_Work_St1.THWWorkStation.TCylToolTorqueOverload);
+		ptrTCylWorkpieceClamp					:=ADR(TStation_Work_St1.THWWorkStation.TCylWorkpieceClamp);
 		ptrTValveAirTable							:=ADR(TStation_Work_St1.THWWorkStation.TValveAirTable);
-		ptrTValveVacuumTable						:=ADR(TStation_Work_St1.THWWorkStation.TValveVacuumTable);
+		ptrTValveVacuumTable					:=ADR(TStation_Work_St1.THWWorkStation.TValveVacuumTable);
+		ptrTValveCleanNozzle						:=ADR(TStation_Work_St1.THWWorkStation.TValveCleanNozzle);
 
 		ptrTCommonAxis:=ADR(TStation_Work_St1.THWWorkStation.TAxisZ);
 		ptrTCommonAxisActive	:=ADR(TStation_Work_St1.THWWorkStation.TAxisZ);
@@ -22214,6 +22249,7 @@ IF (T_Visu.T_PlcParam.dwActualPage =  gT_PageNumber.iWorkStation_Cylinder1) OR
 		5:	ptrTCommonCylinderValve:=ptrTCylWorkpieceClamp;
 		6:	ptrTCommonCylinderValve:=ptrTValveAirTable;
 		7:	ptrTCommonCylinderValve:=ptrTValveVacuumTable;
+		8:	ptrTCommonCylinderValve:=ptrTValveCleanNozzle;
 	END_CASE
 END_IF
 
@@ -35401,6 +35437,7 @@ STRUCT
 	TCylWorkpieceClamp				:ST_CYLINDER;		(* Ventil für Werkstückfixierzylinder *)
 	TValveAirTable					:ST_CYLINDER;		(* Ventil für die Luft des Tisches *)
 	TValveVacuumTable				:ST_CYLINDER;		(* Ventil für die Luft des Tisches *)
+	TValveCleanNozzle				:ST_CYLINDER;		(* Ventil für die Reinigungsduese *)														(* BEF *)
 	TAxisBubbler						:ST_DC_AXIS;		(* Rührwerk für Suspension *)															(* IGS3 *)
 	TAxisFeedPump					:ST_DC_AXIS;		(* Förderpumpe für Suspension *)														(* IGS3 *)
 END_STRUCT
@@ -37279,7 +37316,7 @@ VAR_GLOBAL
 	QxRes309									AT%QX31.1	:BOOL;	(* Reserve *)
 	QxCylStripperClose_St1						AT%QX31.2	:BOOL;	(* Ventil für ZylAbstreiferGeschlossen *)										(* IGS3 *)
 	QxCylStripperOpen_St1						AT%QX31.3	:BOOL;	(* Ventil für ZylAbstreiferOffen *)												(* IGS3 *)
-	QxRes312									AT%QX31.4	:BOOL;	(* Reserve *)
+	QxValveCleanNozzle							AT%QX31.4	:BOOL;	(* Ventil fuer Reinigungsduese *)												(* BEF *)
 	QxRes313									AT%QX31.5	:BOOL;	(* Reserve *)
 	QxRes314									AT%QX31.6	:BOOL;	(* Reserve *)
 	QxRes315									AT%QX31.7	:BOOL;	(* Reserve *)

@@ -24352,6 +24352,13 @@ ACTION	Monitor_ActuatorState:
 	T_ExchgParam.T_Cylinder.arStat[7].bStat:=	bFct_SetCylStat(	TStation_Work_St1.THWWorkStation.TValveVacuumTable.T_CtrleCyl.xStatePosOff,
 														 		TStation_Work_St1.THWWorkStation.TValveVacuumTable.T_CtrleCyl.xStatePosOn,
 											 					T_ExchgParam.T_Cylinder.arStat[7].bStat);
+
+(* 08 Ventil Reinigungsduese *)
+	T_ExchgParam.T_Cylinder.arStat[8].xOff:=	FALSE;
+	T_ExchgParam.T_Cylinder.arStat[8].xOn:=	TStation_Work_St1.THWWorkStation.TValveCleanNozzle.T_CtrleCyl.T_Standard.xActivOn;
+	T_ExchgParam.T_Cylinder.arStat[8].bStat:=	bFct_SetCylStat(	TStation_Work_St1.THWWorkStation.TValveCleanNozzle.T_CtrleCyl.xStatePosOff,
+														 		TStation_Work_St1.THWWorkStation.TValveCleanNozzle.T_CtrleCyl.xStatePosOn,
+											 					T_ExchgParam.T_Cylinder.arStat[8].bStat);
 (*******************************************************************************************************************************************************************************************)
 (*************************************************			                                   Achsen Zustand abfragen                                                      ******************************************)
 (*******************************************************************************************************************************************************************************************)
@@ -35872,8 +35879,8 @@ END_TYPE
 (* @OBJECTFLAGS := '0, 8' *)
 TYPE ST_EXCHG_CYLINDER :
 STRUCT
-	iSelCyl_Setup		:INT;	(*angewählte funktion in Setup Mode , kann als Index verwendet werden für  folgende Statusarray*)
-	arStat				:ARRAY [1..7] OF ST_CYLSTAT;
+	iSelCyl_Setup		:INT;	(*angewaehlte funktion in Setup Mode , kann als Index verwendet werden fuer  folgende Statusarray*)
+	arStat				:ARRAY [1..8] OF ST_CYLSTAT;
 END_STRUCT
 END_TYPE
 (* @END_DECLARATION := '0' *)

@@ -4278,7 +4278,7 @@ FILENAME = TeachINValue_Axis_Z_St1.qob
 
 [FOLDER_39]
 NAME = SetupB_Task2
-ITEMS = OBJECT_159, OBJECT_160, OBJECT_161, OBJECT_162, OBJECT_163, OBJECT_164, OBJECT_165, OBJECT_166, OBJECT_167, OBJECT_168
+ITEMS = OBJECT_159, OBJECT_160, OBJECT_161, OBJECT_162, OBJECT_163, OBJECT_164, OBJECT_165, OBJECT_166, OBJECT_167, OBJECT_168, OBJECT_169
 
 [OBJECT_159]
 FILENAME = CylinderBackgroundMicroHead_SetupB.qob
@@ -4310,123 +4310,126 @@ FILENAME = CylManB06.qob
 [OBJECT_168]
 FILENAME = CylManB07.qob
 
+[OBJECT_169]
+FILENAME = CylManB08.qob
+
 [FOLDER_40]
 NAME = SetupB_Task3
-ITEMS = OBJECT_169
+ITEMS = OBJECT_170
 
-[OBJECT_169]
+[OBJECT_170]
 FILENAME = ValveBackground_SetupB.qob
 
 [FOLDER_41]
 NAME = SetupB_Task4
-ITEMS = OBJECT_170, OBJECT_171
-
-[OBJECT_170]
-FILENAME = FunctionListMicrohead.qob
+ITEMS = OBJECT_171, OBJECT_172
 
 [OBJECT_171]
+FILENAME = FunctionListMicrohead.qob
+
+[OBJECT_172]
 FILENAME = StationCommonDataInfoValueSetup.qob
 
 [FOLDER_42]
 NAME = SetupB_Task5
-ITEMS = OBJECT_172, OBJECT_173, OBJECT_174, OBJECT_175, OBJECT_176, OBJECT_177, OBJECT_178, OBJECT_179, OBJECT_180, OBJECT_181, OBJECT_182, OBJECT_183, OBJECT_184, OBJECT_185, OBJECT_186, OBJECT_187, OBJECT_188, OBJECT_189, OBJECT_190, OBJECT_191, OBJECT_192, OBJECT_193
-
-[OBJECT_172]
-FILENAME = BeckhoffSpindleActive.qob
+ITEMS = OBJECT_173, OBJECT_174, OBJECT_175, OBJECT_176, OBJECT_177, OBJECT_178, OBJECT_179, OBJECT_180, OBJECT_181, OBJECT_182, OBJECT_183, OBJECT_184, OBJECT_185, OBJECT_186, OBJECT_187, OBJECT_188, OBJECT_189, OBJECT_190, OBJECT_191, OBJECT_192, OBJECT_193, OBJECT_194
 
 [OBJECT_173]
-FILENAME = BurnInProcedure.qob
+FILENAME = BeckhoffSpindleActive.qob
 
 [OBJECT_174]
-FILENAME = ConfigSpindle.qob
+FILENAME = BurnInProcedure.qob
 
 [OBJECT_175]
-FILENAME = ConfigSpindle_L.qob
+FILENAME = ConfigSpindle.qob
 
 [OBJECT_176]
-FILENAME = ConfigSpindle_M.qob
+FILENAME = ConfigSpindle_L.qob
 
 [OBJECT_177]
-FILENAME = ConfigTorque.qob
+FILENAME = ConfigSpindle_M.qob
 
 [OBJECT_178]
-FILENAME = SelectCylinderConfig.qob
+FILENAME = ConfigTorque.qob
 
 [OBJECT_179]
-FILENAME = SelectZAxisSetup.qob
+FILENAME = SelectCylinderConfig.qob
 
 [OBJECT_180]
-FILENAME = SpindleCalibration.qob
+FILENAME = SelectZAxisSetup.qob
 
 [OBJECT_181]
-FILENAME = TeachINValue_AnalogSensor.qob
+FILENAME = SpindleCalibration.qob
 
 [OBJECT_182]
-FILENAME = ZAchseErstEinrichtung_1.qob
+FILENAME = TeachINValue_AnalogSensor.qob
 
 [OBJECT_183]
-FILENAME = ZAchseErstEinrichtung_2.qob
+FILENAME = ZAchseErstEinrichtung_1.qob
 
 [OBJECT_184]
-FILENAME = ZAchseErstEinrichtung_3.qob
+FILENAME = ZAchseErstEinrichtung_2.qob
 
 [OBJECT_185]
-FILENAME = ZAchseErstEinrichtung_4.qob
+FILENAME = ZAchseErstEinrichtung_3.qob
 
 [OBJECT_186]
-FILENAME = ZAchseErstEinrichtung_5.qob
+FILENAME = ZAchseErstEinrichtung_4.qob
 
 [OBJECT_187]
-FILENAME = ZAchseFührungsrohr_1.qob
+FILENAME = ZAchseErstEinrichtung_5.qob
 
 [OBJECT_188]
-FILENAME = ZAchseFührungsrohr_2.qob
+FILENAME = ZAchseFührungsrohr_1.qob
 
 [OBJECT_189]
-FILENAME = ZAchseFührungsrohr_3.qob
+FILENAME = ZAchseFührungsrohr_2.qob
 
 [OBJECT_190]
-FILENAME = ZAchseFührungsrohr_4.qob
+FILENAME = ZAchseFührungsrohr_3.qob
 
 [OBJECT_191]
-FILENAME = ZAchseFührungsrohr_5.qob
+FILENAME = ZAchseFührungsrohr_4.qob
 
 [OBJECT_192]
-FILENAME = ZAchseFührungsrohr_6.qob
+FILENAME = ZAchseFührungsrohr_5.qob
 
 [OBJECT_193]
+FILENAME = ZAchseFührungsrohr_6.qob
+
+[OBJECT_194]
 FILENAME = ZAchseFührungsrohr_7.qob
 
 [FOLDER_43]
 NAME = Start
-ITEMS = OBJECT_194, OBJECT_195, OBJECT_196, OBJECT_197, OBJECT_198, OBJECT_199
-
-[OBJECT_194]
-FILENAME = ExitQVisButton.qob
+ITEMS = OBJECT_195, OBJECT_196, OBJECT_197, OBJECT_198, OBJECT_199, OBJECT_200
 
 [OBJECT_195]
-FILENAME = MaTitleWaitCom.qob
+FILENAME = ExitQVisButton.qob
 
 [OBJECT_196]
-FILENAME = SelectSpindleS1S2S3.qob
+FILENAME = MaTitleWaitCom.qob
 
 [OBJECT_197]
-FILENAME = SelectUserLevelBIOS.qob
+FILENAME = SelectSpindleS1S2S3.qob
 
 [OBJECT_198]
-FILENAME = ShutDown.qob
+FILENAME = SelectUserLevelBIOS.qob
 
 [OBJECT_199]
+FILENAME = ShutDown.qob
+
+[OBJECT_200]
 FILENAME = Startpage.qob
 
 [FOLDER_44]
 NAME = StationState
-ITEMS = OBJECT_200, OBJECT_201
-
-[OBJECT_200]
-FILENAME = StationState_Common.qob
+ITEMS = OBJECT_201, OBJECT_202
 
 [OBJECT_201]
+FILENAME = StationState_Common.qob
+
+[OBJECT_202]
 FILENAME = StationState_St1.qob
 
 [FOLDER_45]

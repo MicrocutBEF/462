@@ -4,7 +4,7 @@
 	<ProjectInfo>
 		<Path>Z:\Users\bef\02_Github\462\V4620698\TwinCAT_V4620698\V4620698.pro</Path>
 		<IsLibrary>false</IsLibrary>
-		<ChangeDate>2025-09-09T15:08:55</ChangeDate>
+		<ChangeDate>2025-09-10T12:11:58</ChangeDate>
 		<Library>
 			<Name>TcIoFunctions.lib</Name>
 			<Path>C:\TWINCAT\PLC\LIB\TcIoFunctions.lib</Path>
@@ -6750,7 +6750,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100F3478" Crc32="1357673828" LastChange="2025-09-09T15:08:54">FB_CopyDataFileToProfile</Name>
+			<Name Decoration="100F2CBF" Crc32="1357673828" LastChange="2025-09-09T15:08:54">FB_CopyDataFileToProfile</Name>
 			<BitSize>2184</BitSize>
 			<SubItem>
 				<Name>i</Name>
@@ -12268,7 +12268,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="101AB36C" Crc32="1511743154" LastChange="2025-09-09T15:08:54">FB_PROFILE_FILE</Name>
+			<Name Decoration="101AAB93" Crc32="1511743154" LastChange="2025-09-09T15:08:54">FB_PROFILE_FILE</Name>
 			<BitSize>2458048</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TimerOut</Name>
@@ -12413,7 +12413,7 @@
 			</SubItem>
 			<SubItem>
 				<Name>FBCopyDataFileToProfile</Name>
-				<Type Decoration="100F3478">FB_CopyDataFileToProfile</Type>
+				<Type Decoration="100F2CBF">FB_CopyDataFileToProfile</Type>
 				<BitSize>2184</BitSize>
 				<BitOffs>2455152</BitOffs>
 			</SubItem>
@@ -12984,7 +12984,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10F666B1" Crc32="1870206776" LastChange="2025-09-09T15:08:54">FB_STATION_WORK</Name>
+			<Name Decoration="10F666B1" Crc32="0815536479" LastChange="2025-09-10T12:11:57">FB_STATION_WORK</Name>
 			<BitSize>241376</BitSize>
 			<SubItem>
 				<Name>ptrTAxisZ</Name>
@@ -14612,6 +14612,10 @@
 				<ActionInfo>
 					<Name>StationFunction_Ctrl_CheckPos_Z</Name>
 					<CodeIndex>1503</CodeIndex>
+				</ActionInfo>
+				<ActionInfo>
+					<Name>StationFunction_Ctrl_CleanNozzle</Name>
+					<CodeIndex>1870</CodeIndex>
 				</ActionInfo>
 				<ActionInfo>
 					<Name>StationFunction_Ctrl_Controller_1</Name>
@@ -16568,7 +16572,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10129A09" Crc32="4236519588" LastChange="2025-09-09T15:08:54">FBHW_CYL_STANDARD</Name>
+			<Name Decoration="10129A09" Crc32="4236519588" LastChange="2025-09-10T09:07:38">FBHW_CYL_STANDARD</Name>
 			<BitSize>1136</BitSize>
 			<SubItem>
 				<Name>xConfirmResetFB</Name>
@@ -31967,7 +31971,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1020CB6C" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">FB_DbgOutputCtrl</Name>
+			<Name Decoration="1020C651" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">FB_DbgOutputCtrl</Name>
 			<BitSize>114664</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">fbFormat</Name>
@@ -36078,7 +36082,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10062A94" Crc32="1547455281" LastChange="2025-09-09T15:08:54">iFctExistProfileName</Name>
+			<Name Decoration="10062759" Crc32="1547455281" LastChange="2025-09-09T15:08:54">iFctExistProfileName</Name>
 			<FunInfo>
 				<CodeIndex>1690</CodeIndex>
 				<ReturnValue>
@@ -36520,7 +36524,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10078B41" Crc32="1384486112" LastChange="2025-09-09T15:08:54">xFctCopyProfileToDataFile</Name>
+			<Name Decoration="1007839E" Crc32="1384486112" LastChange="2025-09-09T15:08:54">xFctCopyProfileToDataFile</Name>
 			<FunInfo>
 				<CodeIndex>1733</CodeIndex>
 				<ReturnValue>
@@ -36763,7 +36767,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="1009D837" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_CreateDpv1ReadReqPkg</Name>
+			<Name Decoration="1009D052" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_CreateDpv1ReadReqPkg</Name>
 			<FunInfo>
 				<CodeIndex>19</CodeIndex>
 				<ReturnValue>
@@ -36826,7 +36830,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100A2C11" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_CreateDpv1ReadReqPkgPNET</Name>
+			<Name Decoration="100A2149" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_CreateDpv1ReadReqPkgPNET</Name>
 			<FunInfo>
 				<CodeIndex>20</CodeIndex>
 				<ReturnValue>
@@ -36894,7 +36898,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100E1E50" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_CreateDpv1WriteReqPkg</Name>
+			<Name Decoration="100E11F5" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_CreateDpv1WriteReqPkg</Name>
 			<FunInfo>
 				<CodeIndex>21</CodeIndex>
 				<ReturnValue>
@@ -36982,7 +36986,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100F71FC" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_CreateDpv1WriteReqPkgPNET</Name>
+			<Name Decoration="100F62E4" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_CreateDpv1WriteReqPkgPNET</Name>
 			<FunInfo>
 				<CodeIndex>22</CodeIndex>
 				<ReturnValue>
@@ -37182,7 +37186,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100A1755" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_SplitDpv1ReadResPkg</Name>
+			<Name Decoration="100A0AE0" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_SplitDpv1ReadResPkg</Name>
 			<FunInfo>
 				<CodeIndex>26</CodeIndex>
 				<ReturnValue>
@@ -37244,7 +37248,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100A1B6D" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_SplitDpv1ReadResPkgPNET</Name>
+			<Name Decoration="100A0C19" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_SplitDpv1ReadResPkgPNET</Name>
 			<FunInfo>
 				<CodeIndex>27</CodeIndex>
 				<ReturnValue>
@@ -37306,7 +37310,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100CECEA" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_SplitDpv1WriteResPkg</Name>
+			<Name Decoration="100CE089" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_SplitDpv1WriteResPkg</Name>
 			<FunInfo>
 				<CodeIndex>28</CodeIndex>
 				<ReturnValue>
@@ -37378,7 +37382,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100CF102" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_SplitDpv1WriteResPkgPNET</Name>
+			<Name Decoration="100CE1A6" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">F_SplitDpv1WriteResPkgPNET</Name>
 			<FunInfo>
 				<CodeIndex>29</CodeIndex>
 				<ReturnValue>
@@ -38978,7 +38982,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10079EE8" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">DATA_TO_HEXSTR</Name>
+			<Name Decoration="10079A3F" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">DATA_TO_HEXSTR</Name>
 			<FunInfo>
 				<CodeIndex>613</CodeIndex>
 				<ReturnValue>
@@ -39845,7 +39849,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10151547" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">F_FormatArgToStr</Name>
+			<Name Decoration="101510A6" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">F_FormatArgToStr</Name>
 			<FunInfo>
 				<CodeIndex>643</CodeIndex>
 				<ReturnValue>
@@ -40394,7 +40398,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10041BA6" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">F_LTrim</Name>
+			<Name Decoration="10041707" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">F_LTrim</Name>
 			<FunInfo>
 				<CodeIndex>656</CodeIndex>
 				<ReturnValue>
@@ -40494,7 +40498,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10025CD7" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">F_STRING</Name>
+			<Name Decoration="10025836" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">F_STRING</Name>
 			<FunInfo>
 				<CodeIndex>661</CodeIndex>
 				<ReturnValue>
@@ -41873,7 +41877,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100295F0" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">PMAXSTRING_TO_MAXSTRING</Name>
+			<Name Decoration="1002914D" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcUtilities.lib">PMAXSTRING_TO_MAXSTRING</Name>
 			<FunInfo>
 				<CodeIndex>908</CodeIndex>
 				<ReturnValue>
@@ -44392,7 +44396,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100B93AA" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcSystem.lib">F_SplitPathName</Name>
+			<Name Decoration="100B85B5" IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcSystem.lib">F_SplitPathName</Name>
 			<FunInfo>
 				<CodeIndex>1168</CodeIndex>
 				<ReturnValue>
@@ -46437,7 +46441,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="100B7663" Crc32="2458507159" LastChange="2025-09-09T15:08:54">PRG_HW_GENERAL</Name>
+			<Name Decoration="100B6E6E" Crc32="2458507159" LastChange="2025-09-09T15:08:54">PRG_HW_GENERAL</Name>
 			<PrgInfo>
 				<CodeIndex>1696</CodeIndex>
 				<Symbol>
@@ -46472,87 +46476,6 @@
 				</Symbol>
 				<Symbol>
 					<Name>PRG_HW_GENERAL.FBHW_MachineLamp</Name>
-				</Symbol>
-			</PrgInfo>
-		</Program>
-		<Program>
-			<Name Decoration="101962F4" Crc32="0823002785" LastChange="2025-09-09T15:08:55">PRG_HW_WORK_ST1</Name>
-			<PrgInfo>
-				<CodeIndex>1697</CodeIndex>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.FBHWStationWork_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.IuiActualTorqueAxisZ_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.IwInputState_Z_Axis_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.IuiActualTorqueAxisS_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.IwInputState_S1_Axis_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.IwInputState_S2_Axis_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.IwInputState_S3_Axis_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stZRefIn_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stZRefOut_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stZDriveState_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stSRefIn_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stSRefOut_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stS2RefIn_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stS2RefOut_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stS3RefIn_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stS3RefOut_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stBubblerDataINSt1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stBubblerDataOUTSt1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stFeedpumpINDataSt1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.stFeedpumpOUTDataSt1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.xActiveHWWork_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.xActiveStationWork_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.wState_Z_Axis_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.xStationPowerON_St1</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_HW_WORK_ST1.IudiTorqueOverloadCounterValue_St1</Name>
 				</Symbol>
 			</PrgInfo>
 		</Program>
@@ -46981,21 +46904,6 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10031205" Crc32="1929038302" LastChange="2025-09-09T15:08:55">PRG_USB_IO_PANEL</Name>
-			<PrgInfo>
-				<CodeIndex>1714</CodeIndex>
-				<Symbol>
-					<Name>PRG_USB_IO_PANEL.fbCtrlePanel_IO</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_USB_IO_PANEL.IarxCtrlePanelButton</Name>
-				</Symbol>
-				<Symbol>
-					<Name>PRG_USB_IO_PANEL.QarxCtrlePanelLed</Name>
-				</Symbol>
-			</PrgInfo>
-		</Program>
-		<Program>
 			<Name Decoration="10077396" Crc32="0898064782" LastChange="2025-09-09T15:08:54">PRG_VELOCITY_DETECTION</Name>
 			<PrgInfo>
 				<CodeIndex>1715</CodeIndex>
@@ -47047,6 +46955,102 @@
 				</Symbol>
 				<Symbol>
 					<Name>PRG_VISU.xSetupOperateC_EnergyON</Name>
+				</Symbol>
+			</PrgInfo>
+		</Program>
+		<Program>
+			<Name Decoration="101962F4" Crc32="0823002785" LastChange="2025-09-10T12:11:57">PRG_HW_WORK_ST1</Name>
+			<PrgInfo>
+				<CodeIndex>1697</CodeIndex>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.FBHWStationWork_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.IuiActualTorqueAxisZ_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.IwInputState_Z_Axis_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.IuiActualTorqueAxisS_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.IwInputState_S1_Axis_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.IwInputState_S2_Axis_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.IwInputState_S3_Axis_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stZRefIn_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stZRefOut_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stZDriveState_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stSRefIn_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stSRefOut_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stS2RefIn_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stS2RefOut_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stS3RefIn_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stS3RefOut_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stBubblerDataINSt1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stBubblerDataOUTSt1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stFeedpumpINDataSt1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.stFeedpumpOUTDataSt1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.xActiveHWWork_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.xActiveStationWork_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.wState_Z_Axis_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.xStationPowerON_St1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_HW_WORK_ST1.IudiTorqueOverloadCounterValue_St1</Name>
+				</Symbol>
+			</PrgInfo>
+		</Program>
+		<Program>
+			<Name Decoration="10031205" Crc32="1929038302" LastChange="2025-09-10T12:11:57">PRG_USB_IO_PANEL</Name>
+			<PrgInfo>
+				<CodeIndex>1714</CodeIndex>
+				<Symbol>
+					<Name>PRG_USB_IO_PANEL.fbCtrlePanel_IO</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_USB_IO_PANEL.IarxCtrlePanelButton</Name>
+				</Symbol>
+				<Symbol>
+					<Name>PRG_USB_IO_PANEL.QarxCtrlePanelLed</Name>
 				</Symbol>
 			</PrgInfo>
 		</Program>
@@ -47495,7 +47499,7 @@
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_HW_GENERAL.fbProfileFile</Name>
-			<Type Decoration="101AB36C">FB_PROFILE_FILE</Type>
+			<Type Decoration="101AAB93">FB_PROFILE_FILE</Type>
 			<IGroup>16448</IGroup>
 			<IOffset>257464</IOffset>
 			<BitSize>2458048</BitSize>
@@ -47555,316 +47559,6 @@
 			<IGroup>16448</IGroup>
 			<IOffset>1176062</IOffset>
 			<BitSize>1136</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">PRG_HW_WORK_ST1.FBHWStationWork_St1</Name>
-			<Type Decoration="1083818B">FBHW_STATION_WORK</Type>
-			<Comment>
-				<![CDATA[Axis value]]>
-			</Comment>
-			<IGroup>16448</IGroup>
-			<IOffset>1176204</IOffset>
-			<BitSize>598832</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IuiActualTorqueAxisZ_St1</Name>
-			<Type>UINT</Type>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1656</IOffset>
-			<BitSize>16</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IwInputState_Z_Axis_St1</Name>
-			<Type>WORD</Type>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1658</IOffset>
-			<BitSize>16</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TIID^Gerät 4 (EtherCAT)^Achse Z St1 (AX5106-0000-0210)^AT^Digital inputs, state]]>
-					</Value>
-				</Property>
-			</Properties>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IuiActualTorqueAxisS_St1</Name>
-			<Type>UINT</Type>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1660</IOffset>
-			<BitSize>16</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IwInputState_S1_Axis_St1</Name>
-			<Type>WORD</Type>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1662</IOffset>
-			<BitSize>16</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IwInputState_S2_Axis_St1</Name>
-			<Type>WORD</Type>
-			<Comment>
-				<![CDATA[IGS]]>
-			</Comment>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1012</IOffset>
-			<BitSize>16</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TIID^Gerät 4 (EtherCAT)^Antrieb S2 S3 St1 (AX5206-0000-0203)^AT 1^Digital inputs, state]]>
-					</Value>
-				</Property>
-			</Properties>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IwInputState_S3_Axis_St1</Name>
-			<Type>WORD</Type>
-			<Comment>
-				<![CDATA[IGS]]>
-			</Comment>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1014</IOffset>
-			<BitSize>16</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TIID^Gerät 4 (EtherCAT)^Antrieb S2 S3 St1 (AX5206-0000-0203)^AT 2^Digital inputs, state]]>
-					</Value>
-				</Property>
-			</Properties>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stZRefIn_St1</Name>
-			<Type Decoration="10166AA6">NCTOPLC_AXLESTRUCT</Type>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1016</IOffset>
-			<BitSize>1024</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse Z^Ausgänge^Achse Z_ToPlc]]>
-					</Value>
-				</Property>
-			</Properties>
-		</Symbol>
-		<Symbol>
-			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stZRefOut_St1</Name>
-			<Type Decoration="10074C8A">PLCTONC_AXLESTRUCT</Type>
-			<IGroup>61488</IGroup>
-			<IOffset VarConfig="Changeable">10012</IOffset>
-			<BitSize>1024</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse Z^Eingänge^Achse Z_FromPlc]]>
-					</Value>
-				</Property>
-			</Properties>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stZDriveState_St1</Name>
-			<Type Decoration="10041704">ST_AXIS_DRIVESTATE</Type>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1144</IOffset>
-			<BitSize>32</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stSRefIn_St1</Name>
-			<Type Decoration="10166AA6">NCTOPLC_AXLESTRUCT</Type>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1148</IOffset>
-			<BitSize>1024</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S1^Ausgänge^Achse S1_ToPlc]]>
-					</Value>
-				</Property>
-			</Properties>
-		</Symbol>
-		<Symbol>
-			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stSRefOut_St1</Name>
-			<Type Decoration="10074C8A">PLCTONC_AXLESTRUCT</Type>
-			<IGroup>61488</IGroup>
-			<IOffset VarConfig="Changeable">10140</IOffset>
-			<BitSize>1024</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S1^Eingänge^Achse S1_FromPlc]]>
-					</Value>
-				</Property>
-			</Properties>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stS2RefIn_St1</Name>
-			<Type Decoration="10166AA6">NCTOPLC_AXLESTRUCT</Type>
-			<Comment>
-				<![CDATA[Beckhoff Spindel L]]>
-			</Comment>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1276</IOffset>
-			<BitSize>1024</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S2^Ausgänge^Achse 2_ToPlc]]>
-					</Value>
-				</Property>
-			</Properties>
-		</Symbol>
-		<Symbol>
-			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stS2RefOut_St1</Name>
-			<Type Decoration="10074C8A">PLCTONC_AXLESTRUCT</Type>
-			<Comment>
-				<![CDATA[Beckhoff Spindel L]]>
-			</Comment>
-			<IGroup>61488</IGroup>
-			<IOffset VarConfig="Changeable">10268</IOffset>
-			<BitSize>1024</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S2^Eingänge^Achse 2_FromPlc]]>
-					</Value>
-				</Property>
-			</Properties>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stS3RefIn_St1</Name>
-			<Type Decoration="10166AA6">NCTOPLC_AXLESTRUCT</Type>
-			<Comment>
-				<![CDATA[Beckhoff Spindel M]]>
-			</Comment>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1404</IOffset>
-			<BitSize>1024</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S3^Ausgänge^Achse 3_ToPlc]]>
-					</Value>
-				</Property>
-			</Properties>
-		</Symbol>
-		<Symbol>
-			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stS3RefOut_St1</Name>
-			<Type Decoration="10074C8A">PLCTONC_AXLESTRUCT</Type>
-			<Comment>
-				<![CDATA[Beckhoff Spindel M]]>
-			</Comment>
-			<IGroup>61488</IGroup>
-			<IOffset VarConfig="Changeable">10396</IOffset>
-			<BitSize>1024</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S3^Eingänge^Achse 3_FromPlc]]>
-					</Value>
-				</Property>
-			</Properties>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stBubblerDataINSt1</Name>
-			<Type Decoration="1002089B">ST_COMM_IN_DCAXIS</Type>
-			<Comment>
-				<![CDATA[IGS3]]>
-			</Comment>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1648</IOffset>
-			<BitSize>24</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stBubblerDataOUTSt1</Name>
-			<Type Decoration="1002093B">ST_COMM_OUT_DCAXIS</Type>
-			<Comment>
-				<![CDATA[IGS3]]>
-			</Comment>
-			<IGroup>61488</IGroup>
-			<IOffset VarConfig="Changeable">10587</IOffset>
-			<BitSize>24</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stFeedpumpINDataSt1</Name>
-			<Type Decoration="1002089B">ST_COMM_IN_DCAXIS</Type>
-			<Comment>
-				<![CDATA[IGS3]]>
-			</Comment>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1651</IOffset>
-			<BitSize>24</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stFeedpumpOUTDataSt1</Name>
-			<Type Decoration="1002093B">ST_COMM_OUT_DCAXIS</Type>
-			<Comment>
-				<![CDATA[IGS3]]>
-			</Comment>
-			<IGroup>61488</IGroup>
-			<IOffset VarConfig="Changeable">10590</IOffset>
-			<BitSize>24</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">PRG_HW_WORK_ST1.xActiveHWWork_St1</Name>
-			<Type>BOOL</Type>
-			<IGroup>16448</IGroup>
-			<IOffset>1251058</IOffset>
-			<BitSize>8</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">PRG_HW_WORK_ST1.xActiveStationWork_St1</Name>
-			<Type>BOOL</Type>
-			<IGroup>16448</IGroup>
-			<IOffset>1251059</IOffset>
-			<BitSize>8</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">PRG_HW_WORK_ST1.wState_Z_Axis_St1</Name>
-			<Type>WORD</Type>
-			<IGroup>16448</IGroup>
-			<IOffset>1251060</IOffset>
-			<BitSize>16</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">PRG_HW_WORK_ST1.xStationPowerON_St1</Name>
-			<Type>BOOL</Type>
-			<Comment>
-				<![CDATA[Drehmomentüberlast]]>
-			</Comment>
-			<IGroup>16448</IGroup>
-			<IOffset>1251062</IOffset>
-			<BitSize>8</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IudiTorqueOverloadCounterValue_St1</Name>
-			<Type>UDINT</Type>
-			<Comment>
-				<![CDATA[Clock-->Signal induktiver Sensor für Drehmomentüberlast]]>
-			</Comment>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1532</IOffset>
-			<BitSize>32</BitSize>
-			<Properties>
-				<Property>
-					<Name>LinkedWith</Name>
-					<Value>
-						<![CDATA[TIID^Gerät 1 (EtherCAT)^E-CAT Netzteil  (EK1200)^Zaehlerklemme 15 (EL1502)^CNT Inputs^Counter value]]>
-					</Value>
-				</Property>
-			</Properties>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_PROCESS.FBProcess</Name>
@@ -48699,30 +48393,6 @@
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name TaskPrio="2">PRG_USB_IO_PANEL.fbCtrlePanel_IO</Name>
-			<Type Decoration="1009A19C">FBHW_PANEL_IO</Type>
-			<Comment>
-				<![CDATA[IO connection]]>
-			</Comment>
-			<IGroup>16448</IGroup>
-			<IOffset>1409235</IOffset>
-			<BitSize>280</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="Input" TaskPrio="2">PRG_USB_IO_PANEL.IarxCtrlePanelButton</Name>
-			<Type Decoration="20010142">ARRAY [1..10] OF BOOL</Type>
-			<IGroup>61472</IGroup>
-			<IOffset VarConfig="Changeable">1536</IOffset>
-			<BitSize>80</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="Output" TaskPrio="2">PRG_USB_IO_PANEL.QarxCtrlePanelLed</Name>
-			<Type Decoration="20010142">ARRAY [1..10] OF BOOL</Type>
-			<IGroup>61488</IGroup>
-			<IOffset VarConfig="Changeable">10524</IOffset>
-			<BitSize>80</BitSize>
-		</Symbol>
-		<Symbol>
 			<Name TaskPrio="1">PRG_VELOCITY_DETECTION.ptrTCommonAxis</Name>
 			<Type Decoration="100AB4F5" Pointer="1">ST_AXIS</Type>
 			<IGroup>16448</IGroup>
@@ -48832,6 +48502,340 @@
 			<IGroup>61472</IGroup>
 			<IOffset>1003</IOffset>
 			<BitSize>32</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="1">PRG_HW_WORK_ST1.FBHWStationWork_St1</Name>
+			<Type Decoration="1083818B">FBHW_STATION_WORK</Type>
+			<Comment>
+				<![CDATA[Axis value]]>
+			</Comment>
+			<IGroup>16448</IGroup>
+			<IOffset>1176204</IOffset>
+			<BitSize>598832</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IuiActualTorqueAxisZ_St1</Name>
+			<Type>UINT</Type>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1656</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IwInputState_Z_Axis_St1</Name>
+			<Type>WORD</Type>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1658</IOffset>
+			<BitSize>16</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TIID^Gerät 4 (EtherCAT)^Achse Z St1 (AX5106-0000-0210)^AT^Digital inputs, state]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IuiActualTorqueAxisS_St1</Name>
+			<Type>UINT</Type>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1660</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IwInputState_S1_Axis_St1</Name>
+			<Type>WORD</Type>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1662</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IwInputState_S2_Axis_St1</Name>
+			<Type>WORD</Type>
+			<Comment>
+				<![CDATA[IGS]]>
+			</Comment>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1012</IOffset>
+			<BitSize>16</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TIID^Gerät 4 (EtherCAT)^Antrieb S2 S3 St1 (AX5206-0000-0203)^AT 1^Digital inputs, state]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IwInputState_S3_Axis_St1</Name>
+			<Type>WORD</Type>
+			<Comment>
+				<![CDATA[IGS]]>
+			</Comment>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1014</IOffset>
+			<BitSize>16</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TIID^Gerät 4 (EtherCAT)^Antrieb S2 S3 St1 (AX5206-0000-0203)^AT 2^Digital inputs, state]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stZRefIn_St1</Name>
+			<Type Decoration="10166AA6">NCTOPLC_AXLESTRUCT</Type>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1016</IOffset>
+			<BitSize>1024</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse Z^Ausgänge^Achse Z_ToPlc]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stZRefOut_St1</Name>
+			<Type Decoration="10074C8A">PLCTONC_AXLESTRUCT</Type>
+			<IGroup>61488</IGroup>
+			<IOffset VarConfig="Changeable">10012</IOffset>
+			<BitSize>1024</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse Z^Eingänge^Achse Z_FromPlc]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stZDriveState_St1</Name>
+			<Type Decoration="10041704">ST_AXIS_DRIVESTATE</Type>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1144</IOffset>
+			<BitSize>32</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stSRefIn_St1</Name>
+			<Type Decoration="10166AA6">NCTOPLC_AXLESTRUCT</Type>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1148</IOffset>
+			<BitSize>1024</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S1^Ausgänge^Achse S1_ToPlc]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stSRefOut_St1</Name>
+			<Type Decoration="10074C8A">PLCTONC_AXLESTRUCT</Type>
+			<IGroup>61488</IGroup>
+			<IOffset VarConfig="Changeable">10140</IOffset>
+			<BitSize>1024</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S1^Eingänge^Achse S1_FromPlc]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stS2RefIn_St1</Name>
+			<Type Decoration="10166AA6">NCTOPLC_AXLESTRUCT</Type>
+			<Comment>
+				<![CDATA[Beckhoff Spindel L]]>
+			</Comment>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1276</IOffset>
+			<BitSize>1024</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S2^Ausgänge^Achse 2_ToPlc]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stS2RefOut_St1</Name>
+			<Type Decoration="10074C8A">PLCTONC_AXLESTRUCT</Type>
+			<Comment>
+				<![CDATA[Beckhoff Spindel L]]>
+			</Comment>
+			<IGroup>61488</IGroup>
+			<IOffset VarConfig="Changeable">10268</IOffset>
+			<BitSize>1024</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S2^Eingänge^Achse 2_FromPlc]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stS3RefIn_St1</Name>
+			<Type Decoration="10166AA6">NCTOPLC_AXLESTRUCT</Type>
+			<Comment>
+				<![CDATA[Beckhoff Spindel M]]>
+			</Comment>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1404</IOffset>
+			<BitSize>1024</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S3^Ausgänge^Achse 3_ToPlc]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stS3RefOut_St1</Name>
+			<Type Decoration="10074C8A">PLCTONC_AXLESTRUCT</Type>
+			<Comment>
+				<![CDATA[Beckhoff Spindel M]]>
+			</Comment>
+			<IGroup>61488</IGroup>
+			<IOffset VarConfig="Changeable">10396</IOffset>
+			<BitSize>1024</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TINC^NC-Task 1 SAF^Achsen^Achse S3^Eingänge^Achse 3_FromPlc]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stBubblerDataINSt1</Name>
+			<Type Decoration="1002089B">ST_COMM_IN_DCAXIS</Type>
+			<Comment>
+				<![CDATA[IGS3]]>
+			</Comment>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1648</IOffset>
+			<BitSize>24</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stBubblerDataOUTSt1</Name>
+			<Type Decoration="1002093B">ST_COMM_OUT_DCAXIS</Type>
+			<Comment>
+				<![CDATA[IGS3]]>
+			</Comment>
+			<IGroup>61488</IGroup>
+			<IOffset VarConfig="Changeable">10587</IOffset>
+			<BitSize>24</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.stFeedpumpINDataSt1</Name>
+			<Type Decoration="1002089B">ST_COMM_IN_DCAXIS</Type>
+			<Comment>
+				<![CDATA[IGS3]]>
+			</Comment>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1651</IOffset>
+			<BitSize>24</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Output" TaskPrio="1">PRG_HW_WORK_ST1.stFeedpumpOUTDataSt1</Name>
+			<Type Decoration="1002093B">ST_COMM_OUT_DCAXIS</Type>
+			<Comment>
+				<![CDATA[IGS3]]>
+			</Comment>
+			<IGroup>61488</IGroup>
+			<IOffset VarConfig="Changeable">10590</IOffset>
+			<BitSize>24</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="1">PRG_HW_WORK_ST1.xActiveHWWork_St1</Name>
+			<Type>BOOL</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>1251058</IOffset>
+			<BitSize>8</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="1">PRG_HW_WORK_ST1.xActiveStationWork_St1</Name>
+			<Type>BOOL</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>1251059</IOffset>
+			<BitSize>8</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="1">PRG_HW_WORK_ST1.wState_Z_Axis_St1</Name>
+			<Type>WORD</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>1251060</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="1">PRG_HW_WORK_ST1.xStationPowerON_St1</Name>
+			<Type>BOOL</Type>
+			<Comment>
+				<![CDATA[Drehmomentüberlast]]>
+			</Comment>
+			<IGroup>16448</IGroup>
+			<IOffset>1251062</IOffset>
+			<BitSize>8</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">PRG_HW_WORK_ST1.IudiTorqueOverloadCounterValue_St1</Name>
+			<Type>UDINT</Type>
+			<Comment>
+				<![CDATA[Clock-->Signal induktiver Sensor für Drehmomentüberlast]]>
+			</Comment>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1532</IOffset>
+			<BitSize>32</BitSize>
+			<Properties>
+				<Property>
+					<Name>LinkedWith</Name>
+					<Value>
+						<![CDATA[TIID^Gerät 1 (EtherCAT)^E-CAT Netzteil  (EK1200)^Zaehlerklemme 15 (EL1502)^CNT Inputs^Counter value]]>
+					</Value>
+				</Property>
+			</Properties>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="2">PRG_USB_IO_PANEL.fbCtrlePanel_IO</Name>
+			<Type Decoration="1009A19C">FBHW_PANEL_IO</Type>
+			<Comment>
+				<![CDATA[IO connection]]>
+			</Comment>
+			<IGroup>16448</IGroup>
+			<IOffset>1409235</IOffset>
+			<BitSize>280</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="2">PRG_USB_IO_PANEL.IarxCtrlePanelButton</Name>
+			<Type Decoration="20010142">ARRAY [1..10] OF BOOL</Type>
+			<IGroup>61472</IGroup>
+			<IOffset VarConfig="Changeable">1536</IOffset>
+			<BitSize>80</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Output" TaskPrio="2">PRG_USB_IO_PANEL.QarxCtrlePanelLed</Name>
+			<Type Decoration="20010142">ARRAY [1..10] OF BOOL</Type>
+			<IGroup>61488</IGroup>
+			<IOffset VarConfig="Changeable">10524</IOffset>
+			<BitSize>80</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" TaskPrio="1">.gciAxisZ_St1</Name>

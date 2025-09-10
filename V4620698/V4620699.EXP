@@ -14604,6 +14604,48 @@ IF (iStFct_PosErrorNr <> 0) THEN
 END_IF;
 END_ACTION
 
+ACTION	StationFunction_Ctrl_CleanNozzle:
+IF NOT(ptrTValveCleanNozzle^.T_CtrleCyl.xExecute) AND ptrTValveCleanNozzle^.T_CtrleCyl.xDone THEN
+	CASE T_Station_Parameter.T_StProcess.iCleanNozzleMode OF
+		0: 	(* Disable cleaning nozzle *)
+			IF ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOn THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=1;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			END_IF
+		1: 	(* Cleaning nozzle on Z axis forward *)
+			IF ptrTAxisZ^.T_CtrleSingle.xMovingForward AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOff  THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=2;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			ELSIF NOT(ptrTAxisZ^.T_CtrleSingle.xMovingForward) AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOn THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=1;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			END_IF
+		2: 	(* Cleaning nozzle on Z axis backward *)
+			IF ptrTAxisZ^.T_CtrleSingle.xMovingBackwards AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOff  THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=2;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			ELSIF NOT(ptrTAxisZ^.T_CtrleSingle.xMovingBackwards) AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOn THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=1;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			END_IF
+		3: 	(* Cleaning nozzle on Z axis moving *)
+			IF (ptrTAxisZ^.T_CtrleSingle.xMovingForward  OR ptrTAxisZ^.T_CtrleSingle.xMovingBackwards) AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOff THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=2;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			ELSIF ptrTAxisZ^.T_CtrleSingle.xNotMoving AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOn THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=1;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			END_IF
+	END_CASE
+ELSE
+	ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=FALSE;
+END_IF
+
+
+
+
+END_ACTION
+
 ACTION	StationFunction_Ctrl_Controller_1:
 (* Geschwindigkeitsregelung der Z1 Achse mittels der Kraftmessdose--> Konventioneller Regler *)
 IF ptrTAxisZ^.T_CtrleSingle.xMovingForward THEN
@@ -15956,6 +15998,9 @@ IF xStFct_StartMainPrc AND NOT(xStFct_SetEnd) AND NOT(xStFct_HardwareError) AND 
 		gxWP_Analyse_ActiveWork:=FALSE;
 		gxWP_Analyse_ActiveInfeed:=FALSE;
 	END_IF;
+(***************************************************************************************************************************************************)
+(* Abhandlung der Reinigungsduese *)
+	StationFunction_Ctrl_CleanNozzle;
 (***************************************************************************************************************************************************)
 (* Berechnung der Bearbeitungsarbeit *)
 	StationFunction_Ctrl_CalcProcWork;
@@ -18753,6 +18798,7 @@ END_IF;
 (******************************************************************************************************************************************)
 StationFunction_Ctrl_End;
 END_ACTION
+
 
 
 

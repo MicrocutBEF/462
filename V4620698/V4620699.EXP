@@ -6471,6 +6471,10 @@ END_VAR
 
 	IF T_LoadProfileParameter.T_ProzessData.rSuspensionBubblerSpeed <> T_ProfileParameter.T_ProzessData.rSuspensionBubblerSpeed THEN xProcessValueModified:=TRUE; END_IF
 	IF T_LoadProfileParameter.T_ProzessData.rSuspensionFeederSpeed <> T_ProfileParameter.T_ProzessData.rSuspensionFeederSpeed THEN xProcessValueModified:=TRUE; END_IF
+
+	IF T_LoadProfileParameter.T_ProzessData.rDistProgressStroke <> T_ProfileParameter.T_ProzessData.rDistProgressStroke THEN xProcessValueModified:=TRUE; END_IF
+	IF T_LoadProfileParameter.T_ProzessData.iProgressStrokeStartTorque <> T_ProfileParameter.T_ProzessData.iProgressStrokeStartTorque THEN xProcessValueModified:=TRUE; END_IF
+	IF T_LoadProfileParameter.T_ProzessData.iCleanNozzleMode <> T_ProfileParameter.T_ProzessData.iCleanNozzleMode THEN xProcessValueModified:=TRUE; END_IF
 END_FUNCTION_BLOCK
 
 
@@ -6651,6 +6655,10 @@ IF FIND(sTmp,':=') <> 0 THEN
 
 		ELSIF sVariableName = 'rsuspensionbubblerspeed' THEN ptrStProzessData^.rSuspensionBubblerSpeed:=STRING_TO_REAL(sValue); iCountParameter:=iCountParameter + 1;
 		ELSIF sVariableName = 'rsuspensionfeederspeed' THEN ptrStProzessData^.rSuspensionFeederSpeed:=STRING_TO_REAL(sValue); iCountParameter:=iCountParameter + 1;
+
+		ELSIF sVariableName = 'rdistprogressstroke' THEN ptrStProzessData^.rDistProgressStroke:=STRING_TO_REAL(sValue); iCountParameter:=iCountParameter + 1;
+		ELSIF sVariableName = 'iprogressstrokestarttorque' THEN ptrStProzessData^.iProgressStrokeStartTorque:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
+		ELSIF sVariableName = 'icleannozzlemode' THEN ptrStProzessData^.iCleanNozzleMode:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
 
 		END_IF;
 	END_IF;
@@ -7634,6 +7642,13 @@ END_VAR
 		sTmp:=CONCAT('085:rZMinThresholdTroqueEndProcess:=',REAL_TO_STRING(ptrStProzessData^.rZMinThresholdTroqueEndProcess));
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
 
+		sTmp:=CONCAT('086:rDistProgressStroke:=',REAL_TO_STRING(ptrStProzessData^.rDistProgressStroke));
+		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
+		sTmp:=CONCAT('087:iProgressStrokeStartTorque:=',INT_TO_STRING(ptrStProzessData^.iProgressStrokeStartTorque));
+		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
+		sTmp:=CONCAT('088:iCleanNozzleMode:=',INT_TO_STRING(ptrStProzessData^.iCleanNozzleMode));
+		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
+
 	(* add empty line to set the end *)
 	ptrDataFile^[i]:='';
 
@@ -7751,6 +7766,10 @@ END_VAR
 
 		ptrT_DefaultProfileParameter^[ii].T_ProzessData.rSuspensionBubblerSpeed:=20.0;
 		ptrT_DefaultProfileParameter^[ii].T_ProzessData.rSuspensionFeederSpeed:=20.0;
+
+		ptrT_DefaultProfileParameter^[ii].T_ProzessData.rDistProgressStroke:=0.0;
+		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iProgressStrokeStartTorque:=0;
+		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iCleanNozzleMode:=0;
 
 	END_FOR;
 	(* Confirm Default setting *)
@@ -9732,7 +9751,7 @@ IF xStart OR xTmpStart THEN
 			END_IF;
 		2:	IF NOT(xInitStep) THEN
 				xInitStep:=TRUE;
-				(* Move Absolut backward *)
+				(* Move Absolut backward or forward *)
 				TAxisZ.T_CtrleSingle.iFunction:=7;
 				TAxisZ.T_CtrleSingle.lrPosition:=TAxisZ.T_LiveValue.lrActualPosition + lrHubLength;
 				TAxisZ.T_CtrleSingle.lrAcceleration:=TAxisZ.T_Config_ObjFileValue.lrAcceleration;
@@ -9770,7 +9789,7 @@ IF xStart OR xTmpStart THEN
 			END_IF;
 		3:	IF NOT(xInitStep) THEN
 				xInitStep:=TRUE;
-				(* Move Absolut forward *)
+				(* Move Absolut forward or backward *)
 				TAxisZ.T_CtrleSingle.iFunction:=7;
 				TAxisZ.T_CtrleSingle.lrPosition:=lrSaveSlidePosition;
 				TAxisZ.T_CtrleSingle.lrAcceleration:=TAxisZ.T_Config_ObjFileValue.lrAcceleration;
@@ -10465,18 +10484,19 @@ VAR
 	ptrTAxisZ 							:POINTER TO ST_AXIS;			(* Achse für die Hubachse *)
 	ptrTAxisS 							:POINTER TO ST_AXIS;			(* Achse für die Werkzeugspindel *)
 	ptrTCylToolDeflection					:POINTER TO ST_CYLINDER;	(* Servoventil für das bestimmen der vertikalen Auslenkraft *)
-	ptrTCylToolTorqueHC 					:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung HC *)
-	ptrTCylToolTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung Überlast *)
+	ptrTCylToolTorqueHC 					:POINTER TO ST_CYLINDER;	(* Drehmomentueberwachung HC *)
+	ptrTCylToolTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Drehmomentueberwachung Ueberlast *)
 	ptrTTorqueSensorMeasRange			:POINTER TO ST_CYLINDER;	(* Controlling für den Drehmomentsensor, Einstellung des Drehmomentbereiches *)	(* IGS *)
-	ptrTTorqueSensorControl				:POINTER TO ST_CYLINDER;	(* Controlling für den Drehmomentsensor, Überprüfung auf Funktionalität *)			(* IGS *)
+	ptrTTorqueSensorControl				:POINTER TO ST_CYLINDER;	(* Controlling für den Drehmomentsensor, Ueberpruefung auf Funktionalitaet *)			(* IGS *)
 	ptrTSensorTorque 					:POINTER TO ST_CYLINDER;	(* Analoger Sensor für Drehmoment detektion *)
-	ptrTSensorTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Digitaler Sensor für Drehmoment Überlast detektion *)							(* IGS *)
+	ptrTSensorTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Digitaler Sensor für Drehmoment Ueberlast detektion *)							(* IGS *)
 	ptrTCylBrakeReleaseZAxis 				:POINTER TO ST_CYLINDER;	(* Zylinder für lösen der Bremse bei der Z Achse *)
-	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil für Werkstückfixierzylinder *)
-	ptrTValveAirTable						:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
-	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
-	ptrTAxisBubbler						:POINTER TO ST_DC_AXIS;	(* Rührwerk für Suspension *)												(* IGS3 *)
-	ptrTAxisFeedPump					:POINTER TO ST_DC_AXIS;	(* Förderpumpe für Suspension *)											(* IGS3 *)
+	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil fuer Werkstueckfixierzylinder *)
+	ptrTValveAirTable						:POINTER TO ST_CYLINDER;	(* Ventil fuer die Luft des Tisches *)
+	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil fuer die Luft des Tisches *)
+	ptrTValveCleanNozzle					:POINTER TO ST_CYLINDER;	(* Ventil fuer die Reinigungsduese *)											(* BEF *)
+	ptrTAxisBubbler						:POINTER TO ST_DC_AXIS;	(* Ruehrwerk fuer Suspension *)												(* IGS3 *)
+	ptrTAxisFeedPump					:POINTER TO ST_DC_AXIS;	(* Foerderpumpe fuer Suspension *)											(* IGS3 *)
 
 (* Functionblock axis *)
 	fbAxisZ:FBHW_AXIS_SINGLE;
@@ -10499,6 +10519,7 @@ VAR
 	fbCylWorkpieceClamp : FBHW_CYL_STANDARD_2WAY;
 	fbValveAirTable : FBHW_CYL_STANDARD;
 	fbValveVacuumTable : FBHW_CYL_STANDARD;
+	fbValveCleanNozzle : FBHW_CYL_STANDARD;
 	iStepResetHardware: INT;
 	xHardwareActive: BOOL;
 	TONWaitTimeOut: TON;
@@ -10723,6 +10744,7 @@ ELSE
 	ptrTCylWorkpieceClamp:=ADR(T_Station_Work.THWWorkStation.TCylWorkpieceClamp);
 	ptrTValveAirTable:=ADR(T_Station_Work.THWWorkStation.TValveAirTable);
 	ptrTValveVacuumTable:=ADR(T_Station_Work.THWWorkStation.TValveVacuumTable);
+	ptrTValveCleanNozzle:=ADR(T_Station_Work.THWWorkStation.TValveCleanNozzle);
 	ptrTAxisBubbler:=ADR(T_Station_Work.THWWorkStation.TAxisBubbler);
 	ptrTAxisFeedPump:=ADR(T_Station_Work.THWWorkStation.TAxisFeedPump);
 	xEnableMasterModul:=TRUE;
@@ -10751,6 +10773,7 @@ xCkeckAcitveMovement:=	(NOT(ptrTAxisZ^.T_CtrleSingle.xDone) AND NOT(ptrTAxisZ^.T
 						OR (NOT(ptrTCylWorkpieceClamp^.T_CtrleCyl.xDone) AND NOT(ptrTCylWorkpieceClamp^.T_CtrleCyl.xErr))
 						OR (NOT(ptrTValveAirTable^.T_CtrleCyl.xDone) AND NOT(ptrTValveAirTable^.T_CtrleCyl.xErr))
 						OR (NOT(ptrTValveVacuumTable^.T_CtrleCyl.xDone) AND NOT(ptrTValveVacuumTable^.T_CtrleCyl.xErr))
+						OR (NOT(ptrTValveCleanNozzle^.T_CtrleCyl.xDone) AND NOT(ptrTValveCleanNozzle^.T_CtrleCyl.xErr))
 						OR (NOT(ptrTAxisBubbler^.T_CtrleDCAxis.xDone) AND NOT(ptrTAxisBubbler^.T_CtrleDCAxis.xErr))
 						OR (NOT(ptrTAxisFeedPump^.T_CtrleDCAxis.xDone) AND NOT(ptrTAxisFeedPump^.T_CtrleDCAxis.xErr));
 IF NOT(xCkeckAcitveMovement) THEN
@@ -10787,6 +10810,7 @@ HW_CylBrakeReleaseZAxis;
 HW_CylWorkpieceClamp;
 HW_ValveAirTable;
 HW_ValveVacuumTable;
+HW_ValveCleanNozzle; 	(* BEF *)
 HW_TSensorToolSpindle_L_Connect;
 (******************************************************************************************************************************************)
 (****************************				                Reset Flags                                                           *****************************)
@@ -10821,6 +10845,8 @@ ptrTValveAirTable^.T_CtrleCyl.xReset:=FALSE;
 ptrTValveAirTable^.T_CtrleCyl.xExecute:=FALSE;
 ptrTValveVacuumTable^.T_CtrleCyl.xReset:=FALSE;
 ptrTValveVacuumTable^.T_CtrleCyl.xExecute:=FALSE;
+ptrTValveCleanNozzle^.T_CtrleCyl.xReset:=FALSE;
+ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=FALSE;
 ptrTAxisBubbler^.T_CtrleDCAxis.xReset:=FALSE;
 ptrTAxisBubbler^.T_CtrleDCAxis.xExecute:=FALSE;
 ptrTAxisFeedPump^.T_CtrleDCAxis.xReset:=FALSE;
@@ -11324,8 +11350,23 @@ ptrTValveVacuumTable^.T_CtrleCyl.T_Standard.tDelayActiv							:=T#0s;
 ptrTValveVacuumTable^.T_Config.tDelayPreOff									:=T#0s;
 ptrTValveVacuumTable^.T_Config.tDelayPreOn									:=T#0s;
 
+(* Config Valve Cleaning nozzle  *)
+ptrTValveCleanNozzle^.iCylinderTpye											:=8;
+ptrTValveCleanNozzle^.T_CtrleCyl.xFBActiv										:=T_Station_Work.TControl.xEnable;
+ptrTValveCleanNozzle^.T_Config.xActivState										:=TRUE;
+ptrTValveCleanNozzle^.T_Config.xCtrlePosOff										:=FALSE;
+ptrTValveCleanNozzle^.T_Config.xCtrlePosOn										:=FALSE;
+ptrTValveCleanNozzle^.T_Config.tTimeOut										:=ptrTValveCleanNozzle^.T_Config.tTimeOut;
+ptrTValveCleanNozzle^.T_Config.tDelayOff										:=ptrTValveCleanNozzle^.T_Config.tDelayOff;
+ptrTValveCleanNozzle^.T_Config.tDelayOn										:=ptrTValveCleanNozzle^.T_Config.tDelayOn;
+ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.tDelayAfterSensorOff					:=ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.tDelayAfterSensorOff;
+ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.tDelayAfterSensorOn					:=ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.tDelayAfterSensorOn;
+ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.tDelayActiv							:=T#0s;
+ptrTValveCleanNozzle^.T_Config.tDelayPreOff										:=T#0s;
+ptrTValveCleanNozzle^.T_Config.tDelayPreOn										:=T#0s;
+
 (* Config SensorTorque *)
-ptrTSensorTorque^.iCylinderTpye												:=8;
+ptrTSensorTorque^.iCylinderTpye												:=20;
 ptrTSensorTorque^.T_CtrleCyl.xFBActiv											:=T_Station_Work.TControl.xEnable;
 ptrTSensorTorque^.T_Config.xActivState											:=TRUE;
 ptrTSensorTorque^.T_Config.xCtrlePosOff											:=FALSE;
@@ -11340,7 +11381,7 @@ ptrTSensorTorque^.T_Config.tDelayPreOff										:=T#0s;
 ptrTSensorTorque^.T_Config.tDelayPreOn										:=T#0s;
 
 (* Config SensorTorqueOverload *)
-ptrTSensorTorqueOverload^.iCylinderTpye										:=9;
+ptrTSensorTorqueOverload^.iCylinderTpye										:=21;
 ptrTSensorTorqueOverload^.T_CtrleCyl.xFBActiv									:=T_Station_Work.TControl.xEnable;
 ptrTSensorTorqueOverload^.T_Config.xActivState									:=TRUE;
 ptrTSensorTorqueOverload^.T_Config.xCtrlePosOff									:=FALSE;
@@ -11355,7 +11396,7 @@ ptrTSensorTorqueOverload^.T_Config.tDelayPreOff								:=T#0s;
 ptrTSensorTorqueOverload^.T_Config.tDelayPreOn								:=T#0s;
 
 (* Config Sensor TorqueSensorMeasRange *)
-ptrTTorqueSensorMeasRange^.iCylinderTpye									:=10;
+ptrTTorqueSensorMeasRange^.iCylinderTpye									:=22;
 ptrTTorqueSensorMeasRange^.T_CtrleCyl.xFBActiv								:=T_Station_Work.TControl.xEnable;
 ptrTTorqueSensorMeasRange^.T_Config.xActivState								:=TRUE;
 ptrTTorqueSensorMeasRange^.T_Config.xCtrlePosOff								:=FALSE;
@@ -11370,7 +11411,7 @@ ptrTTorqueSensorMeasRange^.T_Config.tDelayPreOff								:=T#0s;
 ptrTTorqueSensorMeasRange^.T_Config.tDelayPreOn								:=T#0s;
 
 (* Config Sensor TorqueSensorControl *)
-ptrTTorqueSensorControl^.iCylinderTpye											:=11;
+ptrTTorqueSensorControl^.iCylinderTpye											:=23;
 ptrTTorqueSensorControl^.T_CtrleCyl.xFBActiv									:=T_Station_Work.TControl.xEnable;
 ptrTTorqueSensorControl^.T_Config.xActivState									:=TRUE;
 ptrTTorqueSensorControl^.T_Config.xCtrlePosOff									:=FALSE;
@@ -11383,8 +11424,6 @@ ptrTTorqueSensorControl^.T_CtrleCyl.T_Standard.tDelayAfterSensorOn				:=ptrTTorq
 ptrTTorqueSensorControl^.T_CtrleCyl.T_Standard.tDelayActiv						:=ptrTTorqueSensorControl^.T_CtrleCyl.T_Standard.tDelayActiv;
 ptrTTorqueSensorControl^.T_Config.tDelayPreOff									:=T#0s;
 ptrTTorqueSensorControl^.T_Config.tDelayPreOn									:=T#0s;
-
-
 
 (* Config Bubbler Axis *)
 ptrTAxisBubbler^.T_Config_Gen.iTyp:=5; (* Bubbler Axis-->DC-Achse für Rührwerk *)
@@ -11962,15 +12001,26 @@ fbValveAirTable(		xCtrlePosOn:= FALSE,
 QxAirTable:=fbValveAirTable.xCylinder;	(* Ventil QxAirTable-->Ventil für die Luft des Tisches *)
 END_ACTION
 
+ACTION	HW_ValveCleanNozzle:
+(******************************************************************************************************************************************)
+(******************************** 					 Ventil fuer die Reinigungsduese 			 ********************************)
+(******************************************************************************************************************************************)
+fbValveCleanNozzle(	xCtrlePosOn:= FALSE,
+					xCtrlePosOff:= FALSE,
+					T_Cylinder:= ptrTValveCleanNozzle^);
+QxValveCleanNozzle:=fbValveCleanNozzle.xCylinder;	(* Ventil QxValveCleanNozzle-->Ventil fuer die Reinigungsduese *)
+END_ACTION
+
 ACTION	HW_ValveVacuumTable:
 (******************************************************************************************************************************************)
-(********************************   		        Ventil für das Vakuum des Tisches                    ********************************)
+(********************************   		        Ventil fuer das Vakuum des Tisches                    ********************************)
 (******************************************************************************************************************************************)
 fbValveVacuumTable(		xCtrlePosOn:= FALSE,
 							xCtrlePosOff:= FALSE,
 							T_Cylinder:= ptrTValveVacuumTable^);
-QxVacuumTable:=fbValveVacuumTable.xCylinder;	(* Ventil QxVacuumTable-->Ventil für das Vakuum des Tisches *)
+QxVacuumTable:=fbValveVacuumTable.xCylinder;	(* Ventil QxVacuumTable-->Ventil fuer das Vakuum des Tisches *)
 END_ACTION
+
 
 
 
@@ -12942,18 +12992,19 @@ VAR
 	ptrTAxisZ 							:POINTER TO ST_AXIS;		(* Achse für die Hubachse *)
 	ptrTAxisS 							:POINTER TO ST_AXIS;		(* Achse für die Werkzeugspindel *)
 	ptrTCylToolDeflection					:POINTER TO ST_CYLINDER;	(* Servoventil für das bestimmen der vertikalen Auslenkraft *)
-	ptrTCylToolTorqueHC 					:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung HC *)
-	ptrTCylToolTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung Überlast *)
-	ptrTTorqueSensorMeasRange			:POINTER TO ST_CYLINDER;	(* Controlling für den Drehmomentsensor, Einstellung des Drehmomentbereiches *)	(* IGS *)
-	ptrTTorqueSensorControl				:POINTER TO ST_CYLINDER;	(* Controlling für den Drehmomentsensor, Überprüfung auf Funktionalität *)			(* IGS *)
+	ptrTCylToolTorqueHC 					:POINTER TO ST_CYLINDER;	(* Drehmomentueberwachung HC *)
+	ptrTCylToolTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Drehmomentueberwachung Ueberlast *)
+	ptrTTorqueSensorMeasRange			:POINTER TO ST_CYLINDER;	(* Controlling fuer den Drehmomentsensor, Einstellung des Drehmomentbereiches *)	(* IGS *)
+	ptrTTorqueSensorControl				:POINTER TO ST_CYLINDER;	(* Controlling fuer den Drehmomentsensor, Ueberprüfung auf Funktionalitaet *)			(* IGS *)
 	ptrTSensorTorque 					:POINTER TO ST_CYLINDER;	(* Analoger Sensor für Drehmoment detektion *)								(* IGS *)
-	ptrTSensorTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Digitaler Sensor für Drehmoment Überlast detektion *)							(* IGS *)
+	ptrTSensorTorqueOverload 			:POINTER TO ST_CYLINDER;	(* Digitaler Sensor für Drehmoment Ueberlast detektion *)							(* IGS *)
 	ptrTCylBrakeReleaseZAxis 				:POINTER TO ST_CYLINDER;	(* Zylinder für lösen der Bremse bei der Z Achse *)
-	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil für Werkstückfixierzylinder *)
-	ptrTValveAirTable						:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
-	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
-	ptrTAxisBubbler						:POINTER TO ST_DC_AXIS;	(* Rührwerk für Suspension *)												(* IGS3 *)
-	ptrTAxisFeedPump					:POINTER TO ST_DC_AXIS;	(* Förderpumpe für Suspension *)											(* IGS3 *)
+	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil fuer Werkstueckfixierzylinder *)
+	ptrTValveAirTable						:POINTER TO ST_CYLINDER;	(* Ventil fuer die Luft des Tisches *)
+	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil fuer Vacuum des Tisches *)
+	ptrTValveCleanNozzle					:POINTER TO ST_CYLINDER;	(* Ventil fuer die Reinigungsduese*)											(* BEF *)
+	ptrTAxisBubbler						:POINTER TO ST_DC_AXIS;	(* Ruehrwerk fuer Suspension *)												(* IGS3 *)
+	ptrTAxisFeedPump					:POINTER TO ST_DC_AXIS;	(* Foerderpumpe fuer Suspension *)											(* IGS3 *)
 
 	TDeleteStationStruct : ST_STATION;
 	xTmpStopFunction: BOOL := FALSE;
@@ -13142,6 +13193,13 @@ VAR
 	rTorqueMin_Min:REAL;							(* IGS *)
 	rStFct_CalcZSpeed:REAL;						(* IGS *)
 
+	(* Progressiv Stroke *)
+	xProgressStrokeReady:BOOL;					(* BEF *)
+	xProgressStrokeRunning:BOOL;					(* BEF *)
+	iStepProgressStroke:INT;						(* BEF *)
+	rStFct_ProgressStrokePosition:REAL;			(* BEF *)
+
+
 	(* .HW_Axis_DC *)
 (*	iStepBubbler:INT;															(* IGS3 *)
 	iStepFeeder:INT;															(* IGS3 *)*)
@@ -13210,6 +13268,7 @@ ELSE
 	ptrTCylWorkpieceClamp:=ADR(T_Station_Work.THWWorkStation.TCylWorkpieceClamp);
 	ptrTValveAirTable:=ADR(T_Station_Work.THWWorkStation.TValveAirTable);
 	ptrTValveVacuumTable:=ADR(T_Station_Work.THWWorkStation.TValveVacuumTable);
+	ptrTValveCleanNozzle:=ADR(T_Station_Work.THWWorkStation.TValveCleanNozzle);
 	ptrTAxisBubbler:=ADR(T_Station_Work.THWWorkStation.TAxisBubbler);
 	ptrTAxisFeedPump:=ADR(T_Station_Work.THWWorkStation.TAxisFeedPump);
 END_IF;
@@ -13830,6 +13889,7 @@ IF (fbRTrig.Q OR xInitSetEnable) THEN
 				ptrTCylWorkpieceClamp^.T_CtrleCyl.xReset:=TRUE;
 				ptrTValveAirTable^.T_CtrleCyl.xReset:=TRUE;
 				ptrTValveVacuumTable^.T_CtrleCyl.xReset:=TRUE;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xReset:=TRUE;
 				ptrTCylBrakeReleaseZAxis^.T_CtrleCyl.xReset:=TRUE;
 				ptrTAxisZ^.T_CtrleSingle.xReset:=TRUE;
 				ptrTAxisS^.T_CtrleSingle.xReset:=TRUE;
@@ -13840,7 +13900,7 @@ IF (fbRTrig.Q OR xInitSetEnable) THEN
 			AND NOT(ptrTCylToolTorqueOverload^.T_CtrleCyl.xReset) AND NOT(ptrTCylBrakeReleaseZAxis^.T_CtrleCyl.xReset)
 			AND NOT(ptrTTorqueSensorMeasRange^.T_CtrleCyl.xReset) AND NOT(ptrTTorqueSensorControl^.T_CtrleCyl.xReset)
 			AND NOT(ptrTCylWorkpieceClamp^.T_CtrleCyl.xReset) AND NOT(ptrTValveAirTable^.T_CtrleCyl.xReset)
-			AND NOT(ptrTValveVacuumTable^.T_CtrleCyl.xReset)
+			AND NOT(ptrTValveVacuumTable^.T_CtrleCyl.xReset)  AND NOT(ptrTValveCleanNozzle^.T_CtrleCyl.xReset)
 			AND NOT(ptrTAxisZ^.T_CtrleSingle.xReset) AND ptrTAxisZ^.T_CtrleSingle.xDone
 			AND NOT(ptrTAxisS^.T_CtrleSingle.xReset) AND ptrTAxisS^.T_CtrleSingle.xDone
 			AND NOT(ptrTAxisBubbler^.T_CtrleDCAxis.xReset) AND ptrTAxisBubbler^.T_CtrleDCAxis.xDone
@@ -14551,6 +14611,48 @@ IF (iStFct_PosErrorNr <> 0) THEN
 END_IF;
 END_ACTION
 
+ACTION	StationFunction_Ctrl_CleanNozzle:
+IF NOT(ptrTValveCleanNozzle^.T_CtrleCyl.xExecute) AND ptrTValveCleanNozzle^.T_CtrleCyl.xDone THEN
+	CASE T_Station_Parameter.T_StProcess.iCleanNozzleMode OF
+		0: 	(* Disable cleaning nozzle *)
+			IF ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOn THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=1;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			END_IF
+		1: 	(* Cleaning nozzle on Z axis forward *)
+			IF ptrTAxisZ^.T_CtrleSingle.xMovingForward AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOff  THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=2;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			ELSIF NOT(ptrTAxisZ^.T_CtrleSingle.xMovingForward) AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOn THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=1;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			END_IF
+		2: 	(* Cleaning nozzle on Z axis backward *)
+			IF ptrTAxisZ^.T_CtrleSingle.xMovingBackwards AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOff  THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=2;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			ELSIF NOT(ptrTAxisZ^.T_CtrleSingle.xMovingBackwards) AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOn THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=1;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			END_IF
+		3: 	(* Cleaning nozzle on Z axis moving *)
+			IF (ptrTAxisZ^.T_CtrleSingle.xMovingForward  OR ptrTAxisZ^.T_CtrleSingle.xMovingBackwards) AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOff THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=2;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			ELSIF ptrTAxisZ^.T_CtrleSingle.xNotMoving AND ptrTValveCleanNozzle^.T_CtrleCyl.T_Standard.xActivOn THEN
+				ptrTValveCleanNozzle^.T_CtrleCyl.iFunction:=1;
+				ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=TRUE;
+			END_IF
+	END_CASE
+ELSE
+	ptrTValveCleanNozzle^.T_CtrleCyl.xExecute:=FALSE;
+END_IF
+
+
+
+
+END_ACTION
+
 ACTION	StationFunction_Ctrl_Controller_1:
 (* Geschwindigkeitsregelung der Z1 Achse mittels der Kraftmessdose--> Konventioneller Regler *)
 IF ptrTAxisZ^.T_CtrleSingle.xMovingForward THEN
@@ -14644,7 +14746,7 @@ END_ACTION
 
 ACTION	StationFunction_Ctrl_Controller_3:
 (* Geschwindigkeitsregelung der Z1 Achse mittels der Kraftmessdose--> Konventioneller Regler mit D Anteil und schnellerer Reaktionszeit so wie beim PID *)
-IF (iStFct_StepPrc = 3) THEN
+IF (iStFct_StepPrc = 3) AND NOT(xProgressStrokeRunning) THEN
 	TONCalcTorque(IN:=TRUE,PT:=REAL_TO_TIME(INT_TO_REAL(T_Station_Parameter.T_StProcess.iZ_D_FilterM)));
 	diStepCount:=diStepCount + 1;
 	rTorqueSpindleSensorSave:=rTorqueSpindleSensorSave + ptrTSensorTorque^.T_CtrleCyl.T_Analog.rPosIn;
@@ -14841,6 +14943,9 @@ IF xStFct_SetEnd THEN
 	END_IF;
 	xBlockCheckLimitSwitch:=FALSE;
 	xBlockSetFastVelZAxis:=FALSE;
+	xProgressStrokeReady:=FALSE;
+	xProgressStrokeRunning:=FALSE;
+	iStepProgressStroke:=1;
 END_IF;
 END_ACTION
 
@@ -15000,6 +15105,9 @@ IF (xStFct_Start OR xStFct_StartMainCtr) AND NOT(xStFct_SetEnd) AND NOT(xStFct_H
 		xBlockSetFastVelZAxis:=FALSE;
 		xBlockActivateOAxis:=FALSE;
 		xSetDefaultSpeedS:=FALSE;
+		xProgressStrokeReady:=FALSE;
+		xProgressStrokeRunning:=FALSE;
+		iStepProgressStroke:=1;
 	END_IF;
 	IF xStFct_Stop AND NOT(xStFct_TmpStop) THEN
 		xStFct_TmpStop:=TRUE;
@@ -15022,6 +15130,202 @@ IF (xStFct_Start OR xStFct_StartMainCtr) AND NOT(xStFct_SetEnd) AND NOT(xStFct_H
 	IF NOT(xStFct_StartMainPrc) AND NOT(xStFct_SetEnd) THEN
 		xStFct_StartMainPrc:=TRUE;
 	END_IF;
+END_IF;
+END_ACTION
+
+ACTION	StationFunction_Ctrl_ProgressStrokeType1:
+(* Disable progressive stroke behaviour *)
+IF T_Station_Parameter.T_StProcess.iWorkControlType > 1
+	OR T_Station_Parameter.T_StProcess.rDistProgressStroke < 1.0
+	OR T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque = 0 THEN
+	xProgressStrokeReady:=FALSE;
+	xProgressStrokeRunning:=FALSE;
+	iStepProgressStroke:=1;
+	RETURN;
+END_IF
+
+(* Progressive stroke only active in step 3 *)
+IF (iStFct_StepPrc <> 3) THEN
+	xProgressStrokeRunning:=FALSE;
+	iStepProgressStroke:=1;
+	RETURN;
+END_IF
+
+(* Enable entire progressive stroke function -> first return stroke *)
+IF NOT(xProgressStrokeReady) AND ptrTAxisS^.T_LiveValue.diActualTorqueCalc > (T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque*T_Station_Parameter.T_OnlineChange.rTorqueLevelHC) THEN
+	xProgressStrokeReady:=TRUE;
+	xProgressStrokeRunning:=TRUE;
+	iStepProgressStroke:=1;
+(* Process with special stroke function *)
+ELSIF xProgressStrokeReady THEN
+	(* Start new return stroke if current position in limits *)
+	IF NOT(xProgressStrokeRunning)
+		AND ptrTAxisZ^.T_LiveValue.lrActualPosition > (rStFct_ProgressStrokePosition + ABS(T_Station_Parameter.T_StProcess.rDistProgressStroke))
+		AND ptrTAxisZ^.T_LiveValue.lrActualPosition < (garPositionEndProcCalc[1] - ABS(T_Station_Parameter.T_StProcess.rDistProgressStroke)/2.0) THEN
+		xProgressStrokeRunning:=TRUE;
+		iStepProgressStroke:=1;
+	ELSIF xProgressStrokeRunning THEN
+		CASE iStepProgressStroke OF
+		1: 	(* Stop Z axis motion *)
+			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND NOT(ptrTAxisZ^.T_CtrleSingle.xDone) AND
+		   		 NOT(ptrTAxisZ^.T_CtrleSingle.xNotMoving) AND (ptrTAxisZ^.T_CtrleSingle.iFunction <> 12) THEN (* BEF: braucht es diese Konditionen??? was wenn FALSE? *)
+				ptrTAxisZ^.T_CtrleSingle.iFunction:=5;
+				ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+				iStepProgressStroke:=iStepProgressStroke + 1;
+			END_IF
+		2: 	(* Waiting until Z axis stopped *)
+			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
+				(* init. variable *)
+				T_Station_Work.TCtrlOnlineChange.xLockChange_Z_WorkSpeedBackward:=TRUE;
+				T_Station_Work.TCtrlOnlineChange.xLockChange_Z_WorkSpeedForward:=TRUE;
+				T_Station_Work.TCtrlOnlineChange.xLockChange_S_WorkSpindleSpeed:=TRUE;
+				rStFct_ProgressStrokePosition:=ptrTAxisZ^.T_LiveValue.lrActualPosition;
+				(*xStFct_StartMainPrc:=FALSE;*) (* BEF: Wofür ist diese Variable gut???  *)
+				xStFct_InitStep:=FALSE;
+				iStepProgressStroke:=iStepProgressStroke + 1;
+			END_IF;
+		3:	(* Pull back Z axis, make sure to stay within the start and end position  *)
+			IF NOT(xStFct_InitStep) THEN
+				xStFct_InitStep:=TRUE;
+				IF ((ptrTAxisZ^.T_LiveValue.lrActualPosition - ABS(T_Station_Parameter.T_StProcess.rCentringBackStrokeOffsetAfterFirstHC)) >= grZ_WorkStartPos) THEN
+					ptrTAxisZ^.T_CtrleSingle.iFunction:=8;
+					ptrTAxisZ^.T_CtrleSingle.lrDistance:=T_Station_Parameter.T_StProcess.rCentringBackStrokeOffsetAfterFirstHC;
+					ptrTAxisZ^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_StProcess.rCentringBackStrokeSpeed;
+				ELSE
+					ptrTAxisZ^.T_CtrleSingle.iFunction:=7;
+					ptrTAxisZ^.T_CtrleSingle.lrPosition:=grZ_WorkStartPos;
+					ptrTAxisZ^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_StProcess.rCentringBackStrokeSpeed;
+				END_IF;
+				ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+			END_IF;
+			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
+				(*xStFct_StartMainPrc:=FALSE;*)
+				xStFct_InitStep:=FALSE;
+				iStepProgressStroke:=iStepProgressStroke + 1;
+			END_IF;
+		4: 	(* Move Z axis to last stroke position point with offset at fast speed *)
+			IF NOT(xStFct_InitStep) THEN
+				xStFct_InitStep:=TRUE;
+				ptrTAxisZ^.T_CtrleSingle.iFunction:=7;	(* Absolut mouvement *)
+				ptrTAxisZ^.T_CtrleSingle.lrPosition:=rStFct_ProgressStrokePosition - ABS(T_Station_Parameter.T_StProcess.rCentringOffsetBeforeLastHC);	(* Z1 axis to last strok position minus den Offset *)
+				ptrTAxisZ^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_StProcess.rCentringPosSpeedFastZ1Axis;							(* With fast speed  *)
+				ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+			END_IF;
+			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
+				(* Die Z Achse kann wieder weiterfahren im Langsamgang *)
+				(*xStFct_StartMainPrc:=FALSE;*)
+				xStFct_InitStep:=FALSE;
+				iStepProgressStroke:=iStepProgressStroke+1;
+			END_IF;
+		5: 	(* Move Z axis to last saved stroke position at slow speed *)
+			IF NOT(xStFct_InitStep) THEN
+				xStFct_InitStep:=TRUE;
+				ptrTAxisZ^.T_CtrleSingle.iFunction:=7;	(* Absolut mouvement *)
+				ptrTAxisZ^.T_CtrleSingle.lrPosition:=rStFct_ProgressStrokePosition;			(* Z1 axis to last stroke position  *)
+				ptrTAxisZ^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_StProcess.rCentringPosSpeedSlowZ1Axis;	(* With slow speed *)
+				ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+			END_IF;
+			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
+				(*xStFct_StartMainPrc:=FALSE;*)
+				xStFct_InitStep:=FALSE;
+				iStepProgressStroke:=iStepProgressStroke + 1;
+			END_IF;
+		6: 	(* Start absolut movement of Z axis at working speed *)
+			ptrTAxisZ^.T_CtrleSingle.iFunction:=7;	(* Absolut mouvement *)
+			IF NOT(gxProcessCylindricalAreaActive) THEN
+				ptrTAxisZ^.T_CtrleSingle.lrPosition:=garPositionEndProcCalc[1];	(* AxisSlide auf EndPosition setzen *)
+			ELSE
+				(* Das ist der neue Ablauf wo man einen Zylindrische Position definieren kann und aber dieser Position wenn das Drehmoment einem definierten Schwellwert unterschritten wird, dann ist dies das Prozessende. Wird aber diese unten übergebene Position erreicht, dann wertet es als Fehler *)
+				ptrTAxisZ^.T_CtrleSingle.lrPosition:=T_Station_Parameter.T_StProcess.rPositionEndProcMaxInc;
+			END_IF;
+			ptrTAxisZ^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward;
+			ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+			iStepProgressStroke:=10;
+		10: 	(* Finish procress *)
+			xProgressStrokeRunning:=FALSE;
+			iStepProgressStroke:=1;
+		END_CASE
+	ELSE
+		xProgressStrokeRunning:=FALSE;
+		iStepProgressStroke:=1;
+	END_IF
+ELSE
+	xProgressStrokeReady:=FALSE;
+	xProgressStrokeRunning:=FALSE;
+	iStepProgressStroke:=1;
+END_IF;
+END_ACTION
+
+ACTION	StationFunction_Ctrl_ProgressStrokeType2:
+(* Disable progressive stroke behaviour *)
+IF T_Station_Parameter.T_StProcess.iWorkControlType <> 3
+	OR T_Station_Parameter.T_StProcess.rDistProgressStroke < 1.0
+	OR T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque = 0 THEN
+	xProgressStrokeReady:=FALSE;
+	xProgressStrokeRunning:=FALSE;
+	iStepProgressStroke:=1;
+	RETURN;
+END_IF
+
+(* Progressive stroke only active in step 3 *)
+IF (iStFct_StepPrc <> 3) THEN
+	xProgressStrokeRunning:=FALSE;
+	iStepProgressStroke:=1;
+	RETURN;
+END_IF
+
+(* Enable entire progressive stroke function -> first return stroke *)
+IF NOT(xProgressStrokeReady) AND ptrTAxisS^.T_LiveValue.diActualTorqueCalc > (T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque*T_Station_Parameter.T_OnlineChange.rTorqueLevelHC) THEN
+	xProgressStrokeReady:=TRUE;
+	xProgressStrokeRunning:=TRUE;
+	iStepProgressStroke:=1;
+(* Process with special stroke function *)
+ELSIF xProgressStrokeReady THEN
+	(* Start new return stroke if current position in limits *)
+	IF NOT(xProgressStrokeRunning)
+		AND ptrTAxisZ^.T_LiveValue.lrActualPosition > (rStFct_ProgressStrokePosition + ABS(T_Station_Parameter.T_StProcess.rDistProgressStroke))
+		AND ptrTAxisZ^.T_LiveValue.lrActualPosition < (garPositionEndProcCalc[1] - ABS(T_Station_Parameter.T_StProcess.rDistProgressStroke)/2.0) THEN
+		xProgressStrokeRunning:=TRUE;
+		iStepProgressStroke:=1;
+	ELSIF xProgressStrokeRunning THEN
+		CASE iStepProgressStroke OF
+		1: 	(* Set backward speed *)
+			rStFct_ProgressStrokePosition:=ptrTAxisZ^.T_LiveValue.lrActualPosition;
+			rStFct_CalcZSpeed:=(T_Station_Parameter.T_StProcess.rCentringBackStrokeSpeed/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride); (* BEF Wie kann ich sicher sein, dass die Achse rückwärts fährt *)
+			T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * 558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25 *)
+			T_Station_Work.TCtrlOnlineChange.xLockChange_Z_WorkSpeedBackward:=ptrTAxisZ^.T_CtrleSingle.xNotMoving;
+			iStepProgressStroke:=iStepProgressStroke + 1;
+		2:	(* Set fast forward speed once back stroke max position reached *)
+			IF (ptrTAxisZ^.T_LiveValue.lrActualPosition <= grZ_WorkStartPos)
+				OR ptrTAxisZ^.T_LiveValue.lrActualPosition < (rStFct_ProgressStrokePosition - ABS(T_Station_Parameter.T_StProcess.rCentringBackStrokeOffsetAfterFirstHC)) THEN
+				rStFct_CalcZSpeed:=(T_Station_Parameter.T_StProcess.rCentringPosSpeedFastZ1Axis/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);
+				T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * 558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25 *)
+				iStepProgressStroke:=iStepProgressStroke + 1;
+			END_IF;
+		3:	(* Set slow forward speed once back to stroke position with offset *)
+			IF ptrTAxisZ^.T_LiveValue.lrActualPosition > (rStFct_ProgressStrokePosition - ABS(T_Station_Parameter.T_StProcess.rCentringOffsetBeforeLastHC)) THEN
+				rStFct_CalcZSpeed:=(T_Station_Parameter.T_StProcess.rCentringPosSpeedSlowZ1Axis/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);
+				T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * 558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25 *)
+				iStepProgressStroke:=iStepProgressStroke + 1;
+			END_IF;
+		4:	(* Set working speed -> use controller values *)
+			IF ptrTAxisZ^.T_LiveValue.lrActualPosition > rStFct_ProgressStrokePosition THEN
+				rStFct_CalcZSpeed:=(T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);	(* Einstellung der Geschwindigkeit über das Poti *)
+				T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * 558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25 *)
+				iStepProgressStroke:=10;
+			END_IF;
+		10: 	(* Finish procress *)
+			xProgressStrokeRunning:=FALSE;
+			iStepProgressStroke:=1;
+		END_CASE
+	ELSE
+		xProgressStrokeRunning:=FALSE;
+		iStepProgressStroke:=1;
+	END_IF
+ELSE
+	xProgressStrokeReady:=FALSE;
+	xProgressStrokeRunning:=FALSE;
+	iStepProgressStroke:=1;
 END_IF;
 END_ACTION
 
@@ -15904,6 +16208,9 @@ IF xStFct_StartMainPrc AND NOT(xStFct_SetEnd) AND NOT(xStFct_HardwareError) AND 
 		gxWP_Analyse_ActiveInfeed:=FALSE;
 	END_IF;
 (***************************************************************************************************************************************************)
+(* Abhandlung der Reinigungsduese *)
+	StationFunction_Ctrl_CleanNozzle;
+(***************************************************************************************************************************************************)
 (* Berechnung der Bearbeitungsarbeit *)
 	StationFunction_Ctrl_CalcProcWork;
 (***************************************************************************************************************************************************)
@@ -15917,6 +16224,13 @@ ELSE
 END_IF;
 StationFunction_Ctrl_Controller_S;
 StationFunction_Ctrl_Controller_O;
+(***************************************************************************************************************************************************)
+(* Abhandlung von Progressivhub  *)
+IF T_Station_Parameter.T_StProcess.iWorkControlType <= 1 THEN
+	StationFunction_Ctrl_ProgressStrokeType1;
+ELSIF T_Station_Parameter.T_StProcess.iWorkControlType = 3 THEN
+	StationFunction_Ctrl_ProgressStrokeType2;
+END_IF;
 (***************************************************************************************************************************************************)
 (* Berechnung der Schnittgeschwindigkeit *)
 	fbStFct_CalcCuttingSpeed(	rActualPosition:=ptrTAxisZ^.T_LiveValue.lrActualPosition,
@@ -18700,6 +19014,9 @@ END_IF;
 (******************************************************************************************************************************************)
 StationFunction_Ctrl_End;
 END_ACTION
+
+
+
 
 
 
@@ -21635,14 +21952,14 @@ VAR
 	ptrTAxisS_St1 : POINTER TO ST_AXIS;								(* Achse für die Spindel *)
 
 	ptrTCylToolDeflection_St1				:POINTER TO ST_CYLINDER;	(* Servoventil für das bestimmen der vertikalen Auslenkraft *)
-	ptrTSensorTorque_St1 					:POINTER TO ST_CYLINDER;	(* Analoger Sensor für Drehmoment detektion *)
+	ptrTSensorTorque_St1 				:POINTER TO ST_CYLINDER;	(* Analoger Sensor für Drehmoment detektion *)
 	ptrTCylToolTorqueHC_St1 				:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung HC *)
-	ptrTCylToolTorqueOverload_St1 			:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung Überlast *)
+	ptrTCylToolTorqueOverload_St1 		:POINTER TO ST_CYLINDER;	(* Drehmomentüberwachung Überlast *)
 	ptrTCylBrakeReleaseZAxis_St1 			:POINTER TO ST_CYLINDER;	(* Zylinder für lösen der Bremse bei der Z Achse *)
-
-	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil für Werkstückfixierzylinder *)
-	ptrTValveAirTable					:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
-	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil für die Luft des Tisches *)
+	ptrTCylWorkpieceClamp				:POINTER TO ST_CYLINDER;	(* Ventil fuer Werkstückfixierzylinder *)
+	ptrTValveAirTable						:POINTER TO ST_CYLINDER;	(* Ventil fuer die Luft des Tisches *)
+	ptrTValveVacuumTable				:POINTER TO ST_CYLINDER;	(* Ventil fuer Vacuum des Tisches *)
+	ptrTValveCleanNozzle					:POINTER TO ST_CYLINDER;	(* Ventil fuer die Reinigungsduese *)
 
 	ptrTCommonAxis : POINTER TO ST_AXIS;
 	ptrTCommonAxisActive		: POINTER TO ST_AXIS;
@@ -22003,10 +22320,11 @@ ACTION	ActivateFB:
 		ptrTCylBrakeReleaseZAxis_St1 				:=ADR(TStation_Work_St1.THWWorkStation.TCylBrakeReleaseZAxis);
 
 		ptrTCylToolTorqueHC_St1					:=ADR(TStation_Work_St1.THWWorkStation.TCylToolTorqueHC);
-		ptrTCylToolTorqueOverload_St1				:=ADR(TStation_Work_St1.THWWorkStation.TCylToolTorqueOverload);
-		ptrTCylWorkpieceClamp						:=ADR(TStation_Work_St1.THWWorkStation.TCylWorkpieceClamp);
+		ptrTCylToolTorqueOverload_St1			:=ADR(TStation_Work_St1.THWWorkStation.TCylToolTorqueOverload);
+		ptrTCylWorkpieceClamp					:=ADR(TStation_Work_St1.THWWorkStation.TCylWorkpieceClamp);
 		ptrTValveAirTable							:=ADR(TStation_Work_St1.THWWorkStation.TValveAirTable);
-		ptrTValveVacuumTable						:=ADR(TStation_Work_St1.THWWorkStation.TValveVacuumTable);
+		ptrTValveVacuumTable					:=ADR(TStation_Work_St1.THWWorkStation.TValveVacuumTable);
+		ptrTValveCleanNozzle						:=ADR(TStation_Work_St1.THWWorkStation.TValveCleanNozzle);
 
 		ptrTCommonAxis:=ADR(TStation_Work_St1.THWWorkStation.TAxisZ);
 		ptrTCommonAxisActive	:=ADR(TStation_Work_St1.THWWorkStation.TAxisZ);
@@ -22195,6 +22513,7 @@ IF (T_Visu.T_PlcParam.dwActualPage =  gT_PageNumber.iWorkStation_Cylinder1) OR
 		5:	ptrTCommonCylinderValve:=ptrTCylWorkpieceClamp;
 		6:	ptrTCommonCylinderValve:=ptrTValveAirTable;
 		7:	ptrTCommonCylinderValve:=ptrTValveVacuumTable;
+		8:	ptrTCommonCylinderValve:=ptrTValveCleanNozzle;
 	END_CASE
 END_IF
 
@@ -24297,6 +24616,13 @@ ACTION	Monitor_ActuatorState:
 	T_ExchgParam.T_Cylinder.arStat[7].bStat:=	bFct_SetCylStat(	TStation_Work_St1.THWWorkStation.TValveVacuumTable.T_CtrleCyl.xStatePosOff,
 														 		TStation_Work_St1.THWWorkStation.TValveVacuumTable.T_CtrleCyl.xStatePosOn,
 											 					T_ExchgParam.T_Cylinder.arStat[7].bStat);
+
+(* 08 Ventil Reinigungsduese *)
+	T_ExchgParam.T_Cylinder.arStat[8].xOff:=	FALSE;
+	T_ExchgParam.T_Cylinder.arStat[8].xOn:=	TStation_Work_St1.THWWorkStation.TValveCleanNozzle.T_CtrleCyl.T_Standard.xActivOn;
+	T_ExchgParam.T_Cylinder.arStat[8].bStat:=	bFct_SetCylStat(	TStation_Work_St1.THWWorkStation.TValveCleanNozzle.T_CtrleCyl.xStatePosOff,
+														 		TStation_Work_St1.THWWorkStation.TValveCleanNozzle.T_CtrleCyl.xStatePosOn,
+											 					T_ExchgParam.T_Cylinder.arStat[8].bStat);
 (*******************************************************************************************************************************************************************************************)
 (*************************************************			                                   Achsen Zustand abfragen                                                      ******************************************)
 (*******************************************************************************************************************************************************************************************)
@@ -35382,6 +35708,7 @@ STRUCT
 	TCylWorkpieceClamp				:ST_CYLINDER;		(* Ventil für Werkstückfixierzylinder *)
 	TValveAirTable					:ST_CYLINDER;		(* Ventil für die Luft des Tisches *)
 	TValveVacuumTable				:ST_CYLINDER;		(* Ventil für die Luft des Tisches *)
+	TValveCleanNozzle				:ST_CYLINDER;		(* Ventil für die Reinigungsduese *)														(* BEF *)
 	TAxisBubbler						:ST_DC_AXIS;		(* Rührwerk für Suspension *)															(* IGS3 *)
 	TAxisFeedPump					:ST_DC_AXIS;		(* Förderpumpe für Suspension *)														(* IGS3 *)
 END_STRUCT
@@ -35816,8 +36143,8 @@ END_TYPE
 (* @OBJECTFLAGS := '0, 8' *)
 TYPE ST_EXCHG_CYLINDER :
 STRUCT
-	iSelCyl_Setup		:INT;	(*angewählte funktion in Setup Mode , kann als Index verwendet werden für  folgende Statusarray*)
-	arStat				:ARRAY [1..7] OF ST_CYLSTAT;
+	iSelCyl_Setup		:INT;	(*angewaehlte funktion in Setup Mode , kann als Index verwendet werden fuer  folgende Statusarray*)
+	arStat				:ARRAY [1..8] OF ST_CYLSTAT;
 END_STRUCT
 END_TYPE
 (* @END_DECLARATION := '0' *)
@@ -36164,6 +36491,11 @@ STRUCT
 	rDeflectionSensorOffset:REAL;
 (* Drehmomentüberlast *)
 	rTorqueLevel_Overload:REAL;
+(* Progressiv Stroke *)
+	rDistProgressStroke:REAL; 			(* [mm] Vertikale Distanz, welche das Intervall zwischen den Rueckzieher definiert *) (* BEF *)
+	iProgressStrokeStartTorque:INT; 	(* [%] Notwendiges Drehmoment um den ersten Rueckhub zu erzwingen und somit die progressive Hubfunktion zu starten. In Prozent bezogen auf das Hard Contact Drehmoment (WzDrehm. HC) *) (* BEF *)
+(* Abblasduese *)
+	iCleanNozzleMode:INT; 			(*0=Duese nicht eingeschaltet,1= fuer positive Z1 Geschwindigkeiten eingeschaltet, 2=fuer negative Z1 Geschwindigkeiten eingeschaltet, 3=fuer jegliche Geschwindigkeiten eingeschaltet *) (* BEF *)
 (* Positionen *)
 	rPosToolGuid_Up:REAL;			(* Position des Schlitten des oberen Führungsrohr auf der oberen Position *)
 	rPosToolGuid_Down:REAL;			(* Position des Schlitten des oberen Führungsrohr auf der untere Position *)
@@ -36963,7 +37295,7 @@ VAR_GLOBAL CONSTANT
 	csiMaxPage:INT:=60;
 	(* Profile *)
 	csiMaxProfile:INT:=100;
-	csiMaxProfileParameter:INT:=85;		(* PUM alt: 78 *) (* PUM alt: 75 *) (* PUM alt: 61 *) (* PUM alt: 60 *) (* PUM alt: 53 *) (* IGS3 alt: 42 *)(* IGS2 alt: 38 *)(* IGS alt 36 *)
+	csiMaxProfileParameter:INT:=88;		(* BEF alt: 85 *) (* PUM alt: 78 *) (* PUM alt: 75 *) (* PUM alt: 61 *) (* PUM alt: 60 *) (* PUM alt: 53 *) (* IGS3 alt: 42 *)(* IGS2 alt: 38 *)(* IGS alt 36 *)
 (* Page number definition *)
 	gT_PageNumber:ST_VISUPAGENUMBER;
 (* Anzahl maximal Wstk für Aufzeichnung *)
@@ -37255,7 +37587,7 @@ VAR_GLOBAL
 	QxRes309									AT%QX31.1	:BOOL;	(* Reserve *)
 	QxCylStripperClose_St1						AT%QX31.2	:BOOL;	(* Ventil für ZylAbstreiferGeschlossen *)										(* IGS3 *)
 	QxCylStripperOpen_St1						AT%QX31.3	:BOOL;	(* Ventil für ZylAbstreiferOffen *)												(* IGS3 *)
-	QxRes312									AT%QX31.4	:BOOL;	(* Reserve *)
+	QxValveCleanNozzle							AT%QX31.4	:BOOL;	(* Ventil fuer Reinigungsduese *)												(* BEF *)
 	QxRes313									AT%QX31.5	:BOOL;	(* Reserve *)
 	QxRes314									AT%QX31.6	:BOOL;	(* Reserve *)
 	QxRes315									AT%QX31.7	:BOOL;	(* Reserve *)

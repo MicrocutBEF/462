@@ -9751,7 +9751,7 @@ IF xStart OR xTmpStart THEN
 			END_IF;
 		2:	IF NOT(xInitStep) THEN
 				xInitStep:=TRUE;
-				(* Move Absolut backward *)
+				(* Move Absolut backward or forward *)
 				TAxisZ.T_CtrleSingle.iFunction:=7;
 				TAxisZ.T_CtrleSingle.lrPosition:=TAxisZ.T_LiveValue.lrActualPosition + lrHubLength;
 				TAxisZ.T_CtrleSingle.lrAcceleration:=TAxisZ.T_Config_ObjFileValue.lrAcceleration;
@@ -9789,7 +9789,7 @@ IF xStart OR xTmpStart THEN
 			END_IF;
 		3:	IF NOT(xInitStep) THEN
 				xInitStep:=TRUE;
-				(* Move Absolut forward *)
+				(* Move Absolut forward or backward *)
 				TAxisZ.T_CtrleSingle.iFunction:=7;
 				TAxisZ.T_CtrleSingle.lrPosition:=lrSaveSlidePosition;
 				TAxisZ.T_CtrleSingle.lrAcceleration:=TAxisZ.T_Config_ObjFileValue.lrAcceleration;
@@ -13193,6 +13193,13 @@ VAR
 	rTorqueMin_Min:REAL;							(* IGS *)
 	rStFct_CalcZSpeed:REAL;						(* IGS *)
 
+	(* Progressiv Stroke *)
+	xProgressStrokeReady:BOOL;					(* BEF *)
+	xProgressStrokeRunning:BOOL;					(* BEF *)
+	iStepProgressStroke:INT;						(* BEF *)
+	rStFct_ProgressStrokePosition:REAL;			(* BEF *)
+
+
 	(* .HW_Axis_DC *)
 (*	iStepBubbler:INT;															(* IGS3 *)
 	iStepFeeder:INT;															(* IGS3 *)*)
@@ -14936,6 +14943,9 @@ IF xStFct_SetEnd THEN
 	END_IF;
 	xBlockCheckLimitSwitch:=FALSE;
 	xBlockSetFastVelZAxis:=FALSE;
+	xProgressStrokeReady:=FALSE;
+	xProgressStrokeRunning:=FALSE;
+	iStepProgressStroke:=1;
 END_IF;
 END_ACTION
 
@@ -15095,6 +15105,9 @@ IF (xStFct_Start OR xStFct_StartMainCtr) AND NOT(xStFct_SetEnd) AND NOT(xStFct_H
 		xBlockSetFastVelZAxis:=FALSE;
 		xBlockActivateOAxis:=FALSE;
 		xSetDefaultSpeedS:=FALSE;
+		xProgressStrokeReady:=FALSE;
+		xProgressStrokeRunning:=FALSE;
+		iStepProgressStroke:=1;
 	END_IF;
 	IF xStFct_Stop AND NOT(xStFct_TmpStop) THEN
 		xStFct_TmpStop:=TRUE;
@@ -15117,6 +15130,126 @@ IF (xStFct_Start OR xStFct_StartMainCtr) AND NOT(xStFct_SetEnd) AND NOT(xStFct_H
 	IF NOT(xStFct_StartMainPrc) AND NOT(xStFct_SetEnd) THEN
 		xStFct_StartMainPrc:=TRUE;
 	END_IF;
+END_IF;
+END_ACTION
+
+ACTION	StationFunction_Ctrl_ProgressStrokeType1:
+(* Disable progressive stroke behaviour *)
+IF T_Station_Parameter.T_StProcess.iWorkControlType > 1
+	OR T_Station_Parameter.T_StProcess.rDistProgressStroke < 1.0
+	OR T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque = 0 THEN
+	xProgressStrokeReady:=FALSE;
+	xProgressStrokeRunning:=FALSE;
+	iStepProgressStroke:=1;
+	RETURN;
+END_IF
+
+(* Progressive stroke only active in step 3 *)
+IF (iStFct_StepPrc <> 3) THEN
+	xProgressStrokeRunning:=FALSE;
+	iStepProgressStroke:=1;
+	RETURN;
+END_IF
+
+(* Enable entire progressive stroke function -> first return stroke *)
+IF NOT(xProgressStrokeReady) AND ptrTAxisS^.T_LiveValue.diActualTorqueCalc > (T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque*T_Station_Parameter.T_OnlineChange.rTorqueLevelHC) THEN
+	xProgressStrokeReady:=TRUE;
+	xProgressStrokeRunning:=TRUE;
+	iStepProgressStroke:=1;
+(* Process with special stroke function *)
+ELSIF xProgressStrokeReady THEN
+	(* Start new return stroke if current position in limits *)
+	IF NOT(xProgressStrokeRunning)
+		AND ptrTAxisZ^.T_LiveValue.lrActualPosition > (rStFct_ProgressStrokePosition + ABS(T_Station_Parameter.T_StProcess.rDistProgressStroke))
+		AND ptrTAxisZ^.T_LiveValue.lrActualPosition < (garPositionEndProcCalc[1] - ABS(T_Station_Parameter.T_StProcess.rDistProgressStroke)/2.0) THEN
+		xProgressStrokeRunning:=TRUE;
+		iStepProgressStroke:=1;
+	ELSIF xProgressStrokeRunning THEN
+		CASE iStepProgressStroke OF
+		1: 	(* Stop Z axis motion *)
+			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND NOT(ptrTAxisZ^.T_CtrleSingle.xDone) AND
+		   		 NOT(ptrTAxisZ^.T_CtrleSingle.xNotMoving) AND (ptrTAxisZ^.T_CtrleSingle.iFunction <> 12) THEN (* BEF: braucht es diese Konditionen??? was wenn FALSE? *)
+				ptrTAxisZ^.T_CtrleSingle.iFunction:=5;
+				ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+				iStepProgressStroke:=iStepProgressStroke + 1;
+			END_IF
+		2: 	(* Waiting until Z axis stopped *)
+			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
+				(* init. variable *)
+				rStFct_ProgressStrokePosition:=ptrTAxisZ^.T_LiveValue.lrActualPosition;
+				(*xStFct_StartMainPrc:=FALSE;*) (* BEF: Wofür ist diese Variable gut???  *)
+				xStFct_InitStep:=FALSE;
+				iStepProgressStroke:=iStepProgressStroke + 1;
+			END_IF;
+		3:	(* Pull back Z axis, make sure to stay within the start and end position  *)
+			IF NOT(xStFct_InitStep) THEN
+				xStFct_InitStep:=TRUE;
+				IF ((ptrTAxisZ^.T_LiveValue.lrActualPosition - ABS(T_Station_Parameter.T_StProcess.rCentringBackStrokeOffsetAfterFirstHC)) >= grZ_WorkStartPos) THEN
+					ptrTAxisZ^.T_CtrleSingle.iFunction:=8;
+					ptrTAxisZ^.T_CtrleSingle.lrDistance:=T_Station_Parameter.T_StProcess.rCentringBackStrokeOffsetAfterFirstHC;
+					ptrTAxisZ^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_StProcess.rCentringBackStrokeSpeed;
+				ELSE
+					ptrTAxisZ^.T_CtrleSingle.iFunction:=7;
+					ptrTAxisZ^.T_CtrleSingle.lrPosition:=grZ_WorkStartPos;
+					ptrTAxisZ^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_StProcess.rCentringBackStrokeSpeed;
+				END_IF;
+				ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+			END_IF;
+			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
+				(*xStFct_StartMainPrc:=FALSE;*)
+				xStFct_InitStep:=FALSE;
+				iStepProgressStroke:=iStepProgressStroke + 1;
+			END_IF;
+		4: 	(* Move Z axis to last stroke position point with offset at fast speed *)
+			IF NOT(xStFct_InitStep) THEN
+				xStFct_InitStep:=TRUE;
+				ptrTAxisZ^.T_CtrleSingle.iFunction:=7;	(* Absolut mouvement *)
+				ptrTAxisZ^.T_CtrleSingle.lrPosition:=rStFct_ProgressStrokePosition - ABS(T_Station_Parameter.T_StProcess.rCentringOffsetBeforeLastHC);	(* Z1 axis to last strok position minus den Offset *)
+				ptrTAxisZ^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_StProcess.rCentringPosSpeedFastZ1Axis;							(* With fast speed  *)
+				ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+			END_IF;
+			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
+				(* Die Z Achse kann wieder weiterfahren im Langsamgang *)
+				(*xStFct_StartMainPrc:=FALSE;*)
+				xStFct_InitStep:=FALSE;
+				iStepProgressStroke:=iStepProgressStroke+1;
+			END_IF;
+		5: 	(* Move Z axis to last saved stroke position at slow speed *)
+			IF NOT(xStFct_InitStep) THEN
+				xStFct_InitStep:=TRUE;
+				ptrTAxisZ^.T_CtrleSingle.iFunction:=7;	(* Absolut mouvement *)
+				ptrTAxisZ^.T_CtrleSingle.lrPosition:=rStFct_ProgressStrokePosition;			(* Z1 axis to last stroke position  *)
+				ptrTAxisZ^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_StProcess.rCentringPosSpeedSlowZ1Axis;	(* With slow speed *)
+				ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+			END_IF;
+			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
+				(*xStFct_StartMainPrc:=FALSE;*)
+				xStFct_InitStep:=FALSE;
+				iStepProgressStroke:=iStepProgressStroke + 1;
+			END_IF;
+		6: 	(* Start absolut movement of Z axis at working speed *)
+			ptrTAxisZ^.T_CtrleSingle.iFunction:=7;	(* Absolut mouvement *)
+			IF NOT(gxProcessCylindricalAreaActive) THEN
+				ptrTAxisZ^.T_CtrleSingle.lrPosition:=garPositionEndProcCalc[1];	(* AxisSlide auf EndPosition setzen *)
+			ELSE
+				(* Das ist der neue Ablauf wo man einen Zylindrische Position definieren kann und aber dieser Position wenn das Drehmoment einem definierten Schwellwert unterschritten wird, dann ist dies das Prozessende. Wird aber diese unten übergebene Position erreicht, dann wertet es als Fehler *)
+				ptrTAxisZ^.T_CtrleSingle.lrPosition:=T_Station_Parameter.T_StProcess.rPositionEndProcMaxInc;
+			END_IF;
+			ptrTAxisZ^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward;
+			ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+			iStepProgressStroke:=10;
+		10: 	(* Finish procress *)
+			xProgressStrokeRunning:=FALSE;
+			iStepProgressStroke:=1;
+		END_CASE
+	ELSE
+		xProgressStrokeRunning:=FALSE;
+		iStepProgressStroke:=1;
+	END_IF
+ELSE
+	xProgressStrokeReady:=FALSE;
+	xProgressStrokeRunning:=FALSE;
+	iStepProgressStroke:=1;
 END_IF;
 END_ACTION
 
@@ -15998,6 +16131,11 @@ IF xStFct_StartMainPrc AND NOT(xStFct_SetEnd) AND NOT(xStFct_HardwareError) AND 
 		gxWP_Analyse_ActiveWork:=FALSE;
 		gxWP_Analyse_ActiveInfeed:=FALSE;
 	END_IF;
+(***************************************************************************************************************************************************)
+(* Abhandlung von Progressivhub  *)
+IF (T_Station_Parameter.T_StProcess.iWorkControlType <= 1) THEN
+	StationFunction_Ctrl_ProgressStrokeType1;
+END_IF;
 (***************************************************************************************************************************************************)
 (* Abhandlung der Reinigungsduese *)
 	StationFunction_Ctrl_CleanNozzle;
@@ -18798,6 +18936,7 @@ END_IF;
 (******************************************************************************************************************************************)
 StationFunction_Ctrl_End;
 END_ACTION
+
 
 
 

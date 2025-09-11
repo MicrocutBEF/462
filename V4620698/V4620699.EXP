@@ -6475,6 +6475,8 @@ END_VAR
 	IF T_LoadProfileParameter.T_ProzessData.rDistProgressStroke <> T_ProfileParameter.T_ProzessData.rDistProgressStroke THEN xProcessValueModified:=TRUE; END_IF
 	IF T_LoadProfileParameter.T_ProzessData.iProgressStrokeStartTorque <> T_ProfileParameter.T_ProzessData.iProgressStrokeStartTorque THEN xProcessValueModified:=TRUE; END_IF
 	IF T_LoadProfileParameter.T_ProzessData.iCleanNozzleMode <> T_ProfileParameter.T_ProzessData.iCleanNozzleMode THEN xProcessValueModified:=TRUE; END_IF
+	IF T_LoadProfileParameter.T_ProzessData.xOutfeedStrokeEnableControl <> T_ProfileParameter.T_ProzessData.xOutfeedStrokeEnableControl THEN xProcessValueModified:=TRUE; END_IF
+	IF T_LoadProfileParameter.T_ProzessData.xSparkOutEnableControl <> T_ProfileParameter.T_ProzessData.xSparkOutEnableControl THEN xProcessValueModified:=TRUE; END_IF
 END_FUNCTION_BLOCK
 
 
@@ -6659,6 +6661,8 @@ IF FIND(sTmp,':=') <> 0 THEN
 		ELSIF sVariableName = 'rdistprogressstroke' THEN ptrStProzessData^.rDistProgressStroke:=STRING_TO_REAL(sValue); iCountParameter:=iCountParameter + 1;
 		ELSIF sVariableName = 'iprogressstrokestarttorque' THEN ptrStProzessData^.iProgressStrokeStartTorque:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
 		ELSIF sVariableName = 'icleannozzlemode' THEN ptrStProzessData^.iCleanNozzleMode:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
+		ELSIF sVariableName = 'xoutfeedstrokeenablecontrol' THEN ptrStProzessData^.xOutfeedStrokeEnableControl:=STRING_TO_BOOL(sValue); iCountParameter:=iCountParameter + 1;
+		ELSIF sVariableName = 'xsparkoutenablecontrol' THEN ptrStProzessData^.xSparkOutEnableControl:=STRING_TO_BOOL(sValue); iCountParameter:=iCountParameter + 1;
 
 		END_IF;
 	END_IF;
@@ -7648,6 +7652,10 @@ END_VAR
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
 		sTmp:=CONCAT('088:iCleanNozzleMode:=',INT_TO_STRING(ptrStProzessData^.iCleanNozzleMode));
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
+		sTmp:=CONCAT('089:xoutfeedstrokeenablecontrol:=',BOOL_TO_STRING(ptrStProzessData^.xOutfeedStrokeEnableControl));
+		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
+		sTmp:=CONCAT('090:xsparkoutenablecontrol:=',BOOL_TO_STRING(ptrStProzessData^.xSparkOutEnableControl));
+		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
 
 	(* add empty line to set the end *)
 	ptrDataFile^[i]:='';
@@ -7770,6 +7778,8 @@ END_VAR
 		ptrT_DefaultProfileParameter^[ii].T_ProzessData.rDistProgressStroke:=0.0;
 		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iProgressStrokeStartTorque:=0;
 		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iCleanNozzleMode:=0;
+		ptrT_DefaultProfileParameter^[ii].T_ProzessData.xOutfeedStrokeEnableControl:=FALSE;
+		ptrT_DefaultProfileParameter^[ii].T_ProzessData.xSparkOutEnableControl:=FALSE;
 
 	END_FOR;
 	(* Confirm Default setting *)
@@ -36554,9 +36564,12 @@ STRUCT
 	rZ_D_Kd:REAL;
 	iZ_D_FilterM:INT;
 
-	rOutfeedStrokeAxisSpeedSlow:REAL;		(* Neuer Parameter für das zurückfahren am Prozessende wo man eine langsame Geschwindigkeit definieren kann und nach dem abfahren des Offset mit der normalen Geschwindigkeit zurückfährt *)
+	rOutfeedStrokeAxisSpeedSlow:REAL;	(* Neuer Parameter für das zurückfahren am Prozessende wo man eine langsame Geschwindigkeit definieren kann und nach dem abfahren des Offset mit der normalen Geschwindigkeit zurückfährt *)
 	rZ1AxisPosSwitchFastVel:REAL;			(* Neuer Parameter für das zurückfahren am Prozessende nach welcher Z1 Position dann mit der schnellen Geschwindigkeit umstellen soll *)
-	rZ1AxisOffsetStartRecordTorque:REAL;		(* Neuer Parameter für das zurückfahren am Prozessende nach welcher Z1 Position die Aufzeichnung für das maximale Drehmoment gestartet werden soll *)
+	rZ1AxisOffsetStartRecordTorque:REAL;	(* Neuer Parameter für das zurückfahren am Prozessende nach welcher Z1 Position die Aufzeichnung für das maximale Drehmoment gestartet werden soll *)
+
+	xOutfeedStrokeEnableControl:BOOL; 		(* Ein- /Ausschalten vom Drehmomentregler für die Rückfahrt bei Prozessende *)
+	xSparkOutEnableControl:BOOL; 			(* Ein- /Ausschalten vom Drehmomentregler für den Ausfunkprozess *)
 
 (* Neue Parameter für das Inkrementieren der Z1 Zentrier Position *)
 	xCentringEndProcIncOnOff:BOOL;		(* Hier kann definiert werden ob die Inkrementierung in der Zentrierung Aktiv sein soll oder nicht. Wenn Wert 0 eingestellt ist, dann ist es wie gehabt *)
@@ -36564,8 +36577,8 @@ STRUCT
 
 (* Neue Parameter für den Regler für die Spindel S Achse und der O Achse *)
 	rWorkingSpindleSpeedMinMax:REAL;	(* Spindel Regler ist Aktiv wenn dieser Wert nicht gleich Null ist *)
-	rO_Ctrl_TorquePercent_OFF:REAL;	(* Schnellhub Regler --> Wenn dieser Schwellwert des Drehmomentes erreicht wird, dann wird der Schnellhub ausgeschaltet und mittels der Hilfe der Hysterese Offset wieder eingeschaltet wird *)
-	rO_Ctrl_HystereseOffset:REAL;		(* Schnellhub Regler Aktiv wenn dieser Parameter nicht den Wert Null ist. Ist der Wert Positiv, dann muss das Drehmoment ansteigen damit es den Schnellhub wieder einschaltet. Wert Negativ dann muss es abklingen damit es wieder einschaltet *)
+	rO_Ctrl_TorquePercent_OFF:REAL;		(* Schnellhub Regler --> Wenn dieser Schwellwert des Drehmomentes erreicht wird, dann wird der Schnellhub ausgeschaltet und mittels der Hilfe der Hysterese Offset wieder eingeschaltet wird *)
+	rO_Ctrl_HystereseOffset:REAL;			(* Schnellhub Regler Aktiv wenn dieser Parameter nicht den Wert Null ist. Ist der Wert Positiv, dann muss das Drehmoment ansteigen damit es den Schnellhub wieder einschaltet. Wert Negativ dann muss es abklingen damit es wieder einschaltet *)
 
 (* Neue Parameter für Abbruchkriterium für den Zylindrischen Bereich *)
 	rZPositionCylindricalArea:REAL;			(* Hier bestimmt man für die Z Achse wo der Zylindrische Bereich des Werkzeuges anfängt. Wenn der Wert Null beträgt dann gilt der konventionelle Ablauf *)
@@ -37295,7 +37308,7 @@ VAR_GLOBAL CONSTANT
 	csiMaxPage:INT:=60;
 	(* Profile *)
 	csiMaxProfile:INT:=100;
-	csiMaxProfileParameter:INT:=88;		(* BEF alt: 85 *) (* PUM alt: 78 *) (* PUM alt: 75 *) (* PUM alt: 61 *) (* PUM alt: 60 *) (* PUM alt: 53 *) (* IGS3 alt: 42 *)(* IGS2 alt: 38 *)(* IGS alt 36 *)
+	csiMaxProfileParameter:INT:=90;		(* BEF alt: 85 *) (* PUM alt: 78 *) (* PUM alt: 75 *) (* PUM alt: 61 *) (* PUM alt: 60 *) (* PUM alt: 53 *) (* IGS3 alt: 42 *)(* IGS2 alt: 38 *)(* IGS alt 36 *)
 (* Page number definition *)
 	gT_PageNumber:ST_VISUPAGENUMBER;
 (* Anzahl maximal Wstk für Aufzeichnung *)

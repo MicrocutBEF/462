@@ -13208,7 +13208,7 @@ VAR
 	xProgressStrokeRunning:BOOL;					(* BEF *)
 	iStepProgressStroke:INT;						(* BEF *)
 	rStFct_ProgressStrokePosition:REAL;			(* BEF *)
-
+	xConventionalControllerEnable:BOOL;			(* BEF *)
 
 	(* .HW_Axis_DC *)
 (*	iStepBubbler:INT;															(* IGS3 *)
@@ -14666,9 +14666,20 @@ END_ACTION
 ACTION	StationFunction_Ctrl_Controller_1:
 (* Geschwindigkeitsregelung der Z1 Achse mittels der Kraftmessdose--> Konventioneller Regler *)
 IF ptrTAxisZ^.T_CtrleSingle.xMovingForward THEN
-	(* Konventionelle Regelung aber mit Override Funktion *)
 	rStFct_V1:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward;
 	rStFct_V2:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward/100.0;
+	xConventionalControllerEnable:=TRUE;
+ELSIF (T_Station_Parameter.T_StProcess.xSparkOutEnableControl OR T_Station_Parameter.T_StProcess.xOutfeedStrokeEnableControl)
+	AND ptrTAxisZ^.T_CtrleSingle.xMovingBackwards THEN
+	rStFct_V1:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedBackward;
+	rStFct_V2:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedBackward/100.0;
+	xConventionalControllerEnable:=TRUE;
+ELSE
+	xConventionalControllerEnable:=FALSE;
+END_IF
+
+IF xConventionalControllerEnable THEN
+	(* Konventionelle Regelung aber mit Override Funktion *)
 	rStFct_S1:=	0.5;
 	rStFct_S2:=	T_Station_Parameter.T_OnlineChange.rTorqueLevelHC;
 	CASE T_ExchgParam.bToolSpindleActive OF
@@ -14845,7 +14856,9 @@ END_ACTION
 ACTION	StationFunction_Ctrl_Controller_S:
 (* Drehzahlregler der S Achse  mittels der Kraftmessdose--> Konventioneller Regler aber ohne Override da das Override nicht grösser werden darf als 100
    Den Min Max Wert kann man hier auch als Max definieren, d.h. bei ansteigendem Drehmoment wird die Drehzahl höher und deshalb funktioniert das Override nicht *)
-IF ptrTAxisZ^.T_CtrleSingle.xMovingForward AND (T_Station_Parameter.T_StProcess.rWorkingSpindleSpeedMinMax <> 0.0) THEN
+IF (ptrTAxisZ^.T_CtrleSingle.xMovingForward
+	OR ((T_Station_Parameter.T_StProcess.xSparkOutEnableControl OR T_Station_Parameter.T_StProcess.xOutfeedStrokeEnableControl) AND ptrTAxisZ^.T_CtrleSingle.xMovingBackwards))
+	AND (T_Station_Parameter.T_StProcess.rWorkingSpindleSpeedMinMax <> 0.0) THEN
 	(* Konventionelle Regelung aber ohne Override Funktion *)
 	rStFct_V1:=	T_Station_Parameter.T_OnlineChange.rWorkingSpindleSpeed;
 	rStFct_V2:=	T_Station_Parameter.T_StProcess.rWorkingSpindleSpeedMinMax;
@@ -16745,7 +16758,7 @@ END_IF;
 			xStFct_InitStep:=FALSE;
 			iStFct_StepPrc:=3;
 		END_IF;
-	9:	(* Vorwärtsbewegung wieder starten *)
+	9:	(* Ausfunken starten *)
 		IF NOT(xStFct_InitStep) THEN
 			xStFct_InitStep:=TRUE;
 			xStFct_StartSparkOutProcess:=TRUE;

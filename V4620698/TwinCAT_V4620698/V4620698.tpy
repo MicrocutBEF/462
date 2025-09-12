@@ -4,7 +4,7 @@
 	<ProjectInfo>
 		<Path>Z:\Users\bef\02_Github\462\V4620698\TwinCAT_V4620698\V4620698.pro</Path>
 		<IsLibrary>false</IsLibrary>
-		<ChangeDate>2025-09-11T14:56:28</ChangeDate>
+		<ChangeDate>2025-09-12T10:36:02</ChangeDate>
 		<Library>
 			<Name>TcIoFunctions.lib</Name>
 			<Path>C:\TWINCAT\PLC\LIB\TcIoFunctions.lib</Path>
@@ -144,7 +144,7 @@
 	</DirectoryInfos>
 	<DataTypes>
 		<DataType>
-			<Name Decoration="1009A7AE" Crc32="2784166439" LastChange="2025-09-11T14:56:27">FB_Password_SystemLevel</Name>
+			<Name Decoration="1009A7AE" Crc32="2784166439" LastChange="2025-09-12T10:36:01">FB_Password_SystemLevel</Name>
 			<BitSize>1488</BitSize>
 			<SubItem>
 				<Name>ii</Name>
@@ -206,7 +206,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10010581" Crc32="3736089243" LastChange="2025-09-11T14:56:27">ST_PAGE</Name>
+			<Name Decoration="10010581" Crc32="3736089243" LastChange="2025-09-12T10:36:01">ST_PAGE</Name>
 			<BitSize>16</BitSize>
 			<SubItem>
 				<Name>iIndexConfigPage</Name>
@@ -250,7 +250,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100F62FF" Crc32="2755007353" LastChange="2025-09-11T14:56:27">ST_CONFIGPAGE</Name>
+			<Name Decoration="100F62FF" Crc32="2755007353" LastChange="2025-09-12T10:36:01">ST_CONFIGPAGE</Name>
 			<BitSize>1688</BitSize>
 			<SubItem>
 				<Name>sName</Name>
@@ -353,7 +353,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10081A2E" Crc32="2911166745" LastChange="2025-09-11T14:56:27">ST_CTRLEVISU</Name>
+			<Name Decoration="10081A2E" Crc32="2911166745" LastChange="2025-09-12T10:36:01">ST_CTRLEVISU</Name>
 			<BitSize>96</BitSize>
 			<SubItem>
 				<Name>xActive</Name>
@@ -408,7 +408,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10030FEF" Crc32="4037501505" LastChange="2025-09-11T14:56:27">ST_VISU_PLC_PARAM</Name>
+			<Name Decoration="10030FEF" Crc32="4037501505" LastChange="2025-09-12T10:36:01">ST_VISU_PLC_PARAM</Name>
 			<BitSize>96</BitSize>
 			<SubItem>
 				<Name>dwSetNewPage</Name>
@@ -430,7 +430,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1009249A" Crc32="1758131240" LastChange="2025-09-11T14:56:27">ST_CTRLEACTION</Name>
+			<Name Decoration="1009249A" Crc32="1758131240" LastChange="2025-09-12T10:36:01">ST_CTRLEACTION</Name>
 			<BitSize>104</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -494,7 +494,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1006140C" Crc32="1362014613" LastChange="2025-09-11T14:56:27">ST_CTRLEPROCESS</Name>
+			<Name Decoration="1006140C" Crc32="1362014613" LastChange="2025-09-12T10:36:01">ST_CTRLEPROCESS</Name>
 			<BitSize>80</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -555,7 +555,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1006AB8E" Crc32="1033536326" LastChange="2025-09-11T14:56:27">ST_QVIS</Name>
+			<Name Decoration="1006AB8E" Crc32="1033536326" LastChange="2025-09-12T10:36:01">ST_QVIS</Name>
 			<BitSize>117656</BitSize>
 			<SubItem>
 				<Name>T_PageIndex</Name>
@@ -595,7 +595,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1008F480" Crc32="0486338598" LastChange="2025-09-11T14:56:27">ST_EXCHG_MESSAGE</Name>
+			<Name Decoration="1008F480" Crc32="0486338598" LastChange="2025-09-12T10:36:01">ST_EXCHG_MESSAGE</Name>
 			<BitSize>2480</BitSize>
 			<SubItem>
 				<Name>iState</Name>
@@ -665,7 +665,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10016E49" Crc32="3130268725" LastChange="2025-09-11T14:56:27">ST_EXCHG_MESSAGE_LIST</Name>
+			<Name Decoration="10016E49" Crc32="3130268725" LastChange="2025-09-12T10:36:01">ST_EXCHG_MESSAGE_LIST</Name>
 			<BitSize>16160</BitSize>
 			<SubItem>
 				<Name>asMsgErrorList</Name>
@@ -675,7 +675,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100C408D" Crc32="0545781351" LastChange="2025-09-11T14:56:27">ST_EXCHG_LEVEL</Name>
+			<Name Decoration="100C408D" Crc32="0545781351" LastChange="2025-09-12T10:36:01">ST_EXCHG_LEVEL</Name>
 			<BitSize>296</BitSize>
 			<SubItem>
 				<Name>iActLevel</Name>
@@ -751,7 +751,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1018EDA6" Crc32="0576712981" LastChange="2025-09-11T14:56:27">ST_EXCHG_VISU</Name>
+			<Name Decoration="1018EDA6" Crc32="0576712981" LastChange="2025-09-12T10:36:01">ST_EXCHG_VISU</Name>
 			<BitSize>36440</BitSize>
 			<SubItem>
 				<Name>T_Message</Name>
@@ -929,7 +929,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100724D1" Crc32="1248973531" LastChange="2025-09-11T14:56:27">ST_EXCHG_TOUCHSCREENBTPANEL</Name>
+			<Name Decoration="100724D1" Crc32="1248973531" LastChange="2025-09-12T10:36:01">ST_EXCHG_TOUCHSCREENBTPANEL</Name>
 			<BitSize>112</BitSize>
 			<SubItem>
 				<Name>iNotMaskTextBt</Name>
@@ -975,7 +975,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10030BE2" Crc32="1063086942" LastChange="2025-09-11T14:56:27">ST_EXCHG_BTFUNCTIONPANEL</Name>
+			<Name Decoration="10030BE2" Crc32="1063086942" LastChange="2025-09-12T10:36:01">ST_EXCHG_BTFUNCTIONPANEL</Name>
 			<BitSize>48</BitSize>
 			<SubItem>
 				<Name>wState</Name>
@@ -1009,7 +1009,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10074713" Crc32="1687953171" LastChange="2025-09-11T14:56:27">ST_EXCHG_BTPARAMETERLIST</Name>
+			<Name Decoration="10074713" Crc32="1687953171" LastChange="2025-09-12T10:36:01">ST_EXCHG_BTPARAMETERLIST</Name>
 			<BitSize>320</BitSize>
 			<SubItem>
 				<Name>wState</Name>
@@ -1078,7 +1078,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10030BDE" Crc32="2575461849" LastChange="2025-09-11T14:56:27">ST_EXCHG_TOUCHSCREENNAVPANEL</Name>
+			<Name Decoration="10030BDE" Crc32="2575461849" LastChange="2025-09-12T10:36:01">ST_EXCHG_TOUCHSCREENNAVPANEL</Name>
 			<BitSize>48</BitSize>
 			<SubItem>
 				<Name>wState</Name>
@@ -1100,7 +1100,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10010775" Crc32="1785582280" LastChange="2025-09-11T14:56:27">ST_EXCHG_CONFIG</Name>
+			<Name Decoration="10010775" Crc32="1785582280" LastChange="2025-09-12T10:36:01">ST_EXCHG_CONFIG</Name>
 			<BitSize>8</BitSize>
 			<SubItem>
 				<Name>xNoTouchScreenBtPanel</Name>
@@ -1110,7 +1110,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100A2888" Crc32="2004423634" LastChange="2025-09-11T14:56:27">ST_AXIS_LIVESTATE</Name>
+			<Name Decoration="100A2888" Crc32="2004423634" LastChange="2025-09-12T10:36:01">ST_AXIS_LIVESTATE</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>rActPos</Name>
@@ -1225,7 +1225,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100B2B26" Crc32="0648244462" LastChange="2025-09-11T14:56:27">ST_EXCHG_AXIS</Name>
+			<Name Decoration="100B2B26" Crc32="0648244462" LastChange="2025-09-12T10:36:01">ST_EXCHG_AXIS</Name>
 			<BitSize>1056</BitSize>
 			<SubItem>
 				<Name>iSetup_AxisSel</Name>
@@ -1316,7 +1316,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10030758" Crc32="0283486657" LastChange="2025-09-11T14:56:27">ST_CYLSTAT</Name>
+			<Name Decoration="10030758" Crc32="0283486657" LastChange="2025-09-12T10:36:01">ST_CYLSTAT</Name>
 			<BitSize>24</BitSize>
 			<SubItem>
 				<Name>xOn</Name>
@@ -1347,7 +1347,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1002486C" Crc32="3726843941" LastChange="2025-09-11T14:56:27">ST_EXCHG_CYLINDER</Name>
+			<Name Decoration="1002486C" Crc32="3726843941" LastChange="2025-09-12T10:36:01">ST_EXCHG_CYLINDER</Name>
 			<BitSize>208</BitSize>
 			<SubItem>
 				<Name>iSelCyl_Setup</Name>
@@ -1366,7 +1366,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10075C10" Crc32="2540299611" LastChange="2025-09-11T14:56:27">ST_EXCHG_STATION</Name>
+			<Name Decoration="10075C10" Crc32="2540299611" LastChange="2025-09-12T10:36:01">ST_EXCHG_STATION</Name>
 			<BitSize>336</BitSize>
 			<SubItem>
 				<Name>xExist</Name>
@@ -1412,7 +1412,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100313FC" Crc32="0618380710" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_SYSTEM</Name>
+			<Name Decoration="100313FC" Crc32="0618380710" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_SYSTEM</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>xActive_ProfilLoadNormalMode</Name>
@@ -1434,7 +1434,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10052728" Crc32="3393535666" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_AUTOMAT</Name>
+			<Name Decoration="10052728" Crc32="3393535666" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_AUTOMAT</Name>
 			<BitSize>128</BitSize>
 			<SubItem>
 				<Name>tAutoProcessTime_St1St2</Name>
@@ -1492,7 +1492,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1004A4F5" Crc32="1780637857" LastChange="2025-09-11T14:56:27">ST_RETAIN_DATA_MACHINE</Name>
+			<Name Decoration="1004A4F5" Crc32="1780637857" LastChange="2025-09-12T10:36:01">ST_RETAIN_DATA_MACHINE</Name>
 			<BitSize>552</BitSize>
 			<SubItem>
 				<Name>T_ParamSystem</Name>
@@ -1523,7 +1523,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="105673FD" Crc32="0089874144" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_STANDARDPROCESS</Name>
+			<Name Decoration="105673FD" Crc32="0089874144" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_STANDARDPROCESS</Name>
 			<BitSize>2432</BitSize>
 			<SubItem>
 				<Name>rPositionLoad</Name>
@@ -2232,7 +2232,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10062852" Crc32="0428052606" LastChange="2025-09-11T14:56:27">ST_PROFILEONLINECHANGE_DATA</Name>
+			<Name Decoration="10062852" Crc32="0428052606" LastChange="2025-09-12T10:36:01">ST_PROFILEONLINECHANGE_DATA</Name>
 			<BitSize>192</BitSize>
 			<SubItem>
 				<Name>rTorqueLevelHC</Name>
@@ -2278,7 +2278,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10210E09" Crc32="3337289367" LastChange="2025-09-11T14:56:27">ST_EXCHG_INFO_PROCESS</Name>
+			<Name Decoration="10210E09" Crc32="3337289367" LastChange="2025-09-12T10:36:01">ST_EXCHG_INFO_PROCESS</Name>
 			<BitSize>1016</BitSize>
 			<SubItem>
 				<Name>xOnlineValueModified</Name>
@@ -2538,7 +2538,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1006337F" Crc32="1164224993" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_AXIS_STATE</Name>
+			<Name Decoration="1006337F" Crc32="1164224993" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_AXIS_STATE</Name>
 			<BitSize>168</BitSize>
 			<SubItem>
 				<Name>xReferencedZAxis</Name>
@@ -2581,7 +2581,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10127B09" Crc32="0813517815" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_TORQUESYSTEM</Name>
+			<Name Decoration="10127B09" Crc32="0813517815" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_TORQUESYSTEM</Name>
 			<BitSize>576</BitSize>
 			<SubItem>
 				<Name>rGearRatioGearBox</Name>
@@ -2735,7 +2735,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10030F66" Crc32="1354834920" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_TORQUESYSTEM_L</Name>
+			<Name Decoration="10030F66" Crc32="1354834920" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_TORQUESYSTEM_L</Name>
 			<BitSize>96</BitSize>
 			<SubItem>
 				<Name>rActual_Torque</Name>
@@ -2766,7 +2766,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1005201C" Crc32="3381046186" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_SPINDLESYSTEM</Name>
+			<Name Decoration="1005201C" Crc32="3381046186" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_SPINDLESYSTEM</Name>
 			<BitSize>160</BitSize>
 			<SubItem>
 				<Name>rPistonDiameterD1</Name>
@@ -2815,7 +2815,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1005201C" Crc32="2210747115" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_SPINDLESYSTEM_L</Name>
+			<Name Decoration="1005201C" Crc32="2210747115" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_SPINDLESYSTEM_L</Name>
 			<BitSize>160</BitSize>
 			<SubItem>
 				<Name>rPistonDiameterD1</Name>
@@ -2864,7 +2864,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10041A2A" Crc32="3911661430" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_SPINDLEBURNIN</Name>
+			<Name Decoration="10041A2A" Crc32="3911661430" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_SPINDLEBURNIN</Name>
 			<BitSize>128</BitSize>
 			<SubItem>
 				<Name>rTimeSpindleActive</Name>
@@ -2904,7 +2904,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100782AC" Crc32="1408519731" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_SPINDLECALIBRATION</Name>
+			<Name Decoration="100782AC" Crc32="1408519731" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_SPINDLECALIBRATION</Name>
 			<BitSize>464</BitSize>
 			<SubItem>
 				<Name>arOffsetToolDeflection</Name>
@@ -2956,7 +2956,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100316E0" Crc32="0019416345" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_TOOLCOUNTER</Name>
+			<Name Decoration="100316E0" Crc32="0019416345" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_TOOLCOUNTER</Name>
 			<BitSize>96</BitSize>
 			<SubItem>
 				<Name>diMaxNumberToolCycle</Name>
@@ -2987,7 +2987,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10052546" Crc32="2040793740" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_WPCOUNTER</Name>
+			<Name Decoration="10052546" Crc32="2040793740" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_WPCOUNTER</Name>
 			<BitSize>160</BitSize>
 			<SubItem>
 				<Name>diWPCounter_IO_NIO</Name>
@@ -3036,7 +3036,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10051C33" Crc32="3964698033" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_CYLINDER</Name>
+			<Name Decoration="10051C33" Crc32="3964698033" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_CYLINDER</Name>
 			<BitSize>160</BitSize>
 			<SubItem>
 				<Name>rTimeAfterSensorON</Name>
@@ -3070,7 +3070,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10072987" Crc32="1301435672" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_CONTRMOT</Name>
+			<Name Decoration="10072987" Crc32="1301435672" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_CONTRMOT</Name>
 			<BitSize>112</BitSize>
 			<SubItem>
 				<Name>iCurrentReg_PGain</Name>
@@ -3116,7 +3116,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10062E34" Crc32="2598439294" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_Z_TGUIDE</Name>
+			<Name Decoration="10062E34" Crc32="2598439294" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_Z_TGUIDE</Name>
 			<BitSize>192</BitSize>
 			<SubItem>
 				<Name>rOffset_Z_ToolGuide</Name>
@@ -3186,7 +3186,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10022B7E" Crc32="1519153943" LastChange="2025-09-11T14:56:27">ST_RETAIN_DATA_AX5000_PARAM</Name>
+			<Name Decoration="10022B7E" Crc32="1519153943" LastChange="2025-09-12T10:36:01">ST_RETAIN_DATA_AX5000_PARAM</Name>
 			<BitSize>1840</BitSize>
 			<SubItem>
 				<Name>uiP61</Name>
@@ -3208,7 +3208,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="101A1938" Crc32="3275719287" LastChange="2025-09-11T14:56:27">ST_RETAIN_DATA_STATIONWORK</Name>
+			<Name Decoration="101A1938" Crc32="3275719287" LastChange="2025-09-12T10:36:01">ST_RETAIN_DATA_STATIONWORK</Name>
 			<BitSize>10384</BitSize>
 			<SubItem>
 				<Name>T_StProcess</Name>
@@ -3416,7 +3416,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10040C83" Crc32="4233545038" LastChange="2025-09-11T14:56:27">ST_EXCHG_TOUCHBUTTON</Name>
+			<Name Decoration="10040C83" Crc32="4233545038" LastChange="2025-09-12T10:36:01">ST_EXCHG_TOUCHBUTTON</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>xActive</Name>
@@ -3444,7 +3444,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100617EA" Crc32="1660532467" LastChange="2025-09-11T14:56:27">ST_EXCHG_TOUCHINPUT</Name>
+			<Name Decoration="100617EA" Crc32="1660532467" LastChange="2025-09-12T10:36:01">ST_EXCHG_TOUCHINPUT</Name>
 			<BitSize>144</BitSize>
 			<SubItem>
 				<Name>diInput1</Name>
@@ -3484,7 +3484,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="103E888F" Crc32="1379233621" LastChange="2025-09-11T14:56:27">ST_EXCHG_STATION_COMMON</Name>
+			<Name Decoration="103E888F" Crc32="1379233621" LastChange="2025-09-12T10:36:01">ST_EXCHG_STATION_COMMON</Name>
 			<BitSize>12480</BitSize>
 			<SubItem>
 				<Name>wState</Name>
@@ -3958,7 +3958,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1002338A" Crc32="1881382115" LastChange="2025-09-11T14:56:27">ST_EXCHG_FUNCTION_COMMON</Name>
+			<Name Decoration="1002338A" Crc32="1881382115" LastChange="2025-09-12T10:36:01">ST_EXCHG_FUNCTION_COMMON</Name>
 			<BitSize>400</BitSize>
 			<SubItem>
 				<Name>iFunctionNrMicrohead</Name>
@@ -3984,7 +3984,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100621ED" Crc32="4096040532" LastChange="2025-09-11T14:56:27">ST_EXCHG_ANALOGSENSOR</Name>
+			<Name Decoration="100621ED" Crc32="4096040532" LastChange="2025-09-12T10:36:01">ST_EXCHG_ANALOGSENSOR</Name>
 			<BitSize>176</BitSize>
 			<SubItem>
 				<Name>rActual_Position</Name>
@@ -4024,7 +4024,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1002471C" Crc32="2085266428" LastChange="2025-09-11T14:56:27">ST_PROFILE_ID</Name>
+			<Name Decoration="1002471C" Crc32="2085266428" LastChange="2025-09-12T10:36:01">ST_PROFILE_ID</Name>
 			<BitSize>264</BitSize>
 			<SubItem>
 				<Name>iNumber</Name>
@@ -4040,7 +4040,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10020B94" Crc32="3722129305" LastChange="2025-09-11T14:56:27">ST_PROFILE_LIST_MANAGE</Name>
+			<Name Decoration="10020B94" Crc32="3722129305" LastChange="2025-09-12T10:36:01">ST_PROFILE_LIST_MANAGE</Name>
 			<BitSize>16</BitSize>
 			<SubItem>
 				<Name>xListProfileUp</Name>
@@ -4056,7 +4056,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1002471C" Crc32="3948054467" LastChange="2025-09-11T14:56:27">ST_PROFILE_LIST</Name>
+			<Name Decoration="1002471C" Crc32="3948054467" LastChange="2025-09-12T10:36:01">ST_PROFILE_LIST</Name>
 			<BitSize>264</BitSize>
 			<SubItem>
 				<Name>iNumber</Name>
@@ -4072,7 +4072,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100693B5" Crc32="3065738046" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_ONLINECHANGE</Name>
+			<Name Decoration="100693B5" Crc32="3065738046" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_ONLINECHANGE</Name>
 			<BitSize>1152</BitSize>
 			<SubItem>
 				<Name>T_Data</Name>
@@ -4121,7 +4121,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1005C230" Crc32="3068251891" LastChange="2025-09-11T14:56:27">ST_EXCHG_PROFILE_COMMON</Name>
+			<Name Decoration="1005C230" Crc32="3068251891" LastChange="2025-09-12T10:36:01">ST_EXCHG_PROFILE_COMMON</Name>
 			<BitSize>2760</BitSize>
 			<SubItem>
 				<Name>xImportProzessData</Name>
@@ -4158,7 +4158,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100B8F41" Crc32="4099683003" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARTQUALITY</Name>
+			<Name Decoration="100B8F41" Crc32="4099683003" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARTQUALITY</Name>
 			<BitSize>440</BitSize>
 			<SubItem>
 				<Name>bPartQualityStation</Name>
@@ -4296,7 +4296,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100FC61D" Crc32="1870159692" LastChange="2025-09-11T14:56:27">ST_EXCHG_LAMPTEST</Name>
+			<Name Decoration="100FC61D" Crc32="1870159692" LastChange="2025-09-12T10:36:01">ST_EXCHG_LAMPTEST</Name>
 			<BitSize>29296</BitSize>
 			<SubItem>
 				<Name>xButtonLampIO</Name>
@@ -4415,7 +4415,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10051B35" Crc32="2053516387" LastChange="2025-09-11T14:56:27">ST_EXCHG_SPINDLEBURNIN</Name>
+			<Name Decoration="10051B35" Crc32="2053516387" LastChange="2025-09-12T10:36:01">ST_EXCHG_SPINDLEBURNIN</Name>
 			<BitSize>160</BitSize>
 			<SubItem>
 				<Name>rTimeActive</Name>
@@ -4449,7 +4449,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="103E42D9" Crc32="0830040640" LastChange="2025-09-11T14:56:27">ST_EXCHG_SAFETY_CTRL</Name>
+			<Name Decoration="103E42D9" Crc32="0830040640" LastChange="2025-09-12T10:36:01">ST_EXCHG_SAFETY_CTRL</Name>
 			<BitSize>5032</BitSize>
 			<SubItem>
 				<Name>bStateMessageError</Name>
@@ -4914,7 +4914,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10010728" Crc32="2698169943" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_BIOS</Name>
+			<Name Decoration="10010728" Crc32="2698169943" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_BIOS</Name>
 			<BitSize>8</BitSize>
 			<SubItem>
 				<Name>xReferencedZAxis_St1</Name>
@@ -4927,7 +4927,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="101DC058" Crc32="2011401584" LastChange="2025-09-11T14:56:27">ST_QVIS_EXCHG_PARAM</Name>
+			<Name Decoration="101DC058" Crc32="2011401584" LastChange="2025-09-12T10:36:01">ST_QVIS_EXCHG_PARAM</Name>
 			<BitSize>89416</BitSize>
 			<SubItem>
 				<Name>byOverride</Name>
@@ -5137,7 +5137,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10081B36" Crc32="2689646484" LastChange="2025-09-11T14:56:27">ST_CTRLE_HDD</Name>
+			<Name Decoration="10081B36" Crc32="2689646484" LastChange="2025-09-12T10:36:01">ST_CTRLE_HDD</Name>
 			<BitSize>120</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -5192,7 +5192,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1001446C" Crc32="0531511021" LastChange="2025-09-11T14:56:27">ST_HDD_CONFIG</Name>
+			<Name Decoration="1001446C" Crc32="0531511021" LastChange="2025-09-12T10:36:01">ST_HDD_CONFIG</Name>
 			<BitSize>192</BitSize>
 			<SubItem>
 				<Name>sNetId</Name>
@@ -5202,7 +5202,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10062BD2" Crc32="2346969412" LastChange="2025-09-11T14:56:27">ST_HDD_FILE</Name>
+			<Name Decoration="10062BD2" Crc32="2346969412" LastChange="2025-09-12T10:36:01">ST_HDD_FILE</Name>
 			<BitSize>8256</BitSize>
 			<SubItem>
 				<Name>sPathAndFileName</Name>
@@ -5251,7 +5251,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100174AF" Crc32="3131785505" LastChange="2025-09-11T14:56:27">ST_HDD_DATA</Name>
+			<Name Decoration="100174AF" Crc32="3131785505" LastChange="2025-09-12T10:36:01">ST_HDD_DATA</Name>
 			<BitSize>2426240</BitSize>
 			<SubItem>
 				<Name>sData</Name>
@@ -5261,7 +5261,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100456A4" Crc32="0036633365" LastChange="2025-09-11T14:56:27">ST_HDD</Name>
+			<Name Decoration="100456A4" Crc32="0036633365" LastChange="2025-09-12T10:36:01">ST_HDD</Name>
 			<BitSize>2434808</BitSize>
 			<SubItem>
 				<Name>T_Ctrle</Name>
@@ -5289,7 +5289,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100D3577" Crc32="1870839777" LastChange="2025-09-11T14:56:27">ST_CTRLE_DATA_RETAIN</Name>
+			<Name Decoration="100D3577" Crc32="1870839777" LastChange="2025-09-12T10:36:01">ST_CTRLE_DATA_RETAIN</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -5392,7 +5392,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10029C37" Crc32="2305865046" LastChange="2025-09-11T14:56:27">ST_RETAIN_ERROR_DATA</Name>
+			<Name Decoration="10029C37" Crc32="2305865046" LastChange="2025-09-12T10:36:01">ST_RETAIN_ERROR_DATA</Name>
 			<BitSize>2720</BitSize>
 			<SubItem>
 				<Name>adiErrorListMachine</Name>
@@ -5456,7 +5456,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100E8A99" Crc32="1977331907" LastChange="2025-09-11T14:56:27">ST_PARTANALYSIS</Name>
+			<Name Decoration="100E8A99" Crc32="1977331907" LastChange="2025-09-12T10:36:01">ST_PARTANALYSIS</Name>
 			<BitSize>22776</BitSize>
 			<SubItem>
 				<Name>sFileName</Name>
@@ -5612,7 +5612,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10060457" Crc32="4063598604" LastChange="2025-09-11T14:56:27">ST_RETAIN_DATA</Name>
+			<Name Decoration="10060457" Crc32="4063598604" LastChange="2025-09-12T10:36:01">ST_RETAIN_DATA</Name>
 			<BitSize>42832</BitSize>
 			<SubItem>
 				<Name>T_Machine</Name>
@@ -5660,7 +5660,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100269BE" Crc32="2548077568" LastChange="2025-09-11T14:56:27">ST_NOVRAM</Name>
+			<Name Decoration="100269BE" Crc32="2548077568" LastChange="2025-09-12T10:36:01">ST_NOVRAM</Name>
 			<BitSize>43088</BitSize>
 			<SubItem>
 				<Name>T_Ctrle</Name>
@@ -5676,7 +5676,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10081BB2" Crc32="3192137559" LastChange="2025-09-11T14:56:27">ST_CTRLEPANEL</Name>
+			<Name Decoration="10081BB2" Crc32="3192137559" LastChange="2025-09-12T10:36:01">ST_CTRLEPANEL</Name>
 			<BitSize>144</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -5731,7 +5731,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1015B915" Crc32="3463826867" LastChange="2025-09-11T14:56:27">FB_BIOSPARAMETER</Name>
+			<Name Decoration="1015B915" Crc32="3463826867" LastChange="2025-09-12T10:36:01">FB_BIOSPARAMETER</Name>
 			<BitSize>2088</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TONShowMessage</Name>
@@ -5899,7 +5899,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1012C570" Crc32="0500009572" LastChange="2025-09-11T14:56:27">FB_CalcCuttingSpeed</Name>
+			<Name Decoration="1012C570" Crc32="0500009572" LastChange="2025-09-12T10:36:01">FB_CalcCuttingSpeed</Name>
 			<BitSize>26072</BitSize>
 			<SubItem>
 				<Name>arCuttingSpeed</Name>
@@ -6018,7 +6018,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100E4AC0" Crc32="2742436896" LastChange="2025-09-11T14:56:27">FB_CalcSpindleForce</Name>
+			<Name Decoration="100E4AC0" Crc32="2742436896" LastChange="2025-09-12T10:36:01">FB_CalcSpindleForce</Name>
 			<BitSize>432</BitSize>
 			<SubItem>
 				<Name>rMaxForce</Name>
@@ -6134,7 +6134,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100623F8" Crc32="0763864716" LastChange="2025-09-11T14:56:27">FB_CHECKMACHINESTATE</Name>
+			<Name Decoration="100623F8" Crc32="0763864716" LastChange="2025-09-12T10:36:01">FB_CHECKMACHINESTATE</Name>
 			<BitSize>56</BitSize>
 			<SubItem>
 				<Name>xTmp</Name>
@@ -6184,7 +6184,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="101498AC" Crc32="0007913999" LastChange="2025-09-11T14:56:27">ST_TWINSAFE_IN</Name>
+			<Name Decoration="101498AC" Crc32="0007913999" LastChange="2025-09-12T10:36:01">ST_TWINSAFE_IN</Name>
 			<BitSize>160</BitSize>
 			<SubItem>
 				<Name>IxEmergencyStopButtonCh1</Name>
@@ -6368,7 +6368,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1004BDC3" Crc32="0903436643" LastChange="2025-09-11T14:56:27">FB_CHECKSETUPMODE</Name>
+			<Name Decoration="1004BDC3" Crc32="0903436643" LastChange="2025-09-12T10:36:01">FB_CHECKSETUPMODE</Name>
 			<BitSize>192</BitSize>
 			<SubItem>
 				<Name>xSetupModeA</Name>
@@ -6403,7 +6403,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1002D7ED" Crc32="1095562590" LastChange="2025-09-11T14:56:27">ST_RETAIN_DATA_PROFILEPARAMETER</Name>
+			<Name Decoration="1002D7ED" Crc32="1095562590" LastChange="2025-09-12T10:36:01">ST_RETAIN_DATA_PROFILEPARAMETER</Name>
 			<BitSize>2624</BitSize>
 			<SubItem>
 				<Name>T_ProzessData</Name>
@@ -6419,7 +6419,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1005FF24" Crc32="3366334187" LastChange="2025-09-11T14:56:27">FB_COMPAREPROFILEPROCESSVALUE</Name>
+			<Name Decoration="1005FF24" Crc32="3366334187" LastChange="2025-09-12T10:36:01">FB_COMPAREPROFILEPROCESSVALUE</Name>
 			<BitSize>5320</BitSize>
 			<SubItem>
 				<Name>rTmpDifference</Name>
@@ -6463,7 +6463,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100E3615" Crc32="4171867369" LastChange="2025-09-11T14:56:27">ST_CTRLE_PROCESS</Name>
+			<Name Decoration="100E3615" Crc32="4171867369" LastChange="2025-09-12T10:36:01">ST_CTRLE_PROCESS</Name>
 			<BitSize>152</BitSize>
 			<SubItem>
 				<Name>iFunctNr</Name>
@@ -6554,7 +6554,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100B2A47" Crc32="0838862704" LastChange="2025-09-11T14:56:27">ST_FCT_PROCESS</Name>
+			<Name Decoration="100B2A47" Crc32="0838862704" LastChange="2025-09-12T10:36:01">ST_FCT_PROCESS</Name>
 			<BitSize>120</BitSize>
 			<SubItem>
 				<Name>iFunctNr</Name>
@@ -6624,7 +6624,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10028D92" Crc32="0329912951" LastChange="2025-09-11T14:56:27">ST_PROCESS</Name>
+			<Name Decoration="10028D92" Crc32="0329912951" LastChange="2025-09-12T10:36:01">ST_PROCESS</Name>
 			<BitSize>272</BitSize>
 			<SubItem>
 				<Name>T_Ctrle</Name>
@@ -6640,7 +6640,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10139C0F" Crc32="0067245354" LastChange="2025-09-11T14:56:27">FB_ControlLamp</Name>
+			<Name Decoration="10139C0F" Crc32="0067245354" LastChange="2025-09-12T10:36:01">FB_ControlLamp</Name>
 			<BitSize>456</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TimerON</Name>
@@ -6768,7 +6768,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100F3478" Crc32="0000485897" LastChange="2025-09-11T14:56:27">FB_CopyDataFileToProfile</Name>
+			<Name Decoration="100F3478" Crc32="0000485897" LastChange="2025-09-12T10:36:01">FB_CopyDataFileToProfile</Name>
 			<BitSize>2184</BitSize>
 			<SubItem>
 				<Name>i</Name>
@@ -6873,7 +6873,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10041145" Crc32="3512052114" LastChange="2025-09-11T14:56:27">ST_BUTTON</Name>
+			<Name Decoration="10041145" Crc32="3512052114" LastChange="2025-09-12T10:36:01">ST_BUTTON</Name>
 			<BitSize>56</BitSize>
 			<SubItem>
 				<Name>xInputState</Name>
@@ -6901,7 +6901,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="101D7955" Crc32="3943786867" LastChange="2025-09-11T14:56:27">FB_CTRLEBUTTON</Name>
+			<Name Decoration="101D7955" Crc32="3943786867" LastChange="2025-09-12T10:36:01">FB_CTRLEBUTTON</Name>
 			<BitSize>207408</BitSize>
 			<SubItem>
 				<Name>iIndexActivPage</Name>
@@ -7107,7 +7107,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="101F3482" Crc32="3900542216" LastChange="2025-09-11T14:56:27">FB_CylAnalogFunction</Name>
+			<Name Decoration="101F3482" Crc32="3900542216" LastChange="2025-09-12T10:36:01">FB_CylAnalogFunction</Name>
 			<BitSize>96944</BitSize>
 			<SubItem>
 				<Name>xInit</Name>
@@ -7301,7 +7301,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10071B0B" Crc32="0848774546" LastChange="2025-09-11T14:56:27">ST_CTRL_PID_PARAM</Name>
+			<Name Decoration="10071B0B" Crc32="0848774546" LastChange="2025-09-12T10:36:01">ST_CTRL_PID_PARAM</Name>
 			<BitSize>200</BitSize>
 			<SubItem>
 				<Name>rCtrlCycleTime</Name>
@@ -7360,7 +7360,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100931BE" Crc32="2975924251" LastChange="2025-09-11T14:56:27">FB_D_CONTROL</Name>
+			<Name Decoration="100931BE" Crc32="2975924251" LastChange="2025-09-12T10:36:01">FB_D_CONTROL</Name>
 			<BitSize>240</BitSize>
 			<SubItem>
 				<Name>r_E_Fehler</Name>
@@ -7431,7 +7431,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10016F3F" Crc32="3320119882" LastChange="2025-09-11T14:56:27">ST_LANGUAGE_LIST</Name>
+			<Name Decoration="10016F3F" Crc32="3320119882" LastChange="2025-09-12T10:36:01">ST_LANGUAGE_LIST</Name>
 			<BitSize>242400</BitSize>
 			<SubItem>
 				<Name>T_LanguagList</Name>
@@ -7441,7 +7441,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10039CDE" Crc32="3014014400" LastChange="2025-09-11T14:56:27">ST_ERROR_LIST</Name>
+			<Name Decoration="10039CDE" Crc32="3014014400" LastChange="2025-09-12T10:36:01">ST_ERROR_LIST</Name>
 			<BitSize>727200</BitSize>
 			<SubItem>
 				<Name>asErrorListEnglish</Name>
@@ -7463,7 +7463,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100E4C80" Crc32="3397356220" LastChange="2025-09-11T14:56:27">FB_ErrorMessage</Name>
+			<Name Decoration="100E4C80" Crc32="3397356220" LastChange="2025-09-12T10:36:01">FB_ErrorMessage</Name>
 			<BitSize>733808</BitSize>
 			<SubItem>
 				<Name>sTmpText1</Name>
@@ -7568,7 +7568,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100F70DF" Crc32="1975222398" LastChange="2025-09-11T14:56:27">FB_GetParameterList</Name>
+			<Name Decoration="100F70DF" Crc32="1975222398" LastChange="2025-09-12T10:36:01">FB_GetParameterList</Name>
 			<BitSize>448</BitSize>
 			<SubItem>
 				<Name>xInit</Name>
@@ -7669,7 +7669,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10020D82" Crc32="2612587789" LastChange="2025-09-11T14:56:27">FB_GetStationFunctionNr</Name>
+			<Name Decoration="10020D82" Crc32="2612587789" LastChange="2025-09-12T10:36:01">FB_GetStationFunctionNr</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name FbParameter="Input">iVisuFunctionNr</Name>
@@ -7689,7 +7689,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10010B70" Crc32="1946576651" LastChange="2025-09-11T14:56:27">FB_InitErrorList</Name>
+			<Name Decoration="10010B70" Crc32="1946576651" LastChange="2025-09-12T10:36:01">FB_InitErrorList</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name FbParameter="InOut">T_ErrorList</Name>
@@ -7712,7 +7712,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100879D0" Crc32="0625284878" LastChange="2025-09-11T14:56:27">FB_Linearization_Potentiometer</Name>
+			<Name Decoration="100879D0" Crc32="0625284878" LastChange="2025-09-12T10:36:01">FB_Linearization_Potentiometer</Name>
 			<BitSize>1072</BitSize>
 			<SubItem>
 				<Name>ii</Name>
@@ -7780,7 +7780,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10096D7A" Crc32="1536097674" LastChange="2025-09-11T14:56:27">ST_PASSWORD_CTRLE</Name>
+			<Name Decoration="10096D7A" Crc32="1536097674" LastChange="2025-09-12T10:36:01">ST_PASSWORD_CTRLE</Name>
 			<BitSize>792</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -7841,7 +7841,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10018502" Crc32="1396776669" LastChange="2025-09-11T14:56:27">ST_PASSWORD</Name>
+			<Name Decoration="10018502" Crc32="1396776669" LastChange="2025-09-12T10:36:01">ST_PASSWORD</Name>
 			<BitSize>792</BitSize>
 			<SubItem>
 				<Name>T_Ctrle</Name>
@@ -7851,7 +7851,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100E62F2" Crc32="3040047437" LastChange="2025-09-11T14:56:27">FB_PASSWORD</Name>
+			<Name Decoration="100E62F2" Crc32="3040047437" LastChange="2025-09-12T10:36:01">FB_PASSWORD</Name>
 			<BitSize>2428720</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">RisingEdgeReset</Name>
@@ -7943,7 +7943,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100E676C" Crc32="3655095216" LastChange="2025-09-11T14:56:27">FB_PID_CONTROL</Name>
+			<Name Decoration="100E676C" Crc32="3655095216" LastChange="2025-09-12T10:36:01">FB_PID_CONTROL</Name>
 			<BitSize>488</BitSize>
 			<SubItem>
 				<Name>r_E_Fehler</Name>
@@ -8057,7 +8057,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100544B7" Crc32="0461622063" LastChange="2025-09-11T14:56:27">FB_PreWarning_Message</Name>
+			<Name Decoration="100544B7" Crc32="0461622063" LastChange="2025-09-12T10:36:01">FB_PreWarning_Message</Name>
 			<BitSize>144</BitSize>
 			<SubItem>
 				<Name>iMessageNr</Name>
@@ -8107,7 +8107,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100A2B8E" Crc32="4119239933" LastChange="2025-09-11T14:56:27">ST_PREWARNING</Name>
+			<Name Decoration="100A2B8E" Crc32="4119239933" LastChange="2025-09-12T10:36:01">ST_PREWARNING</Name>
 			<BitSize>49640</BitSize>
 			<SubItem>
 				<Name>xToolNearChangeSt1</Name>
@@ -8201,7 +8201,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="101B1D00" Crc32="0390394269" LastChange="2025-09-11T14:56:27">FB_PreWarning_Ctrl_Message</Name>
+			<Name Decoration="101B1D00" Crc32="0390394269" LastChange="2025-09-12T10:36:01">FB_PreWarning_Ctrl_Message</Name>
 			<BitSize>113112</BitSize>
 			<SubItem>
 				<Name>asMessageStringEngl</Name>
@@ -8371,7 +8371,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="101A7FBB" Crc32="4187270727" LastChange="2025-09-11T14:56:27">ST_CTRLE_STATION</Name>
+			<Name Decoration="101A7FBB" Crc32="4187270727" LastChange="2025-09-12T10:36:01">ST_CTRLE_STATION</Name>
 			<BitSize>248</BitSize>
 			<SubItem>
 				<Name>xActiveStation</Name>
@@ -8531,7 +8531,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10053384" Crc32="3747146426" LastChange="2025-09-11T14:56:27">ST_CTRL_ONLINECHANGE</Name>
+			<Name Decoration="10053384" Crc32="3747146426" LastChange="2025-09-12T10:36:01">ST_CTRL_ONLINECHANGE</Name>
 			<BitSize>40</BitSize>
 			<SubItem>
 				<Name>xLockChange_Z_WorkSpeedForward</Name>
@@ -8565,7 +8565,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1042D2C2" Crc32="0396149470" LastChange="2025-09-11T14:56:27">ST_CTRL_WORK</Name>
+			<Name Decoration="1042D2C2" Crc32="0396149470" LastChange="2025-09-12T10:36:01">ST_CTRL_WORK</Name>
 			<BitSize>1176</BitSize>
 			<SubItem>
 				<Name>rLastOverLimitPosition</Name>
@@ -9073,7 +9073,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10368AE4" Crc32="1949533646" LastChange="2025-09-11T14:56:27">ST_CTRLESINGLE</Name>
+			<Name Decoration="10368AE4" Crc32="1949533646" LastChange="2025-09-12T10:36:01">ST_CTRLESINGLE</Name>
 			<BitSize>3200</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -9620,7 +9620,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10081D38" Crc32="3152736044" LastChange="2025-09-11T14:56:27">ST_CTRLEMULTI</Name>
+			<Name Decoration="10081D38" Crc32="3152736044" LastChange="2025-09-12T10:36:01">ST_CTRLEMULTI</Name>
 			<BitSize>112</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -9675,7 +9675,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1005561E" Crc32="3562115517" LastChange="2025-09-11T14:56:27">ST_PARAM_FILE_OBJ</Name>
+			<Name Decoration="1005561E" Crc32="3562115517" LastChange="2025-09-12T10:36:01">ST_PARAM_FILE_OBJ</Name>
 			<BitSize>328</BitSize>
 			<SubItem>
 				<Name>udiIdxGroup</Name>
@@ -9709,7 +9709,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10093247" Crc32="0725424261" LastChange="2025-09-11T14:56:27">ST_CONFIG_GENERAL</Name>
+			<Name Decoration="10093247" Crc32="0725424261" LastChange="2025-09-12T10:36:01">ST_CONFIG_GENERAL</Name>
 			<BitSize>1024</BitSize>
 			<SubItem>
 				<Name>sDeviceName</Name>
@@ -9793,7 +9793,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100B3B86" Crc32="3024285483" LastChange="2025-09-11T14:56:27">ST_CONFIG_OBJECT</Name>
+			<Name Decoration="100B3B86" Crc32="3024285483" LastChange="2025-09-12T10:36:01">ST_CONFIG_OBJECT</Name>
 			<BitSize>592</BitSize>
 			<SubItem>
 				<Name>lrMaxVelocity</Name>
@@ -9863,7 +9863,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10105E5A" Crc32="3467943160" LastChange="2025-09-11T14:56:27">ST_CONFIG_SETTING</Name>
+			<Name Decoration="10105E5A" Crc32="3467943160" LastChange="2025-09-12T10:36:01">ST_CONFIG_SETTING</Name>
 			<BitSize>680</BitSize>
 			<SubItem>
 				<Name>lrJogFast</Name>
@@ -9963,7 +9963,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1009357D" Crc32="0124712433" LastChange="2025-09-11T14:56:27">ST_LIVEVALUE</Name>
+			<Name Decoration="1009357D" Crc32="0124712433" LastChange="2025-09-12T10:36:01">ST_LIVEVALUE</Name>
 			<BitSize>360</BitSize>
 			<SubItem>
 				<Name>dwState</Name>
@@ -10024,7 +10024,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1004118F" Crc32="3730355878" LastChange="2025-09-11T14:56:27">ST_OSCILLATION</Name>
+			<Name Decoration="1004118F" Crc32="3730355878" LastChange="2025-09-12T10:36:01">ST_OSCILLATION</Name>
 			<BitSize>112</BitSize>
 			<SubItem>
 				<Name>rFrequence</Name>
@@ -10061,7 +10061,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10016B30" Crc32="4140329348" LastChange="2025-09-11T14:56:27">ST_AXIS_FILE_OBJ</Name>
+			<Name Decoration="10016B30" Crc32="4140329348" LastChange="2025-09-12T10:36:01">ST_AXIS_FILE_OBJ</Name>
 			<BitSize>32400</BitSize>
 			<SubItem>
 				<Name>sData</Name>
@@ -10071,7 +10071,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10041704" Crc32="2761300196" LastChange="2025-09-11T14:56:27">ST_AXIS_DRIVESTATE</Name>
+			<Name Decoration="10041704" Crc32="2761300196" LastChange="2025-09-12T10:36:01">ST_AXIS_DRIVESTATE</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>usiDriveState0</Name>
@@ -10108,7 +10108,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100AB4F5" Crc32="3564515630" LastChange="2025-09-11T14:56:27">ST_AXIS</Name>
+			<Name Decoration="100AB4F5" Crc32="3564515630" LastChange="2025-09-12T10:36:01">ST_AXIS</Name>
 			<BitSize>51632</BitSize>
 			<SubItem>
 				<Name>T_CtrleSingle</Name>
@@ -10172,7 +10172,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1008235B" Crc32="1109604537" LastChange="2025-09-11T14:56:27">ST_CONFIG</Name>
+			<Name Decoration="1008235B" Crc32="1109604537" LastChange="2025-09-12T10:36:01">ST_CONFIG</Name>
 			<BitSize>184</BitSize>
 			<SubItem>
 				<Name>tDelayOn</Name>
@@ -10263,7 +10263,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10051A99" Crc32="2835083252" LastChange="2025-09-11T14:56:27">ST_STANDARD</Name>
+			<Name Decoration="10051A99" Crc32="2835083252" LastChange="2025-09-12T10:36:01">ST_STANDARD</Name>
 			<BitSize>112</BitSize>
 			<SubItem>
 				<Name>tDelayActiv</Name>
@@ -10313,7 +10313,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10124D6D" Crc32="2599561125" LastChange="2025-09-11T14:56:27">ST_ANALOG</Name>
+			<Name Decoration="10124D6D" Crc32="2599561125" LastChange="2025-09-12T10:36:01">ST_ANALOG</Name>
 			<BitSize>552</BitSize>
 			<SubItem>
 				<Name>tDelayActiv</Name>
@@ -10481,7 +10481,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100CB99A" Crc32="1340920596" LastChange="2025-09-11T14:56:27">ST_CTRLECYL</Name>
+			<Name Decoration="100CB99A" Crc32="1340920596" LastChange="2025-09-12T10:36:01">ST_CTRLECYL</Name>
 			<BitSize>776</BitSize>
 			<SubItem>
 				<Name>xFBActiv</Name>
@@ -10601,7 +10601,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10030D7C" Crc32="1544873659" LastChange="2025-09-11T14:56:27">ST_CYLINDER</Name>
+			<Name Decoration="10030D7C" Crc32="1544873659" LastChange="2025-09-12T10:36:01">ST_CYLINDER</Name>
 			<BitSize>976</BitSize>
 			<SubItem>
 				<Name>iCylinderTpye</Name>
@@ -10633,7 +10633,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100E36E9" Crc32="0291365681" LastChange="2025-09-11T14:56:27">ST_CTRLE_DCAXIS</Name>
+			<Name Decoration="100E36E9" Crc32="0291365681" LastChange="2025-09-12T10:36:01">ST_CTRLE_DCAXIS</Name>
 			<BitSize>264</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -10724,7 +10724,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10044F19" Crc32="1900140711" LastChange="2025-09-11T14:56:27">ST_PARAM_FILE_OBJ_DCAXIS</Name>
+			<Name Decoration="10044F19" Crc32="1900140711" LastChange="2025-09-12T10:36:01">ST_PARAM_FILE_OBJ_DCAXIS</Name>
 			<BitSize>264</BitSize>
 			<SubItem>
 				<Name>iRegisterNr</Name>
@@ -10752,7 +10752,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1007E35B" Crc32="0021090830" LastChange="2025-09-11T14:56:27">ST_CONFIG_GENERAL_DCAXIS</Name>
+			<Name Decoration="1007E35B" Crc32="0021090830" LastChange="2025-09-12T10:36:01">ST_CONFIG_GENERAL_DCAXIS</Name>
 			<BitSize>896</BitSize>
 			<SubItem>
 				<Name>sDeviceName</Name>
@@ -10804,7 +10804,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100B49E0" Crc32="1064830145" LastChange="2025-09-11T14:56:27">ST_CONFIG_OBJECT_DCAXIS</Name>
+			<Name Decoration="100B49E0" Crc32="1064830145" LastChange="2025-09-12T10:36:01">ST_CONFIG_OBJECT_DCAXIS</Name>
 			<BitSize>232</BitSize>
 			<SubItem>
 				<Name>diMaxMotorCurrent</Name>
@@ -10874,7 +10874,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10016B30" Crc32="2601795315" LastChange="2025-09-11T14:56:27">ST_AXIS_FILE_OBJ_DCAXIS</Name>
+			<Name Decoration="10016B30" Crc32="2601795315" LastChange="2025-09-12T10:36:01">ST_AXIS_FILE_OBJ_DCAXIS</Name>
 			<BitSize>32400</BitSize>
 			<SubItem>
 				<Name>sData</Name>
@@ -10893,7 +10893,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1005CFC0" Crc32="2417569243" LastChange="2025-09-11T14:56:27">ST_DC_AXIS</Name>
+			<Name Decoration="1005CFC0" Crc32="2417569243" LastChange="2025-09-12T10:36:01">ST_DC_AXIS</Name>
 			<BitSize>39072</BitSize>
 			<SubItem>
 				<Name>T_CtrleDCAxis</Name>
@@ -10927,7 +10927,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10134436" Crc32="1333630084" LastChange="2025-09-11T14:56:27">ST_HW_WORKSTATION</Name>
+			<Name Decoration="10134436" Crc32="1333630084" LastChange="2025-09-12T10:36:01">ST_HW_WORKSTATION</Name>
 			<BitSize>195280</BitSize>
 			<SubItem>
 				<Name>xActiveStation</Name>
@@ -11096,7 +11096,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10069152" Crc32="2511110449" LastChange="2025-09-11T14:56:27">ST_STATION</Name>
+			<Name Decoration="10069152" Crc32="2511110449" LastChange="2025-09-12T10:36:01">ST_STATION</Name>
 			<BitSize>195840</BitSize>
 			<SubItem>
 				<Name>xActive</Name>
@@ -11142,7 +11142,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1007B5DE" Crc32="1463945512" LastChange="2025-09-11T14:56:27">FB_ProcessInformation</Name>
+			<Name Decoration="1007B5DE" Crc32="1463945512" LastChange="2025-09-12T10:36:01">FB_ProcessInformation</Name>
 			<BitSize>376</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TONWorkTime</Name>
@@ -11192,7 +11192,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10031A2D" Crc32="4051783102" LastChange="2025-09-11T14:56:27">FB_WPCounter</Name>
+			<Name Decoration="10031A2D" Crc32="4051783102" LastChange="2025-09-12T10:36:01">FB_WPCounter</Name>
 			<BitSize>80</BitSize>
 			<SubItem>
 				<Name FbParameter="Input">iStationNr</Name>
@@ -11218,7 +11218,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10146452" Crc32="4050993577" LastChange="2025-09-11T14:56:27">FB_WPAnalysis</Name>
+			<Name Decoration="10146452" Crc32="4050993577" LastChange="2025-09-12T10:36:01">FB_WPAnalysis</Name>
 			<BitSize>2048</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TONCycleTime</Name>
@@ -11352,7 +11352,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100718FA" Crc32="0526068862" LastChange="2025-09-11T14:56:27">ST_PROCESSDATA_CTRLE</Name>
+			<Name Decoration="100718FA" Crc32="0526068862" LastChange="2025-09-12T10:36:01">ST_PROCESSDATA_CTRLE</Name>
 			<BitSize>112</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -11401,7 +11401,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10013146" Crc32="0327395614" LastChange="2025-09-11T14:56:27">ST_PROCESSDATA</Name>
+			<Name Decoration="10013146" Crc32="0327395614" LastChange="2025-09-12T10:36:01">ST_PROCESSDATA</Name>
 			<BitSize>112</BitSize>
 			<SubItem>
 				<Name>T_Ctrle</Name>
@@ -11411,7 +11411,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1044321E" Crc32="0244334146" LastChange="2025-09-11T14:56:27">FB_PROCESS</Name>
+			<Name Decoration="1044321E" Crc32="0244334146" LastChange="2025-09-12T10:36:01">FB_PROCESS</Name>
 			<BitSize>737336</BitSize>
 			<SubItem>
 				<Name>xDisable</Name>
@@ -11879,7 +11879,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1029E919" Crc32="2371513230" LastChange="2025-09-11T14:56:27">FB_PROCESSDATA</Name>
+			<Name Decoration="1029E919" Crc32="2371513230" LastChange="2025-09-12T10:36:01">FB_PROCESSDATA</Name>
 			<BitSize>2441304</BitSize>
 			<SubItem>
 				<Name>sTmp</Name>
@@ -12136,7 +12136,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1009AB34" Crc32="3705331056" LastChange="2025-09-11T14:56:27">ST_PROFILE_CTRLE</Name>
+			<Name Decoration="1009AB34" Crc32="3705331056" LastChange="2025-09-12T10:36:01">ST_PROFILE_CTRLE</Name>
 			<BitSize>2384</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -12197,7 +12197,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100283D7" Crc32="0554523977" LastChange="2025-09-11T14:56:27">ST_PROFILEONLINECHANGE</Name>
+			<Name Decoration="100283D7" Crc32="0554523977" LastChange="2025-09-12T10:36:01">ST_PROFILEONLINECHANGE</Name>
 			<BitSize>384</BitSize>
 			<SubItem>
 				<Name>T_Max</Name>
@@ -12222,7 +12222,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10082787" Crc32="3740512060" LastChange="2025-09-11T14:56:27">ST_PROFILE</Name>
+			<Name Decoration="10082787" Crc32="3740512060" LastChange="2025-09-12T10:36:01">ST_PROFILE</Name>
 			<BitSize>39928</BitSize>
 			<SubItem>
 				<Name>T_Ctrle</Name>
@@ -12286,7 +12286,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="101AB36C" Crc32="1511743154" LastChange="2025-09-11T14:56:27">FB_PROFILE_FILE</Name>
+			<Name Decoration="101AB36C" Crc32="1511743154" LastChange="2025-09-12T10:36:01">FB_PROFILE_FILE</Name>
 			<BitSize>2458048</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TimerOut</Name>
@@ -12468,7 +12468,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100D4DA5" Crc32="2760648645" LastChange="2025-09-11T14:56:27">FB_ReadAxisState</Name>
+			<Name Decoration="100D4DA5" Crc32="2760648645" LastChange="2025-09-12T10:36:01">FB_ReadAxisState</Name>
 			<BitSize>4152</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcEtherCAT.lib">fbCoEReadParameter</Name>
@@ -12560,7 +12560,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1008A393" Crc32="0980304959" LastChange="2025-09-11T14:56:27">FB_ResetError</Name>
+			<Name Decoration="1008A393" Crc32="0980304959" LastChange="2025-09-12T10:36:01">FB_ResetError</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">RisingEdgeExecute</Name>
@@ -12619,7 +12619,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100834DD" Crc32="0974240820" LastChange="2025-09-11T14:56:27">ST_TWINSAFE_OUT</Name>
+			<Name Decoration="100834DD" Crc32="0974240820" LastChange="2025-09-12T10:36:01">ST_TWINSAFE_OUT</Name>
 			<BitSize>64</BitSize>
 			<SubItem>
 				<Name>QxContactorMasterModul400VCh1</Name>
@@ -12695,7 +12695,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10131AA1" Crc32="3509348876" LastChange="2025-09-11T14:56:27">FB_SAFETYLOGIC</Name>
+			<Name Decoration="10131AA1" Crc32="3509348876" LastChange="2025-09-12T10:36:01">FB_SAFETYLOGIC</Name>
 			<BitSize>52336</BitSize>
 			<SubItem>
 				<Name>FBCheckSetupMode</Name>
@@ -12820,7 +12820,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="101BD03A" Crc32="1050345141" LastChange="2025-09-11T14:56:27">FB_SparkOutProcess</Name>
+			<Name Decoration="101BD03A" Crc32="1050345141" LastChange="2025-09-12T10:36:01">FB_SparkOutProcess</Name>
 			<BitSize>10856</BitSize>
 			<SubItem>
 				<Name>xTmpStart</Name>
@@ -13002,8 +13002,8 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10FA96A7" Crc32="3462126786" LastChange="2025-09-11T14:56:27">FB_STATION_WORK</Name>
-			<BitSize>241456</BitSize>
+			<Name Decoration="10FB9F97" Crc32="0707242621" LastChange="2025-09-12T10:36:01">FB_STATION_WORK</Name>
+			<BitSize>241464</BitSize>
 			<SubItem>
 				<Name>ptrTAxisZ</Name>
 				<Type Decoration="100AB4F5" Pointer="1">ST_AXIS</Type>
@@ -14322,13 +14322,22 @@
 				<BitOffs>237904</BitOffs>
 			</SubItem>
 			<SubItem>
+				<Name>xConventionalControllerEnable</Name>
+				<Type>BOOL</Type>
+				<Comment>
+					<![CDATA[BEF]]>
+				</Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>237936</BitOffs>
+			</SubItem>
+			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TONStFct_WaitMeasure</Name>
 				<Type Decoration="10060D24">TON</Type>
 				<Comment>
 					<![CDATA[IGS]]>
 				</Comment>
 				<BitSize>120</BitSize>
-				<BitOffs>237936</BitOffs>
+				<BitOffs>237944</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>iStFct_MeasuringStep</Name>
@@ -14337,7 +14346,7 @@
 					<![CDATA[IGS]]>
 				</Comment>
 				<BitSize>16</BitSize>
-				<BitOffs>238056</BitOffs>
+				<BitOffs>238064</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>arStFct_NullPointToolTorque</Name>
@@ -14346,7 +14355,7 @@
 					<![CDATA[Durchschnittswert von 20 Messwerten wird der Nullpunkt bestimmt]]>
 				</Comment>
 				<BitSize>640</BitSize>
-				<BitOffs>238072</BitOffs>
+				<BitOffs>238080</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>rStFct_NullPointToolTorque</Name>
@@ -14355,199 +14364,199 @@
 					<![CDATA[IGS]]>
 				</Comment>
 				<BitSize>32</BitSize>
-				<BitOffs>238712</BitOffs>
+				<BitOffs>238720</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TONWaitHCActive</Name>
 				<Type Decoration="10060D24">TON</Type>
 				<BitSize>120</BitSize>
-				<BitOffs>238744</BitOffs>
+				<BitOffs>238752</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TONWaitHCInactive</Name>
 				<Type Decoration="10060D24">TON</Type>
 				<BitSize>120</BitSize>
-				<BitOffs>238864</BitOffs>
+				<BitOffs>238872</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>lrActualPositionSave</Name>
 				<Type>LREAL</Type>
 				<BitSize>64</BitSize>
-				<BitOffs>238984</BitOffs>
+				<BitOffs>238992</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>lrZ1HCMinPosition</Name>
 				<Type>LREAL</Type>
 				<BitSize>64</BitSize>
-				<BitOffs>239048</BitOffs>
+				<BitOffs>239056</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>lrZ1HCMaxPosition</Name>
 				<Type>LREAL</Type>
 				<BitSize>64</BitSize>
-				<BitOffs>239112</BitOffs>
+				<BitOffs>239120</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>diHCCheckCounter</Name>
 				<Type>DINT</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>239176</BitOffs>
+				<BitOffs>239184</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>lrActualPositionSaveSwitchZSpeed</Name>
 				<Type>LREAL</Type>
 				<BitSize>64</BitSize>
-				<BitOffs>239208</BitOffs>
+				<BitOffs>239216</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TONWaitStopOAxis</Name>
 				<Type Decoration="10060D24">TON</Type>
 				<BitSize>120</BitSize>
-				<BitOffs>239272</BitOffs>
+				<BitOffs>239280</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>xZFastSpeedSettled</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>239392</BitOffs>
+				<BitOffs>239400</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TONCalcTorque</Name>
 				<Type Decoration="10060D24">TON</Type>
 				<BitSize>120</BitSize>
-				<BitOffs>239400</BitOffs>
+				<BitOffs>239408</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>diStepCount</Name>
 				<Type>DINT</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>239520</BitOffs>
+				<BitOffs>239528</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>rTorqueSpindleSensorSave</Name>
 				<Type>REAL</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>239552</BitOffs>
+				<BitOffs>239560</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>rTorqueSpindleSensor</Name>
 				<Type>REAL</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>239584</BitOffs>
+				<BitOffs>239592</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>rOutMaxLimit</Name>
 				<Type>REAL</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>239616</BitOffs>
+				<BitOffs>239624</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>rOutMinLimit</Name>
 				<Type>REAL</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>239648</BitOffs>
+				<BitOffs>239656</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>T_CtrlPara</Name>
 				<Type Decoration="10071B0B">ST_CTRL_PID_PARAM</Type>
 				<BitSize>200</BitSize>
-				<BitOffs>239680</BitOffs>
+				<BitOffs>239688</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>FBPIDCTRL</Name>
 				<Type Decoration="100E676C">FB_PID_CONTROL</Type>
 				<BitSize>488</BitSize>
-				<BitOffs>239880</BitOffs>
+				<BitOffs>239888</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>T_CtrlPara_D</Name>
 				<Type Decoration="10071B0B">ST_CTRL_PID_PARAM</Type>
 				<BitSize>200</BitSize>
-				<BitOffs>240368</BitOffs>
+				<BitOffs>240376</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>rActualValue</Name>
 				<Type>REAL</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>240568</BitOffs>
+				<BitOffs>240576</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>FBDCONTROL</Name>
 				<Type Decoration="100931BE">FB_D_CONTROL</Type>
 				<BitSize>240</BitSize>
-				<BitOffs>240600</BitOffs>
+				<BitOffs>240608</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>rStFct_CalcZSpeed_D</Name>
 				<Type>REAL</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>240840</BitOffs>
+				<BitOffs>240848</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">TONWaitMovement</Name>
 				<Type Decoration="10060D24">TON</Type>
 				<BitSize>120</BitSize>
-				<BitOffs>240872</BitOffs>
+				<BitOffs>240880</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">RisingEdgeCountHC</Name>
 				<Type Decoration="1003051C">R_TRIG</Type>
 				<BitSize>24</BitSize>
-				<BitOffs>240992</BitOffs>
+				<BitOffs>241000</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>rOutfeedStrokeAxisSpeed</Name>
 				<Type>REAL</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>241016</BitOffs>
+				<BitOffs>241024</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>xBlockSetFastVelZAxis</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241048</BitOffs>
+				<BitOffs>241056</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>lrStartRecordMaxTorque</Name>
 				<Type>LREAL</Type>
 				<BitSize>64</BitSize>
-				<BitOffs>241056</BitOffs>
+				<BitOffs>241064</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>lrZCheckPosition</Name>
 				<Type>LREAL</Type>
 				<BitSize>64</BitSize>
-				<BitOffs>241120</BitOffs>
+				<BitOffs>241128</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>xSetDefaultSpeedS</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241184</BitOffs>
+				<BitOffs>241192</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>lrSaveSSpeed</Name>
 				<Type>LREAL</Type>
 				<BitSize>64</BitSize>
-				<BitOffs>241192</BitOffs>
+				<BitOffs>241200</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>xBlockActivateOAxis</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241256</BitOffs>
+				<BitOffs>241264</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>xEndPosReachZylindricalProcess</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241264</BitOffs>
+				<BitOffs>241272</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Input">xSafetyCircuitOn</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241272</BitOffs>
+				<BitOffs>241280</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Input">xAxisBrakeBlock</Name>
@@ -14556,73 +14565,73 @@
 					<![CDATA[Blockieren der automatischen überwachung der Achsenbremsen]]>
 				</Comment>
 				<BitSize>8</BitSize>
-				<BitOffs>241280</BitOffs>
+				<BitOffs>241288</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Input">xProcessDone</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241288</BitOffs>
+				<BitOffs>241296</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">xActive</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241296</BitOffs>
+				<BitOffs>241304</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">xStatusRdy</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241304</BitOffs>
+				<BitOffs>241312</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">xStatusEnd</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241312</BitOffs>
+				<BitOffs>241320</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">xStatusStop</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241320</BitOffs>
+				<BitOffs>241328</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">xStatusRef</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241328</BitOffs>
+				<BitOffs>241336</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">xError</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>241336</BitOffs>
+				<BitOffs>241344</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">iErrorNr</Name>
 				<Type>DINT</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>241344</BitOffs>
+				<BitOffs>241352</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">iStatusFctNr</Name>
 				<Type>INT</Type>
 				<BitSize>16</BitSize>
-				<BitOffs>241376</BitOffs>
+				<BitOffs>241384</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="InOut">T_Station_Parameter</Name>
 				<Type Decoration="101A1938" Pointer="1">ST_RETAIN_DATA_STATIONWORK</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>241392</BitOffs>
+				<BitOffs>241400</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="InOut">T_Station_Work</Name>
 				<Type Decoration="10069152" Pointer="1">ST_STATION</Type>
 				<BitSize>32</BitSize>
-				<BitOffs>241424</BitOffs>
+				<BitOffs>241432</BitOffs>
 			</SubItem>
 			<FbInfo>
 				<CodeIndex>1492</CodeIndex>
@@ -14774,7 +14783,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10059F37" Crc32="0919211611" LastChange="2025-09-11T14:56:27">FB_TeachPosToHMI</Name>
+			<Name Decoration="10059F37" Crc32="0919211611" LastChange="2025-09-12T10:36:01">FB_TeachPosToHMI</Name>
 			<BitSize>2528</BitSize>
 			<SubItem>
 				<Name FbParameter="Input">iAxisNr</Name>
@@ -14815,7 +14824,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="101CD2BD" Crc32="3868165564" LastChange="2025-09-11T14:56:27">FB_TorqueLevelAirPressureAnalog</Name>
+			<Name Decoration="101CD2BD" Crc32="3868165564" LastChange="2025-09-12T10:36:01">FB_TorqueLevelAirPressureAnalog</Name>
 			<BitSize>11192</BitSize>
 			<SubItem>
 				<Name>rTorque</Name>
@@ -15006,7 +15015,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100A3FCC" Crc32="2878451685" LastChange="2025-09-11T14:56:27">ST_PARTANALYSIS_OUTPUT</Name>
+			<Name Decoration="100A3FCC" Crc32="2878451685" LastChange="2025-09-12T10:36:01">ST_PARTANALYSIS_OUTPUT</Name>
 			<BitSize>208</BitSize>
 			<SubItem>
 				<Name>bHole_WorkPartQuality</Name>
@@ -15097,7 +15106,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10050CBD" Crc32="2170492186" LastChange="2025-09-11T14:56:27">FB_WRAP_WPQUALITY</Name>
+			<Name Decoration="10050CBD" Crc32="2170492186" LastChange="2025-09-12T10:36:01">FB_WRAP_WPQUALITY</Name>
 			<BitSize>23064</BitSize>
 			<SubItem>
 				<Name>diTmpHoleNumber</Name>
@@ -15135,7 +15144,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100E8D34" Crc32="3914337426" LastChange="2025-09-11T14:56:27">FB_WriteObject</Name>
+			<Name Decoration="100E8D34" Crc32="3914337426" LastChange="2025-09-12T10:36:01">FB_WriteObject</Name>
 			<BitSize>4208</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcEtherCAT.lib">fbCoEWriteParameter</Name>
@@ -15233,7 +15242,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1010E053" Crc32="3047367388" LastChange="2025-09-11T14:56:27">FBConvertParaAxis</Name>
+			<Name Decoration="1010E053" Crc32="3047367388" LastChange="2025-09-12T10:36:01">FBConvertParaAxis</Name>
 			<BitSize>4344</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">RisingEdgeStart</Name>
@@ -15343,7 +15352,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100353E9" Crc32="2518616190" LastChange="2025-09-11T14:56:27">FBDefaultAxisValue</Name>
+			<Name Decoration="100353E9" Crc32="2518616190" LastChange="2025-09-12T10:36:01">FBDefaultAxisValue</Name>
 			<BitSize>2088</BitSize>
 			<SubItem>
 				<Name FbParameter="Input">xDefaultValue</Name>
@@ -15369,7 +15378,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="103A99AB" Crc32="3610269961" LastChange="2025-09-11T14:56:27">FBHW_AXIS_DC</Name>
+			<Name Decoration="103A99AB" Crc32="3610269961" LastChange="2025-09-12T10:36:01">FBHW_AXIS_DC</Name>
 			<BitSize>92032</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">RisingEdgeResetFB</Name>
@@ -15740,7 +15749,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10064B4F" Crc32="1792925860" LastChange="2025-09-11T14:56:27">FBHW_AXIS_LIVEVALUES</Name>
+			<Name Decoration="10064B4F" Crc32="1792925860" LastChange="2025-09-12T10:36:01">FBHW_AXIS_LIVEVALUES</Name>
 			<BitSize>176</BitSize>
 			<SubItem>
 				<Name>i</Name>
@@ -15787,7 +15796,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1070B359" Crc32="3983955377" LastChange="2025-09-11T14:56:27">FBHW_AXIS_SINGLE</Name>
+			<Name Decoration="1070B359" Crc32="3983955377" LastChange="2025-09-12T10:36:01">FBHW_AXIS_SINGLE</Name>
 			<BitSize>33864</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcMC.lib">fbAxisReset</Name>
@@ -16482,7 +16491,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1017DD39" Crc32="2874056393" LastChange="2025-09-11T14:56:27">FBHW_CYL_ANALOG</Name>
+			<Name Decoration="1017DD39" Crc32="2874056393" LastChange="2025-09-12T10:36:01">FBHW_CYL_ANALOG</Name>
 			<BitSize>98024</BitSize>
 			<SubItem>
 				<Name>xConfirmResetFB</Name>
@@ -16634,7 +16643,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10129A09" Crc32="4236519588" LastChange="2025-09-11T14:56:27">FBHW_CYL_STANDARD</Name>
+			<Name Decoration="10129A09" Crc32="4236519588" LastChange="2025-09-12T10:36:01">FBHW_CYL_STANDARD</Name>
 			<BitSize>1136</BitSize>
 			<SubItem>
 				<Name>xConfirmResetFB</Name>
@@ -16756,7 +16765,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1014C134" Crc32="0356149999" LastChange="2025-09-11T14:56:27">FBHW_CYL_STANDARD_2WAY</Name>
+			<Name Decoration="1014C134" Crc32="0356149999" LastChange="2025-09-12T10:36:01">FBHW_CYL_STANDARD_2WAY</Name>
 			<BitSize>1264</BitSize>
 			<SubItem>
 				<Name>xConfirmResetFB</Name>
@@ -16899,7 +16908,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1029993F" Crc32="2656513717" LastChange="2025-09-11T14:56:27">FBHW_HDD</Name>
+			<Name Decoration="1029993F" Crc32="2656513717" LastChange="2025-09-12T10:36:01">FBHW_HDD</Name>
 			<BitSize>553704</BitSize>
 			<SubItem>
 				<Name>xConfirmResetFB</Name>
@@ -17159,7 +17168,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10081928" Crc32="3306047476" LastChange="2025-09-11T14:56:27">FBHW_NOVRAM</Name>
+			<Name Decoration="10081928" Crc32="3306047476" LastChange="2025-09-12T10:36:01">FBHW_NOVRAM</Name>
 			<BitSize>1680</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\TcIoFunctions.lib">fbNovRamReadWrite</Name>
@@ -17230,7 +17239,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1009A19C" Crc32="1979632007" LastChange="2025-09-11T14:56:27">FBHW_PANEL_IO</Name>
+			<Name Decoration="1009A19C" Crc32="1979632007" LastChange="2025-09-12T10:36:01">FBHW_PANEL_IO</Name>
 			<BitSize>280</BitSize>
 			<SubItem>
 				<Name>xConfirmResetFB</Name>
@@ -17295,7 +17304,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10112BD5" Crc32="3433010051" LastChange="2025-09-11T14:56:27">ST_TWINSAFE_DRIVE</Name>
+			<Name Decoration="10112BD5" Crc32="3433010051" LastChange="2025-09-12T10:36:01">ST_TWINSAFE_DRIVE</Name>
 			<BitSize>136</BitSize>
 			<SubItem>
 				<Name>xSTO</Name>
@@ -17452,7 +17461,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1002089B" Crc32="1161282956" LastChange="2025-09-11T14:56:27">ST_COMM_IN_DCAXIS</Name>
+			<Name Decoration="1002089B" Crc32="1161282956" LastChange="2025-09-12T10:36:01">ST_COMM_IN_DCAXIS</Name>
 			<BitSize>24</BitSize>
 			<SubItem>
 				<Name>usiStatusWord</Name>
@@ -17468,7 +17477,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1002093B" Crc32="1875421623" LastChange="2025-09-11T14:56:27">ST_COMM_OUT_DCAXIS</Name>
+			<Name Decoration="1002093B" Crc32="1875421623" LastChange="2025-09-12T10:36:01">ST_COMM_OUT_DCAXIS</Name>
 			<BitSize>24</BitSize>
 			<SubItem>
 				<Name>usiControlWord</Name>
@@ -17484,7 +17493,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1083A0A7" Crc32="1887296434" LastChange="2025-09-11T14:56:27">FBHW_STATION_WORK</Name>
+			<Name Decoration="1083A0A7" Crc32="1887296434" LastChange="2025-09-12T10:36:01">FBHW_STATION_WORK</Name>
 			<BitSize>598864</BitSize>
 			<SubItem>
 				<Name>ptrTAxisZ</Name>
@@ -18556,7 +18565,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10055BD0" Crc32="2813446677" LastChange="2025-09-11T14:56:27">FBQVIS_INITPAGE</Name>
+			<Name Decoration="10055BD0" Crc32="2813446677" LastChange="2025-09-12T10:36:01">FBQVIS_INITPAGE</Name>
 			<BitSize>112</BitSize>
 			<SubItem>
 				<Name>ptrConfigPage</Name>
@@ -18768,7 +18777,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100D3B51" Crc32="3198005321" LastChange="2025-09-11T14:56:27">ST_EXCHG_PARAM_TEACHIN</Name>
+			<Name Decoration="100D3B51" Crc32="3198005321" LastChange="2025-09-12T10:36:01">ST_EXCHG_PARAM_TEACHIN</Name>
 			<BitSize>392</BitSize>
 			<SubItem>
 				<Name>rIncSlow</Name>
@@ -18850,7 +18859,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10062764" Crc32="1138982093" LastChange="2025-09-11T14:56:27">ST_TEMP_ACTIVE_STATE</Name>
+			<Name Decoration="10062764" Crc32="1138982093" LastChange="2025-09-12T10:36:01">ST_TEMP_ACTIVE_STATE</Name>
 			<BitSize>96</BitSize>
 			<SubItem>
 				<Name>iActCyl_SetupB1_St1</Name>
@@ -18899,7 +18908,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1006210E" Crc32="2682628386" LastChange="2025-09-11T14:56:27">ST_QVISCTRLE</Name>
+			<Name Decoration="1006210E" Crc32="2682628386" LastChange="2025-09-12T10:36:01">ST_QVISCTRLE</Name>
 			<BitSize>192</BitSize>
 			<SubItem>
 				<Name>dwInCommand</Name>
@@ -18961,7 +18970,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="113B8681" Crc32="0660326211" LastChange="2025-09-11T14:56:27">FBQVIS</Name>
+			<Name Decoration="113B8681" Crc32="0660326211" LastChange="2025-09-12T10:36:01">FBQVIS</Name>
 			<BitSize>99440</BitSize>
 			<SubItem>
 				<Name>xActivFB</Name>
@@ -21193,7 +21202,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100230BA" Crc32="3742424088" LastChange="2025-09-11T14:56:27">ST_AXIS_CTRLE</Name>
+			<Name Decoration="100230BA" Crc32="3742424088" LastChange="2025-09-12T10:36:01">ST_AXIS_CTRLE</Name>
 			<BitSize>8</BitSize>
 			<StaticItem>
 				<Name Static="Output">diVelocityCommandValue</Name>
@@ -21217,7 +21226,7 @@
 			</StaticItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100106C8" Crc32="3044836858" LastChange="2025-09-11T14:56:27">ST_COLLISION_DETECTION</Name>
+			<Name Decoration="100106C8" Crc32="3044836858" LastChange="2025-09-12T10:36:01">ST_COLLISION_DETECTION</Name>
 			<BitSize>8</BitSize>
 			<SubItem>
 				<Name>xZAxisBrakeReleased</Name>
@@ -21227,7 +21236,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100B6C14" Crc32="2566365208" LastChange="2025-09-11T14:56:27">ST_CTRLE_UPS</Name>
+			<Name Decoration="100B6C14" Crc32="2566365208" LastChange="2025-09-12T10:36:01">ST_CTRLE_UPS</Name>
 			<BitSize>144</BitSize>
 			<SubItem>
 				<Name>xDIPDisable</Name>
@@ -21300,7 +21309,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10045AF0" Crc32="3333197310" LastChange="2025-09-11T14:56:27">ST_CTRLEBUTTON</Name>
+			<Name Decoration="10045AF0" Crc32="3333197310" LastChange="2025-09-12T10:36:01">ST_CTRLEBUTTON</Name>
 			<BitSize>128</BitSize>
 			<SubItem>
 				<Name>T_Start</Name>
@@ -21334,7 +21343,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100A2E36" Crc32="1705679888" LastChange="2025-09-11T14:56:27">ST_CTRLESTARTUP</Name>
+			<Name Decoration="100A2E36" Crc32="1705679888" LastChange="2025-09-12T10:36:01">ST_CTRLESTARTUP</Name>
 			<BitSize>120</BitSize>
 			<SubItem>
 				<Name>xExecute</Name>
@@ -21401,7 +21410,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="100A4396" Crc32="0028161415" LastChange="2025-09-11T14:56:27">ST_SAFETY_STATUS</Name>
+			<Name Decoration="100A4396" Crc32="0028161415" LastChange="2025-09-12T10:36:01">ST_SAFETY_STATUS</Name>
 			<BitSize>88</BitSize>
 			<SubItem>
 				<Name>iSetupMode</Name>
@@ -21474,7 +21483,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1003105E" Crc32="1864548862" LastChange="2025-09-11T14:56:27">ST_STARTUPSTATE</Name>
+			<Name Decoration="1003105E" Crc32="1864548862" LastChange="2025-09-12T10:36:01">ST_STARTUPSTATE</Name>
 			<BitSize>24</BitSize>
 			<SubItem>
 				<Name>xPLCReady</Name>
@@ -21496,7 +21505,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10026C70" Crc32="0588980432" LastChange="2025-09-11T14:56:27">ST_STARTUP</Name>
+			<Name Decoration="10026C70" Crc32="0588980432" LastChange="2025-09-12T10:36:01">ST_STARTUP</Name>
 			<BitSize>144</BitSize>
 			<SubItem>
 				<Name>T_Ctrle</Name>
@@ -21512,7 +21521,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="1006285B" Crc32="4133922900" LastChange="2025-09-11T14:56:27">ST_TERMINAL_STATE</Name>
+			<Name Decoration="1006285B" Crc32="4133922900" LastChange="2025-09-12T10:36:01">ST_TERMINAL_STATE</Name>
 			<BitSize>96</BitSize>
 			<SubItem>
 				<Name>wEtherCAT_1_State</Name>
@@ -21570,7 +21579,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10031C7E" Crc32="1588673114" LastChange="2025-09-11T14:56:27">ST_TWINSAFE_CTRLE_IN</Name>
+			<Name Decoration="10031C7E" Crc32="1588673114" LastChange="2025-09-12T10:36:01">ST_TWINSAFE_CTRLE_IN</Name>
 			<BitSize>24</BitSize>
 			<SubItem>
 				<Name>xTwinSAFE_Group_FB_Error_1</Name>
@@ -21592,7 +21601,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10020C37" Crc32="0052258695" LastChange="2025-09-11T14:56:27">ST_TWINSAFE_CTRLE_OUT</Name>
+			<Name Decoration="10020C37" Crc32="0052258695" LastChange="2025-09-12T10:36:01">ST_TWINSAFE_CTRLE_OUT</Name>
 			<BitSize>16</BitSize>
 			<SubItem>
 				<Name>xTwinSAFE_Run_1</Name>
@@ -21608,7 +21617,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="10084219" Crc32="4162074626" LastChange="2025-09-11T14:56:27">ST_TWINSAFE_FB_ERROR</Name>
+			<Name Decoration="10084219" Crc32="4162074626" LastChange="2025-09-12T10:36:01">ST_TWINSAFE_FB_ERROR</Name>
 			<BitSize>64</BitSize>
 			<SubItem>
 				<Name>xMON_EmergencyButtonMachine</Name>
@@ -21684,7 +21693,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name Decoration="102702C2" Crc32="2713461900" LastChange="2025-09-11T14:56:27">ST_VISUPAGENUMBER</Name>
+			<Name Decoration="102702C2" Crc32="2713461900" LastChange="2025-09-12T10:36:01">ST_VISUPAGENUMBER</Name>
 			<BitSize>624</BitSize>
 			<SubItem>
 				<Name>iStart_Page1</Name>
@@ -35949,7 +35958,7 @@
 	</DataTypes>
 	<Functions>
 		<Function>
-			<Name Decoration="10020A21" Crc32="1647389450" LastChange="2025-09-11T14:56:27">bFct_GetLedState</Name>
+			<Name Decoration="10020A21" Crc32="1647389450" LastChange="2025-09-12T10:36:01">bFct_GetLedState</Name>
 			<FunInfo>
 				<CodeIndex>1417</CodeIndex>
 				<ReturnValue>
@@ -35965,7 +35974,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100818EF" Crc32="3399658313" LastChange="2025-09-11T14:56:27">bFct_SetAxisStat</Name>
+			<Name Decoration="100818EF" Crc32="3399658313" LastChange="2025-09-12T10:36:01">bFct_SetAxisStat</Name>
 			<FunInfo>
 				<CodeIndex>1418</CodeIndex>
 				<ReturnValue>
@@ -36032,7 +36041,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10040D71" Crc32="0456457132" LastChange="2025-09-11T14:56:27">bFct_SetCylStat</Name>
+			<Name Decoration="10040D71" Crc32="0456457132" LastChange="2025-09-12T10:36:01">bFct_SetCylStat</Name>
 			<FunInfo>
 				<CodeIndex>1419</CodeIndex>
 				<ReturnValue>
@@ -36058,7 +36067,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10060F3A" Crc32="2912032535" LastChange="2025-09-11T14:56:27">Fct_ConvertDateToString</Name>
+			<Name Decoration="10060F3A" Crc32="2912032535" LastChange="2025-09-12T10:36:01">Fct_ConvertDateToString</Name>
 			<FunInfo>
 				<CodeIndex>1690</CodeIndex>
 				<ReturnValue>
@@ -36097,7 +36106,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10040F20" Crc32="3367063636" LastChange="2025-09-11T14:56:27">iFct_GetBitNumber</Name>
+			<Name Decoration="10040F20" Crc32="3367063636" LastChange="2025-09-12T10:36:01">iFct_GetBitNumber</Name>
 			<FunInfo>
 				<CodeIndex>1691</CodeIndex>
 				<ReturnValue>
@@ -36123,7 +36132,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="1003141B" Crc32="0606497435" LastChange="2025-09-11T14:56:27">iFct_GetLeftButtonNumber</Name>
+			<Name Decoration="1003141B" Crc32="0606497435" LastChange="2025-09-12T10:36:01">iFct_GetLeftButtonNumber</Name>
 			<FunInfo>
 				<CodeIndex>1692</CodeIndex>
 				<ReturnValue>
@@ -36144,7 +36153,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10062A94" Crc32="1547455281" LastChange="2025-09-11T14:56:27">iFctExistProfileName</Name>
+			<Name Decoration="10062A94" Crc32="1547455281" LastChange="2025-09-12T10:36:01">iFctExistProfileName</Name>
 			<FunInfo>
 				<CodeIndex>1693</CodeIndex>
 				<ReturnValue>
@@ -36180,7 +36189,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="1003537C" Crc32="2969489455" LastChange="2025-09-11T14:56:27">sFct_GetLampOrderNumberEngl</Name>
+			<Name Decoration="1003537C" Crc32="2969489455" LastChange="2025-09-12T10:36:01">sFct_GetLampOrderNumberEngl</Name>
 			<FunInfo>
 				<CodeIndex>1721</CodeIndex>
 				<ReturnValue>
@@ -36201,7 +36210,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10035334" Crc32="2529143972" LastChange="2025-09-11T14:56:27">sFct_GetLampOrderNumberGer</Name>
+			<Name Decoration="10035334" Crc32="2529143972" LastChange="2025-09-12T10:36:01">sFct_GetLampOrderNumberGer</Name>
 			<FunInfo>
 				<CodeIndex>1722</CodeIndex>
 				<ReturnValue>
@@ -36222,7 +36231,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10051C23" Crc32="0725958446" LastChange="2025-09-11T14:56:27">sFctDeleteChar</Name>
+			<Name Decoration="10051C23" Crc32="0725958446" LastChange="2025-09-12T10:36:01">sFctDeleteChar</Name>
 			<FunInfo>
 				<CodeIndex>1723</CodeIndex>
 				<ReturnValue>
@@ -36253,7 +36262,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10086531" Crc32="2060703662" LastChange="2025-09-11T14:56:27">sFctUpLowCase</Name>
+			<Name Decoration="10086531" Crc32="2060703662" LastChange="2025-09-12T10:36:01">sFctUpLowCase</Name>
 			<FunInfo>
 				<CodeIndex>1724</CodeIndex>
 				<ReturnValue>
@@ -36302,7 +36311,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="1006A330" Crc32="2166591116" LastChange="2025-09-11T14:56:27">udiFct_FormatNumber</Name>
+			<Name Decoration="1006A330" Crc32="2166591116" LastChange="2025-09-12T10:36:01">udiFct_FormatNumber</Name>
 			<FunInfo>
 				<CodeIndex>1725</CodeIndex>
 				<ReturnValue>
@@ -36338,7 +36347,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10031157" Crc32="3820452996" LastChange="2025-09-11T14:56:27">wFct_GetTaskNumber</Name>
+			<Name Decoration="10031157" Crc32="3820452996" LastChange="2025-09-12T10:36:01">wFct_GetTaskNumber</Name>
 			<FunInfo>
 				<CodeIndex>1726</CodeIndex>
 				<ReturnValue>
@@ -36359,7 +36368,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10051D37" Crc32="1884374351" LastChange="2025-09-11T14:56:27">xFct_CheckSingleButtonActivation</Name>
+			<Name Decoration="10051D37" Crc32="1884374351" LastChange="2025-09-12T10:36:01">xFct_CheckSingleButtonActivation</Name>
 			<FunInfo>
 				<CodeIndex>1727</CodeIndex>
 				<ReturnValue>
@@ -36390,7 +36399,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10030E9F" Crc32="2628656855" LastChange="2025-09-11T14:56:27">xFct_GetJogMode</Name>
+			<Name Decoration="10030E9F" Crc32="2628656855" LastChange="2025-09-12T10:36:01">xFct_GetJogMode</Name>
 			<FunInfo>
 				<CodeIndex>1728</CodeIndex>
 				<ReturnValue>
@@ -36414,7 +36423,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10020E44" Crc32="2509499202" LastChange="2025-09-11T14:56:27">xFct_GetNormalOperateActive</Name>
+			<Name Decoration="10020E44" Crc32="2509499202" LastChange="2025-09-12T10:36:01">xFct_GetNormalOperateActive</Name>
 			<FunInfo>
 				<CodeIndex>1729</CodeIndex>
 				<ReturnValue>
@@ -36430,7 +36439,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10020E29" Crc32="1658689914" LastChange="2025-09-11T14:56:27">xFct_GetParameterPageActive</Name>
+			<Name Decoration="10020E29" Crc32="1658689914" LastChange="2025-09-12T10:36:01">xFct_GetParameterPageActive</Name>
 			<FunInfo>
 				<CodeIndex>1730</CodeIndex>
 				<ReturnValue>
@@ -36446,7 +36455,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="1003117C" Crc32="0796726789" LastChange="2025-09-11T14:56:27">xFct_GetSetupMode</Name>
+			<Name Decoration="1003117C" Crc32="0796726789" LastChange="2025-09-12T10:36:01">xFct_GetSetupMode</Name>
 			<FunInfo>
 				<CodeIndex>1731</CodeIndex>
 				<ReturnValue>
@@ -36467,7 +36476,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10020E0C" Crc32="1819879975" LastChange="2025-09-11T14:56:27">xFct_GetSetupOperateActive</Name>
+			<Name Decoration="10020E0C" Crc32="1819879975" LastChange="2025-09-12T10:36:01">xFct_GetSetupOperateActive</Name>
 			<FunInfo>
 				<CodeIndex>1732</CodeIndex>
 				<ReturnValue>
@@ -36483,7 +36492,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10010710" Crc32="1301544633" LastChange="2025-09-11T14:56:27">xFct_Reset_Actuator</Name>
+			<Name Decoration="10010710" Crc32="1301544633" LastChange="2025-09-12T10:36:01">xFct_Reset_Actuator</Name>
 			<FunInfo>
 				<CodeIndex>1733</CodeIndex>
 				<ReturnValue>
@@ -36494,7 +36503,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100421E4" Crc32="1293824619" LastChange="2025-09-11T14:56:27">xFct_SetActualPageTask</Name>
+			<Name Decoration="100421E4" Crc32="1293824619" LastChange="2025-09-12T10:36:01">xFct_SetActualPageTask</Name>
 			<FunInfo>
 				<CodeIndex>1734</CodeIndex>
 				<ReturnValue>
@@ -36520,7 +36529,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100CB979" Crc32="2442301110" LastChange="2025-09-11T14:56:27">xFctCheckNumber</Name>
+			<Name Decoration="100CB979" Crc32="2442301110" LastChange="2025-09-12T10:36:01">xFctCheckNumber</Name>
 			<FunInfo>
 				<CodeIndex>1735</CodeIndex>
 				<ReturnValue>
@@ -36586,7 +36595,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10078B41" Crc32="3949506828" LastChange="2025-09-11T14:56:27">xFctCopyProfileToDataFile</Name>
+			<Name Decoration="10078B41" Crc32="3949506828" LastChange="2025-09-12T10:36:01">xFctCopyProfileToDataFile</Name>
 			<FunInfo>
 				<CodeIndex>1736</CodeIndex>
 				<ReturnValue>
@@ -36630,7 +36639,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100364D0" Crc32="1005791504" LastChange="2025-09-11T14:56:27">xFctSetDefaultValueStaticProfile</Name>
+			<Name Decoration="100364D0" Crc32="1005791504" LastChange="2025-09-12T10:36:01">xFctSetDefaultValueStaticProfile</Name>
 			<FunInfo>
 				<CodeIndex>1737</CodeIndex>
 				<ReturnValue>
@@ -36651,7 +36660,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="100671BE" Crc32="2505330339" LastChange="2025-09-11T14:56:27">xFctSetOnlineChangeMaxMin</Name>
+			<Name Decoration="100671BE" Crc32="2505330339" LastChange="2025-09-12T10:36:01">xFctSetOnlineChangeMaxMin</Name>
 			<FunInfo>
 				<CodeIndex>1738</CodeIndex>
 				<ReturnValue>
@@ -36687,7 +36696,7 @@
 			</FunInfo>
 		</Function>
 		<Function>
-			<Name Decoration="10064788" Crc32="0673834162" LastChange="2025-09-11T14:56:27">xFctUpdateOnlineChangeValue</Name>
+			<Name Decoration="10064788" Crc32="0673834162" LastChange="2025-09-12T10:36:01">xFctUpdateOnlineChangeValue</Name>
 			<FunInfo>
 				<CodeIndex>1739</CodeIndex>
 				<ReturnValue>
@@ -46296,7 +46305,7 @@
 	</Functions>
 	<Programs>
 		<Program>
-			<Name Decoration="1016AD7E" Crc32="3760394524" LastChange="2025-09-11T14:56:27">PRG_COLLISION_DETECTION</Name>
+			<Name Decoration="1016AD7E" Crc32="3760394524" LastChange="2025-09-12T10:36:01">PRG_COLLISION_DETECTION</Name>
 			<PrgInfo>
 				<CodeIndex>1694</CodeIndex>
 				<ActionInfo>
@@ -46376,7 +46385,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="1027B224" Crc32="0229566610" LastChange="2025-09-11T14:56:27">PRG_ERROR_WARNING_CTRLE</Name>
+			<Name Decoration="1027B224" Crc32="0229566610" LastChange="2025-09-12T10:36:01">PRG_ERROR_WARNING_CTRLE</Name>
 			<PrgInfo>
 				<CodeIndex>1697</CodeIndex>
 				<ActionInfo>
@@ -46503,7 +46512,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="100B7663" Crc32="2458507159" LastChange="2025-09-11T14:56:27">PRG_HW_GENERAL</Name>
+			<Name Decoration="100B7663" Crc32="2458507159" LastChange="2025-09-12T10:36:01">PRG_HW_GENERAL</Name>
 			<PrgInfo>
 				<CodeIndex>1699</CodeIndex>
 				<Symbol>
@@ -46542,7 +46551,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="101981F0" Crc32="0823002785" LastChange="2025-09-11T14:56:28">PRG_HW_WORK_ST1</Name>
+			<Name Decoration="101981F0" Crc32="0823002785" LastChange="2025-09-12T10:36:02">PRG_HW_WORK_ST1</Name>
 			<PrgInfo>
 				<CodeIndex>1700</CodeIndex>
 				<Symbol>
@@ -46623,7 +46632,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="100A9FDC" Crc32="1519079674" LastChange="2025-09-11T14:56:27">PRG_PROCESS</Name>
+			<Name Decoration="100A9FDC" Crc32="1519079674" LastChange="2025-09-12T10:36:01">PRG_PROCESS</Name>
 			<PrgInfo>
 				<CodeIndex>1701</CodeIndex>
 				<Symbol>
@@ -46659,7 +46668,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="1061D907" Crc32="3422158899" LastChange="2025-09-11T14:56:27">PRG_STARTUP</Name>
+			<Name Decoration="1061D907" Crc32="3422158899" LastChange="2025-09-12T10:36:01">PRG_STARTUP</Name>
 			<PrgInfo>
 				<CodeIndex>1702</CodeIndex>
 				<ActionInfo>
@@ -47008,7 +47017,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="100BF0C5" Crc32="3029666263" LastChange="2025-09-11T14:56:27">PRG_STATION_WORK_ST1</Name>
+			<Name Decoration="100BF9B6" Crc32="3029666263" LastChange="2025-09-12T10:36:01">PRG_STATION_WORK_ST1</Name>
 			<PrgInfo>
 				<CodeIndex>1716</CodeIndex>
 				<Symbol>
@@ -47047,7 +47056,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10031205" Crc32="1929038302" LastChange="2025-09-11T14:56:28">PRG_USB_IO_PANEL</Name>
+			<Name Decoration="10031205" Crc32="1929038302" LastChange="2025-09-12T10:36:02">PRG_USB_IO_PANEL</Name>
 			<PrgInfo>
 				<CodeIndex>1717</CodeIndex>
 				<Symbol>
@@ -47062,7 +47071,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10077396" Crc32="0898064782" LastChange="2025-09-11T14:56:27">PRG_VELOCITY_DETECTION</Name>
+			<Name Decoration="10077396" Crc32="0898064782" LastChange="2025-09-12T10:36:01">PRG_VELOCITY_DETECTION</Name>
 			<PrgInfo>
 				<CodeIndex>1718</CodeIndex>
 				<ActionInfo>
@@ -47093,7 +47102,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10064C87" Crc32="1016766228" LastChange="2025-09-11T14:56:27">PRG_VISU</Name>
+			<Name Decoration="10064C87" Crc32="1016766228" LastChange="2025-09-12T10:36:01">PRG_VISU</Name>
 			<PrgInfo>
 				<CodeIndex>1720</CodeIndex>
 				<Symbol>
@@ -48689,79 +48698,79 @@
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_STATION_WORK_ST1.FBStationWork_St1</Name>
-			<Type Decoration="10FA96A7">FB_STATION_WORK</Type>
+			<Type Decoration="10FB9F97">FB_STATION_WORK</Type>
 			<IGroup>16448</IGroup>
 			<IOffset>1379053</IOffset>
-			<BitSize>241456</BitSize>
+			<BitSize>241464</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xActive_Work_St1</Name>
-			<Type>BOOL</Type>
-			<IGroup>16448</IGroup>
-			<IOffset>1409235</IOffset>
-			<BitSize>8</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xRdy_Work_St1</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
 			<IOffset>1409236</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xEnd_Work_St1</Name>
+			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xRdy_Work_St1</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
 			<IOffset>1409237</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xStop_Work_St1</Name>
+			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xEnd_Work_St1</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
 			<IOffset>1409238</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xReferenced_Work_St1</Name>
+			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xStop_Work_St1</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
 			<IOffset>1409239</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xError_Work_St1</Name>
+			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xReferenced_Work_St1</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
 			<IOffset>1409240</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
+			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xError_Work_St1</Name>
+			<Type>BOOL</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>1409241</IOffset>
+			<BitSize>8</BitSize>
+		</Symbol>
+		<Symbol>
 			<Name TaskPrio="1">PRG_STATION_WORK_ST1.iErrorNr_Work_St1</Name>
 			<Type>DINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409241</IOffset>
+			<IOffset>1409242</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_STATION_WORK_ST1.iStatusFctNr_Work_St1</Name>
 			<Type>INT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409245</IOffset>
+			<IOffset>1409246</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xStationPowerON_St1</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409247</IOffset>
+			<IOffset>1409248</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_STATION_WORK_ST1.xAxisBrakeBlock_St1</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409248</IOffset>
+			<IOffset>1409249</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -48771,7 +48780,7 @@
 				<![CDATA[IO connection]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1409249</IOffset>
+			<IOffset>1409250</IOffset>
 			<BitSize>280</BitSize>
 		</Symbol>
 		<Symbol>
@@ -48792,91 +48801,91 @@
 			<Name TaskPrio="1">PRG_VELOCITY_DETECTION.ptrTCommonAxis</Name>
 			<Type Decoration="100AB4F5" Pointer="1">ST_AXIS</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409284</IOffset>
+			<IOffset>1409285</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VELOCITY_DETECTION.xTmp</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409288</IOffset>
+			<IOffset>1409289</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VELOCITY_DETECTION.lrSaveZAxisVelocity</Name>
 			<Type>LREAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409289</IOffset>
+			<IOffset>1409290</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VELOCITY_DETECTION.lrMaxVelocity_Z_Axis</Name>
 			<Type>LREAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409297</IOffset>
+			<IOffset>1409298</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VELOCITY_DETECTION.xSLS_Z_Axis</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409305</IOffset>
+			<IOffset>1409306</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VELOCITY_DETECTION.lrMaxVelocity_SetupA_Z_Axis</Name>
 			<Type>LREAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409306</IOffset>
+			<IOffset>1409307</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VELOCITY_DETECTION.lrMaxVelocity_SetupB_Z_Axis</Name>
 			<Type>LREAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409314</IOffset>
+			<IOffset>1409315</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VISU.FBQVIS</Name>
 			<Type Decoration="113B8681">FBQVIS</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1409322</IOffset>
+			<IOffset>1409323</IOffset>
 			<BitSize>99440</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VISU.FBCtrlButton</Name>
 			<Type Decoration="101D7955">FB_CTRLEBUTTON</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1421752</IOffset>
+			<IOffset>1421753</IOffset>
 			<BitSize>207408</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VISU.xNormalMode_EnergyON</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1447678</IOffset>
+			<IOffset>1447679</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VISU.xSetupOperateA_EnergyON</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1447679</IOffset>
+			<IOffset>1447680</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VISU.xSetupOperateB_EnergyON</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1447680</IOffset>
+			<IOffset>1447681</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">PRG_VISU.xSetupOperateC_EnergyON</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1447681</IOffset>
+			<IOffset>1447682</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52142,7 +52151,7 @@
 				<![CDATA[Anzahl maximal Wstk für Aufzeichnung]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1447720</IOffset>
+			<IOffset>1447721</IOffset>
 			<BitSize>624</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52163,7 +52172,7 @@
 			<Name TaskPrio="1">.QVisCtrl</Name>
 			<Type Decoration="1006210E">ST_QVISCTRLE</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1447798</IOffset>
+			<IOffset>1447799</IOffset>
 			<BitSize>192</BitSize>
 			<Properties>
 				<Property>
@@ -52181,7 +52190,7 @@
 			<Name TaskPrio="1">.T_ExchgParam</Name>
 			<Type Decoration="101DC058">ST_QVIS_EXCHG_PARAM</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1447822</IOffset>
+			<IOffset>1447823</IOffset>
 			<BitSize>89416</BitSize>
 			<Properties>
 				<Property>
@@ -52199,14 +52208,14 @@
 			<Name TaskPrio="1">.T_VisuQVis</Name>
 			<Type Decoration="1006AB8E">ST_QVIS</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1458999</IOffset>
+			<IOffset>1459000</IOffset>
 			<BitSize>117656</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.TProcess</Name>
 			<Type Decoration="10028D92">ST_PROCESS</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1473706</IOffset>
+			<IOffset>1473707</IOffset>
 			<BitSize>272</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52216,21 +52225,21 @@
 				<![CDATA[Structure layer 2]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1473740</IOffset>
+			<IOffset>1473741</IOffset>
 			<BitSize>195840</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="3">.T_CtrlePanel</Name>
 			<Type Decoration="10081BB2">ST_CTRLEPANEL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1498220</IOffset>
+			<IOffset>1498221</IOffset>
 			<BitSize>144</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.T_HDD</Name>
 			<Type Decoration="100456A4">ST_HDD</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1498238</IOffset>
+			<IOffset>1498239</IOffset>
 			<BitSize>2434808</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52240,7 +52249,7 @@
 				<![CDATA[StartUp]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1802589</IOffset>
+			<IOffset>1802590</IOffset>
 			<BitSize>43088</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52250,14 +52259,14 @@
 				<![CDATA[UPS]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1807975</IOffset>
+			<IOffset>1807976</IOffset>
 			<BitSize>144</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.T_CtrleUPS</Name>
 			<Type Decoration="100B6C14">ST_CTRLE_UPS</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1807993</IOffset>
+			<IOffset>1807994</IOffset>
 			<BitSize>144</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52267,7 +52276,7 @@
 				<![CDATA[Profile, 40 records ID for each Station]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1808011</IOffset>
+			<IOffset>1808012</IOffset>
 			<BitSize>2768</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52277,7 +52286,7 @@
 				<![CDATA[TwinSAFE]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1808357</IOffset>
+			<IOffset>1808358</IOffset>
 			<BitSize>39928</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52373,7 +52382,7 @@
 			<Name TaskPrio="1">.gT_SafetyStatus</Name>
 			<Type Decoration="100A4396">ST_SAFETY_STATUS</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1813348</IOffset>
+			<IOffset>1813349</IOffset>
 			<BitSize>88</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52383,7 +52392,7 @@
 				<![CDATA[Static Error List]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1813359</IOffset>
+			<IOffset>1813360</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52393,7 +52402,7 @@
 				<![CDATA[Static define Error List]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1813360</IOffset>
+			<IOffset>1813361</IOffset>
 			<BitSize>727200</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52403,7 +52412,7 @@
 				<![CDATA[Einrichtlampe]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1904260</IOffset>
+			<IOffset>1904261</IOffset>
 			<BitSize>792</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52413,7 +52422,7 @@
 				<![CDATA[Control Button Start/Stop]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1904359</IOffset>
+			<IOffset>1904360</IOffset>
 			<BitSize>976</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52423,7 +52432,7 @@
 				<![CDATA[Kollisionsüberwachung]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1904481</IOffset>
+			<IOffset>1904482</IOffset>
 			<BitSize>128</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52433,7 +52442,7 @@
 				<![CDATA[Status der Beckhoffklemmen und Kopplert]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1904497</IOffset>
+			<IOffset>1904498</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52450,14 +52459,14 @@
 			<Name TaskPrio="1">.giDeleteMessageNumber</Name>
 			<Type>INT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904498</IOffset>
+			<IOffset>1904499</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gcarAxisConfig</Name>
 			<Type Decoration="20015201">ARRAY [1..2] OF ST_EXCHG_PARAM_TEACHIN</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904500</IOffset>
+			<IOffset>1904501</IOffset>
 			<BitSize>784</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52467,7 +52476,7 @@
 				<![CDATA[Für Simulationszwecke ohne Hardware]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1904598</IOffset>
+			<IOffset>1904599</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52477,14 +52486,14 @@
 				<![CDATA[Für Simulationszwecke wenn nur der Servocontroller der Z Achse fehlt und der Rest der Hardware vorhanden ist]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1904599</IOffset>
+			<IOffset>1904600</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxEnable_Joystick_Axis_Z</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904600</IOffset>
+			<IOffset>1904601</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52494,14 +52503,14 @@
 				<![CDATA[Freigabe für Bewegung der Achsen mittels dem Zustimmschalter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1904601</IOffset>
+			<IOffset>1904602</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxResetDataAnalysis_St1</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904602</IOffset>
+			<IOffset>1904603</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52511,112 +52520,112 @@
 				<![CDATA[Merker für Grundstellungsfahrt, ob dies ausgelöst wurde oder nicht]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1904603</IOffset>
+			<IOffset>1904604</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxAxisPositionSettled</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904604</IOffset>
+			<IOffset>1904605</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxSetSpeedInMovement</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904605</IOffset>
+			<IOffset>1904606</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxSetupFunctionActive</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904606</IOffset>
+			<IOffset>1904607</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxAxisAbsolutMovementActive</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904607</IOffset>
+			<IOffset>1904608</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxHandModeActive</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904608</IOffset>
+			<IOffset>1904609</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxBlockSetQuality</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904609</IOffset>
+			<IOffset>1904610</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxSpindelCalibrationONOFF_St1</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904610</IOffset>
+			<IOffset>1904611</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gT_PreWarning</Name>
 			<Type Decoration="100A2B8E">ST_PREWARNING</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1904611</IOffset>
+			<IOffset>1904612</IOffset>
 			<BitSize>49640</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxAddInfeedZ</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910816</IOffset>
+			<IOffset>1910817</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxSetPartQuality</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910817</IOffset>
+			<IOffset>1910818</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxWP_Analyse_ActiveWork</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910818</IOffset>
+			<IOffset>1910819</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxWP_Analyse_ActiveInfeed</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910819</IOffset>
+			<IOffset>1910820</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxWP_Analyse_ActiveCentering</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910820</IOffset>
+			<IOffset>1910821</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxWP_Analyse_ResetCentCountValue</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910821</IOffset>
+			<IOffset>1910822</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gdiSavePartQuality</Name>
 			<Type>DINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910822</IOffset>
+			<IOffset>1910823</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52626,112 +52635,112 @@
 				<![CDATA[Process Daten Aufzeichnung]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1910826</IOffset>
+			<IOffset>1910827</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.T_ProcessData_St1</Name>
 			<Type Decoration="10013146">ST_PROCESSDATA</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910827</IOffset>
+			<IOffset>1910828</IOffset>
 			<BitSize>112</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gsDriveNameProcessData</Name>
 			<Type Decoration="40000051">STRING(80)</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910841</IOffset>
+			<IOffset>1910842</IOffset>
 			<BitSize>648</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxBlockChangeMovementVisuActiveMessage</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910922</IOffset>
+			<IOffset>1910923</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxSpindleOverloadError</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910923</IOffset>
+			<IOffset>1910924</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.garRockerMeasureValue</Name>
 			<Type Decoration="200101F1">ARRAY [1..200] OF REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1910924</IOffset>
+			<IOffset>1910925</IOffset>
 			<BitSize>6400</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.grRockerMaxValue</Name>
 			<Type>REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911724</IOffset>
+			<IOffset>1911725</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.grRockerMinValue</Name>
 			<Type>REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911728</IOffset>
+			<IOffset>1911729</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.grRockerQuality</Name>
 			<Type>REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911732</IOffset>
+			<IOffset>1911733</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.grRockerAmplitude</Name>
 			<Type>REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911736</IOffset>
+			<IOffset>1911737</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.grRockerAmplitudeMin</Name>
 			<Type>REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911740</IOffset>
+			<IOffset>1911741</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.grRockerAmplitudeMax</Name>
 			<Type>REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911744</IOffset>
+			<IOffset>1911745</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.grRockerQualityMin</Name>
 			<Type>REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911748</IOffset>
+			<IOffset>1911749</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.grRockerQualityMax</Name>
 			<Type>REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911752</IOffset>
+			<IOffset>1911753</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gdiRockerCountHC</Name>
 			<Type>DINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911756</IOffset>
+			<IOffset>1911757</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gdiRockerCountHCTime</Name>
 			<Type>DINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911760</IOffset>
+			<IOffset>1911761</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52741,28 +52750,28 @@
 				<![CDATA[Globale Z Achsen Position]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1911764</IOffset>
+			<IOffset>1911765</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.grZ_LoadPos</Name>
 			<Type>REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911768</IOffset>
+			<IOffset>1911769</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.grZ_WorkStartPos</Name>
 			<Type>REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911772</IOffset>
+			<IOffset>1911773</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.grZ_WorkEndPos</Name>
 			<Type>REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911776</IOffset>
+			<IOffset>1911777</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52772,7 +52781,7 @@
 				<![CDATA[IGS]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1911780</IOffset>
+			<IOffset>1911781</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52782,7 +52791,7 @@
 				<![CDATA[IGS3]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1911784</IOffset>
+			<IOffset>1911785</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52792,7 +52801,7 @@
 				<![CDATA[IGS3]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1911785</IOffset>
+			<IOffset>1911786</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -52802,42 +52811,42 @@
 				<![CDATA[IGS3]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1911786</IOffset>
+			<IOffset>1911787</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.garPositionEndProcCalc</Name>
 			<Type Decoration="2001012A">ARRAY [1..1] OF REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911787</IOffset>
+			<IOffset>1911788</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.garCentringEndProcCalc</Name>
 			<Type Decoration="2001012A">ARRAY [1..1] OF REAL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911791</IOffset>
+			<IOffset>1911792</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxZAxisVelocityCtrlActive</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911795</IOffset>
+			<IOffset>1911796</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxZFollowDistanceError</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911796</IOffset>
+			<IOffset>1911797</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.gxProcessCylindricalAreaActive</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911797</IOffset>
+			<IOffset>1911798</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -53977,14 +53986,14 @@
 				<![CDATA[DPV1 via ProfiNET]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1911798</IOffset>
+			<IOffset>1911799</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.tCommDelayDPV1PNET</Name>
 			<Type>TIME</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911802</IOffset>
+			<IOffset>1911803</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -53994,7 +54003,7 @@
 				<![CDATA[Number of 100ns ticks between 1.1.1601 and 1.1.2000]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1911806</IOffset>
+			<IOffset>1911807</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54004,7 +54013,7 @@
 				<![CDATA[Number of nanosecond ticks per millisecond]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1911814</IOffset>
+			<IOffset>1911815</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54014,7 +54023,7 @@
 				<![CDATA[Number of nanosecond ticks per second]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1911822</IOffset>
+			<IOffset>1911823</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54024,21 +54033,21 @@
 				<![CDATA[Number of nanosecond ticks per day]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1911830</IOffset>
+			<IOffset>1911831</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.bSeqReadDrvAttrAndValue</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1911838</IOffset>
+			<IOffset>1911839</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1" TaskPrio="1">.NCPORT_TCMC</Name>
 			<Type>INT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1912357</IOffset>
+			<IOffset>1912358</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54048,14 +54057,14 @@
 				<![CDATA[used with all axis coupling commands - 12.7.2006 KSt]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1912359</IOffset>
+			<IOffset>1912360</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1" TaskPrio="1">.NCNETID_TCMC</Name>
 			<Type Decoration="40000018">STRING(23)</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1912361</IOffset>
+			<IOffset>1912362</IOffset>
 			<BitSize>192</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54065,7 +54074,7 @@
 				<![CDATA[2..100]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1912385</IOffset>
+			<IOffset>1912386</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54075,7 +54084,7 @@
 				<![CDATA[IEC prefixes for binary, octal or hexadecimal type]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1912387</IOffset>
+			<IOffset>1912388</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54085,7 +54094,7 @@
 				<![CDATA[Windows SBCS (Single Byte Character Set) Code Page Table]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1912389</IOffset>
+			<IOffset>1912390</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54095,7 +54104,7 @@
 				<![CDATA[0 == pulse < 140ms, 1 == pulse > 140]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1912391</IOffset>
+			<IOffset>1912392</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54105,7 +54114,7 @@
 				<![CDATA[TRUE = Enable plausibility check (two telegrams are checked), FALSE = Disable check]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1912395</IOffset>
+			<IOffset>1912396</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54115,7 +54124,7 @@
 				<![CDATA[semicolon (;) := 16#3B => german field separator, comma (,) := 16#2C => US field separator]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1912396</IOffset>
+			<IOffset>1912397</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54125,7 +54134,7 @@
 				<![CDATA[System Service file functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1920081</IOffset>
+			<IOffset>1920082</IOffset>
 			<BitSize>1168</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54135,7 +54144,7 @@
 				<![CDATA[Lower and upper case ASCII codes of hexadecimal digits]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1920227</IOffset>
+			<IOffset>1920228</IOffset>
 			<BitSize>80</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54145,7 +54154,7 @@
 				<![CDATA[ASCII to decimal and decimal digits to ASCII codes]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1920237</IOffset>
+			<IOffset>1920238</IOffset>
 			<BitSize>256</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54155,7 +54164,7 @@
 				<![CDATA[Default precision values ( -1 => disabled (prints all characters or has special function)]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1920269</IOffset>
+			<IOffset>1920270</IOffset>
 			<BitSize>80</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54165,7 +54174,7 @@
 				<![CDATA[plc var type support mask]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1920279</IOffset>
+			<IOffset>1920280</IOffset>
 			<BitSize>192</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54175,7 +54184,7 @@
 				<![CDATA[TYPEFIELD_EL]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1920303</IOffset>
+			<IOffset>1920304</IOffset>
 			<BitSize>1824</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54185,7 +54194,7 @@
 				<![CDATA[PREFIXFLAG_HASH]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1920531</IOffset>
+			<IOffset>1920532</IOffset>
 			<BitSize>384</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54195,56 +54204,56 @@
 				<![CDATA[HASHPREFIX_STDC]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1920579</IOffset>
+			<IOffset>1920580</IOffset>
 			<BitSize>2112</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.ARGTYPE_IS_SIGNED_TYPE</Name>
 			<Type Decoration="20010149">ARRAY [0..18] OF BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1920843</IOffset>
+			<IOffset>1920844</IOffset>
 			<BitSize>152</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.ARGTYPE_IS_FLOAT_TYPE</Name>
 			<Type Decoration="20010149">ARRAY [0..18] OF BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1920862</IOffset>
+			<IOffset>1920863</IOffset>
 			<BitSize>152</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.ARGTYPE_IS_STRING_TYPE</Name>
 			<Type Decoration="20010149">ARRAY [0..18] OF BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1920881</IOffset>
+			<IOffset>1920882</IOffset>
 			<BitSize>152</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.ARGTYPE_IS_UNSIGNED_TYPE</Name>
 			<Type Decoration="20010149">ARRAY [0..18] OF BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1920900</IOffset>
+			<IOffset>1920901</IOffset>
 			<BitSize>152</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.ARGTYPE_IS_BIT_TYPE</Name>
 			<Type Decoration="20010149">ARRAY [0..18] OF BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1920919</IOffset>
+			<IOffset>1920920</IOffset>
 			<BitSize>152</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.SYSTEMTIME_MAX_MONTHDAYS</Name>
 			<Type Decoration="2002015B">ARRAY [0..1, 1..12] OF WORD</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1920938</IOffset>
+			<IOffset>1920939</IOffset>
 			<BitSize>384</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.SYSTEMTIME_MAX_YEARSDAY</Name>
 			<Type Decoration="2002015B">ARRAY [0..1, 0..13] OF WORD</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1920986</IOffset>
+			<IOffset>1920987</IOffset>
 			<BitSize>448</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54254,7 +54263,7 @@
 				<![CDATA[Number of 100ns ticks per millisecond]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1921042</IOffset>
+			<IOffset>1921043</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54264,7 +54273,7 @@
 				<![CDATA[Number of 100ns ticks per second]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1921050</IOffset>
+			<IOffset>1921051</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54274,7 +54283,7 @@
 				<![CDATA[Number of 100ns ticks per day]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1921058</IOffset>
+			<IOffset>1921059</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54284,7 +54293,7 @@
 				<![CDATA[min. DT value as file time DT#1970-01-01-00:00:00]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1921066</IOffset>
+			<IOffset>1921067</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54294,7 +54303,7 @@
 				<![CDATA[max. DT value as file time DT#2106-02-06-06:28:15]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1921074</IOffset>
+			<IOffset>1921075</IOffset>
 			<BitSize>64</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54304,14 +54313,14 @@
 				<![CDATA[Windows SBCS tables]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1921082</IOffset>
+			<IOffset>1921083</IOffset>
 			<BitSize>864</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.SBCS_TABLES</Name>
 			<Type Decoration="2001635C">ARRAY [1..2] OF ST_SBCSTable</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1921190</IOffset>
+			<IOffset>1921191</IOffset>
 			<BitSize>4096</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54321,49 +54330,49 @@
 				<![CDATA[CRC16-CCITT lookup table ( 0x1021 as generator polynomial )]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1921702</IOffset>
+			<IOffset>1921703</IOffset>
 			<BitSize>2048</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.GLOBAL_CRC_CCITT_TABLE</Name>
 			<Type Decoration="2001024D">ARRAY [0..255] OF WORD</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1921958</IOffset>
+			<IOffset>1921959</IOffset>
 			<BitSize>4096</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.DWORD_DECADE_DIVIDER</Name>
 			<Type Decoration="2001019C">ARRAY [0..9] OF DWORD</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1936836</IOffset>
+			<IOffset>1936837</IOffset>
 			<BitSize>320</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.WORD_DECADE_DIVIDER</Name>
 			<Type Decoration="20010152">ARRAY [0..4] OF WORD</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1936876</IOffset>
+			<IOffset>1936877</IOffset>
 			<BitSize>80</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.BYTE_DECADE_DIVIDER</Name>
 			<Type Decoration="20010147">ARRAY [0..2] OF BYTE</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1936886</IOffset>
+			<IOffset>1936887</IOffset>
 			<BitSize>24</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" IsDefinedInLibrary="1">.EMPTY_GUID_STRUCT</Name>
 			<Type Decoration="10042FD3">GUID</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1936889</IOffset>
+			<IOffset>1936890</IOffset>
 			<BitSize>128</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.eWatchdogConfig</Name>
 			<Type Decoration="30000698">E_WATCHDOG_TIME_CONFIG</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1936915</IOffset>
+			<IOffset>1936916</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54373,14 +54382,14 @@
 				<![CDATA[Watchdog time. Depending of eWatchdogConfig : seconds or minutes]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936917</IOffset>
+			<IOffset>1936918</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.VAR_NC_AMSPORT</Name>
 			<Type>UINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1936918</IOffset>
+			<IOffset>1936919</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54390,7 +54399,7 @@
 				<![CDATA[added 2006-12-13 KSt]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936920</IOffset>
+			<IOffset>1936921</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54400,7 +54409,7 @@
 				<![CDATA[Axis with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936922</IOffset>
+			<IOffset>1936923</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54410,7 +54419,7 @@
 				<![CDATA[Axis with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936926</IOffset>
+			<IOffset>1936927</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54420,7 +54429,7 @@
 				<![CDATA[Axis with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936930</IOffset>
+			<IOffset>1936931</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54430,7 +54439,7 @@
 				<![CDATA[Axis with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936934</IOffset>
+			<IOffset>1936935</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54440,7 +54449,7 @@
 				<![CDATA[Encoder with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936938</IOffset>
+			<IOffset>1936939</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54450,7 +54459,7 @@
 				<![CDATA[Encoder with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936942</IOffset>
+			<IOffset>1936943</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54460,7 +54469,7 @@
 				<![CDATA[Encoder with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936946</IOffset>
+			<IOffset>1936947</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54470,7 +54479,7 @@
 				<![CDATA[Encoder with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936950</IOffset>
+			<IOffset>1936951</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54480,7 +54489,7 @@
 				<![CDATA[Controller with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936954</IOffset>
+			<IOffset>1936955</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54490,7 +54499,7 @@
 				<![CDATA[Controller with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936958</IOffset>
+			<IOffset>1936959</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54500,7 +54509,7 @@
 				<![CDATA[Controller with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936962</IOffset>
+			<IOffset>1936963</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54510,7 +54519,7 @@
 				<![CDATA[Controller with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936966</IOffset>
+			<IOffset>1936967</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54520,7 +54529,7 @@
 				<![CDATA[Drive with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936970</IOffset>
+			<IOffset>1936971</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54530,7 +54539,7 @@
 				<![CDATA[Drive with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936974</IOffset>
+			<IOffset>1936975</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54540,7 +54549,7 @@
 				<![CDATA[Drive with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936978</IOffset>
+			<IOffset>1936979</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54550,7 +54559,7 @@
 				<![CDATA[Drive with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936982</IOffset>
+			<IOffset>1936983</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54560,7 +54569,7 @@
 				<![CDATA[Tabular with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936986</IOffset>
+			<IOffset>1936987</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54570,7 +54579,7 @@
 				<![CDATA[Tabular with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936990</IOffset>
+			<IOffset>1936991</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54580,7 +54589,7 @@
 				<![CDATA[Tabular with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936994</IOffset>
+			<IOffset>1936995</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54590,56 +54599,56 @@
 				<![CDATA[Tabular with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1936998</IOffset>
+			<IOffset>1936999</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXG_CHNPARMS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937002</IOffset>
+			<IOffset>1937003</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXG_CHNSTATE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937006</IOffset>
+			<IOffset>1937007</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXG_CHNFUNCS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937010</IOffset>
+			<IOffset>1937011</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXG_CHNIOAREA</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937014</IOffset>
+			<IOffset>1937015</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXG_GROUPPARMS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937018</IOffset>
+			<IOffset>1937019</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXG_GROUPSTATE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937022</IOffset>
+			<IOffset>1937023</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXG_GROUPFUNCS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937026</IOffset>
+			<IOffset>1937027</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54649,7 +54658,7 @@
 				<![CDATA[NC ADS Index Offsets for Axis Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937030</IOffset>
+			<IOffset>1937031</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54659,7 +54668,7 @@
 				<![CDATA[Axis: reset]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937034</IOffset>
+			<IOffset>1937035</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54669,7 +54678,7 @@
 				<![CDATA[Axis: stop]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937038</IOffset>
+			<IOffset>1937039</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54679,7 +54688,7 @@
 				<![CDATA[Axis: clear]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937042</IOffset>
+			<IOffset>1937043</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54689,7 +54698,7 @@
 				<![CDATA[Axis: reference]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937046</IOffset>
+			<IOffset>1937047</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54699,7 +54708,7 @@
 				<![CDATA[Axis: new endposition]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937050</IOffset>
+			<IOffset>1937051</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54709,7 +54718,7 @@
 				<![CDATA[Axis: set actual position]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937054</IOffset>
+			<IOffset>1937055</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54719,7 +54728,7 @@
 				<![CDATA[Axis: set reference flag]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937058</IOffset>
+			<IOffset>1937059</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54729,7 +54738,7 @@
 				<![CDATA[Axis: set actual position on the fly]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937062</IOffset>
+			<IOffset>1937063</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54739,7 +54748,7 @@
 				<![CDATA[Axis: normal start]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937066</IOffset>
+			<IOffset>1937067</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54749,7 +54758,7 @@
 				<![CDATA[Axis: extended start]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937070</IOffset>
+			<IOffset>1937071</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54759,7 +54768,7 @@
 				<![CDATA[Axis: special]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937074</IOffset>
+			<IOffset>1937075</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54769,7 +54778,7 @@
 				<![CDATA[Axis: enable external set point generator]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937078</IOffset>
+			<IOffset>1937079</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54779,7 +54788,7 @@
 				<![CDATA[Axis: disable external set point generator]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937082</IOffset>
+			<IOffset>1937083</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54789,7 +54798,7 @@
 				<![CDATA[Axis: start drive output]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937086</IOffset>
+			<IOffset>1937087</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54799,7 +54808,7 @@
 				<![CDATA[Axis: stop drive output]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937090</IOffset>
+			<IOffset>1937091</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54809,7 +54818,7 @@
 				<![CDATA[Axis: start compensation]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937094</IOffset>
+			<IOffset>1937095</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54819,7 +54828,7 @@
 				<![CDATA[Axis: stop compensation]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937098</IOffset>
+			<IOffset>1937099</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54829,7 +54838,7 @@
 				<![CDATA[Axis: couple master-slave]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937102</IOffset>
+			<IOffset>1937103</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54839,7 +54848,7 @@
 				<![CDATA[Axis: decouple master-slave]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937106</IOffset>
+			<IOffset>1937107</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54849,7 +54858,7 @@
 				<![CDATA[Axis: change coupleparams]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937110</IOffset>
+			<IOffset>1937111</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54859,7 +54868,7 @@
 				<![CDATA[Axis: change coupleparams f. tabs]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937114</IOffset>
+			<IOffset>1937115</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54869,7 +54878,7 @@
 				<![CDATA[Axis: couple master-slave w. tabs]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937118</IOffset>
+			<IOffset>1937119</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54879,7 +54888,7 @@
 				<![CDATA[Axis: activate corr. tab]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937122</IOffset>
+			<IOffset>1937123</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54889,7 +54898,7 @@
 				<![CDATA[Axis: deactivate profile tab]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937126</IOffset>
+			<IOffset>1937127</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54899,7 +54908,7 @@
 				<![CDATA[Axis: couple master-slave w.solo  tabs]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937130</IOffset>
+			<IOffset>1937131</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54909,7 +54918,7 @@
 				<![CDATA[Axis: disable]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937134</IOffset>
+			<IOffset>1937135</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54919,7 +54928,7 @@
 				<![CDATA[Axis: enable]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937138</IOffset>
+			<IOffset>1937139</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54929,7 +54938,7 @@
 				<![CDATA[Axis: disable drive output]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937142</IOffset>
+			<IOffset>1937143</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -54939,182 +54948,182 @@
 				<![CDATA[Axis: enable drive output]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937146</IOffset>
+			<IOffset>1937147</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXVREFSEARCH</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937150</IOffset>
+			<IOffset>1937151</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXVSYNCSEARCH</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937154</IOffset>
+			<IOffset>1937155</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXVSLOWMANUAL</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937158</IOffset>
+			<IOffset>1937159</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXVFASTMANUAL</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937162</IOffset>
+			<IOffset>1937163</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXVELOFAST</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937166</IOffset>
+			<IOffset>1937167</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXPOSAREAENABLE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937170</IOffset>
+			<IOffset>1937171</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXPOSAREARANGE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937174</IOffset>
+			<IOffset>1937175</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXMOTCNTRLENABLE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937178</IOffset>
+			<IOffset>1937179</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXMOTCNTRLTIME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937182</IOffset>
+			<IOffset>1937183</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXLOOPENABLE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937186</IOffset>
+			<IOffset>1937187</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXLOOPDISTANCE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937190</IOffset>
+			<IOffset>1937191</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXTARGETPOSENA</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937194</IOffset>
+			<IOffset>1937195</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXTARGETPOSRANGE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937198</IOffset>
+			<IOffset>1937199</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXTARGETPOSTIME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937202</IOffset>
+			<IOffset>1937203</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXPULSDISTPOS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937206</IOffset>
+			<IOffset>1937207</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXPULSDISTNEG</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937210</IOffset>
+			<IOffset>1937211</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXUNITFLAGS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937214</IOffset>
+			<IOffset>1937215</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXVELOMAXIMUM</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937218</IOffset>
+			<IOffset>1937219</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXMOTCNTRLRANGE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937222</IOffset>
+			<IOffset>1937223</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXPEHCONTROLENA</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937226</IOffset>
+			<IOffset>1937227</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXPEHCONTROLTIME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937230</IOffset>
+			<IOffset>1937231</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXBACKLASHCOMPENA</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937234</IOffset>
+			<IOffset>1937235</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXBACKLASH</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937238</IOffset>
+			<IOffset>1937239</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXACCP</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937242</IOffset>
+			<IOffset>1937243</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXACCM</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937246</IOffset>
+			<IOffset>1937247</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55124,42 +55133,42 @@
 				<![CDATA[NC ADS Index Offsets for Group Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937250</IOffset>
+			<IOffset>1937251</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRRESET</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937254</IOffset>
+			<IOffset>1937255</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRSTOP</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937258</IOffset>
+			<IOffset>1937259</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRCLEAR</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937262</IOffset>
+			<IOffset>1937263</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRAXCONFIG</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937266</IOffset>
+			<IOffset>1937267</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRFEED</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937270</IOffset>
+			<IOffset>1937271</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55169,7 +55178,7 @@
 				<![CDATA[Group: internal use only]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937274</IOffset>
+			<IOffset>1937275</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55179,7 +55188,7 @@
 				<![CDATA[Group: internal use only]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937278</IOffset>
+			<IOffset>1937279</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55189,7 +55198,7 @@
 				<![CDATA[Group: internal use only]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937282</IOffset>
+			<IOffset>1937283</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55199,7 +55208,7 @@
 				<![CDATA[Group: internal use only]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937286</IOffset>
+			<IOffset>1937287</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55209,7 +55218,7 @@
 				<![CDATA[Group: internal use only]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937290</IOffset>
+			<IOffset>1937291</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55219,7 +55228,7 @@
 				<![CDATA[Group: internal use only]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937294</IOffset>
+			<IOffset>1937295</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55229,7 +55238,7 @@
 				<![CDATA[Group: internal use only  (special FUNCTION)]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937298</IOffset>
+			<IOffset>1937299</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55239,14 +55248,14 @@
 				<![CDATA[Group: internal use only]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937302</IOffset>
+			<IOffset>1937303</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRSTARTFIFO</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937306</IOffset>
+			<IOffset>1937307</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55256,49 +55265,49 @@
 				<![CDATA[NC ADS Index Offsets for Group Parameters]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937310</IOffset>
+			<IOffset>1937311</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRPNAME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937314</IOffset>
+			<IOffset>1937315</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRPTYPE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937318</IOffset>
+			<IOffset>1937319</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRPSINGLESTEP</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937322</IOffset>
+			<IOffset>1937323</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRPSCHNID</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937326</IOffset>
+			<IOffset>1937327</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRPNRINCHN</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937330</IOffset>
+			<IOffset>1937331</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRPFIFODIM</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937334</IOffset>
+			<IOffset>1937335</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55308,7 +55317,7 @@
 				<![CDATA[NC ADS Index Offsets for Group State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937338</IOffset>
+			<IOffset>1937339</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55318,7 +55327,7 @@
 				<![CDATA[Channel with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937342</IOffset>
+			<IOffset>1937343</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55328,7 +55337,7 @@
 				<![CDATA[Channel with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937346</IOffset>
+			<IOffset>1937347</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55338,7 +55347,7 @@
 				<![CDATA[Channel with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937350</IOffset>
+			<IOffset>1937351</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55348,7 +55357,7 @@
 				<![CDATA[Channel with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937354</IOffset>
+			<IOffset>1937355</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55358,7 +55367,7 @@
 				<![CDATA[Group with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937358</IOffset>
+			<IOffset>1937359</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55368,7 +55377,7 @@
 				<![CDATA[Group with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937362</IOffset>
+			<IOffset>1937363</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55378,7 +55387,7 @@
 				<![CDATA[Group with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937366</IOffset>
+			<IOffset>1937367</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55388,7 +55397,7 @@
 				<![CDATA[Group with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937370</IOffset>
+			<IOffset>1937371</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55398,7 +55407,7 @@
 				<![CDATA[Axis with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937374</IOffset>
+			<IOffset>1937375</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55408,7 +55417,7 @@
 				<![CDATA[Axis with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937378</IOffset>
+			<IOffset>1937379</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55418,7 +55427,7 @@
 				<![CDATA[Axis with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937382</IOffset>
+			<IOffset>1937383</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55428,7 +55437,7 @@
 				<![CDATA[Axis with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937386</IOffset>
+			<IOffset>1937387</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55438,7 +55447,7 @@
 				<![CDATA[Encoder with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937390</IOffset>
+			<IOffset>1937391</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55448,7 +55457,7 @@
 				<![CDATA[Encoder with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937394</IOffset>
+			<IOffset>1937395</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55458,7 +55467,7 @@
 				<![CDATA[Encoder with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937398</IOffset>
+			<IOffset>1937399</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55468,7 +55477,7 @@
 				<![CDATA[Encoder with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937402</IOffset>
+			<IOffset>1937403</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55478,7 +55487,7 @@
 				<![CDATA[Controller with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937406</IOffset>
+			<IOffset>1937407</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55488,7 +55497,7 @@
 				<![CDATA[Controller with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937410</IOffset>
+			<IOffset>1937411</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55498,7 +55507,7 @@
 				<![CDATA[Controller with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937414</IOffset>
+			<IOffset>1937415</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55508,7 +55517,7 @@
 				<![CDATA[Controller with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937418</IOffset>
+			<IOffset>1937419</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55518,7 +55527,7 @@
 				<![CDATA[Drive with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937422</IOffset>
+			<IOffset>1937423</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55528,7 +55537,7 @@
 				<![CDATA[Drive with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937426</IOffset>
+			<IOffset>1937427</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55538,7 +55547,7 @@
 				<![CDATA[Drive with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937430</IOffset>
+			<IOffset>1937431</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55548,7 +55557,7 @@
 				<![CDATA[Drive with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937434</IOffset>
+			<IOffset>1937435</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55558,7 +55567,7 @@
 				<![CDATA[Tabular with ID: Parameter]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937438</IOffset>
+			<IOffset>1937439</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55568,7 +55577,7 @@
 				<![CDATA[Tabular with ID: State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937442</IOffset>
+			<IOffset>1937443</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55578,7 +55587,7 @@
 				<![CDATA[Tabular with ID: Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937446</IOffset>
+			<IOffset>1937447</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55588,7 +55597,7 @@
 				<![CDATA[Tabular with ID: Processdata]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937450</IOffset>
+			<IOffset>1937451</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55598,7 +55607,7 @@
 				<![CDATA[Channel ID]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937454</IOffset>
+			<IOffset>1937455</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55608,7 +55617,7 @@
 				<![CDATA[Channel name]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937458</IOffset>
+			<IOffset>1937459</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55618,7 +55627,7 @@
 				<![CDATA[Channel type]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937462</IOffset>
+			<IOffset>1937463</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55628,49 +55637,49 @@
 				<![CDATA[Interpreter type]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937466</IOffset>
+			<IOffset>1937467</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNP_BUFFERSIZE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937470</IOffset>
+			<IOffset>1937471</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNP_JOBLISTNR</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937474</IOffset>
+			<IOffset>1937475</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNP_LOADERLOG</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937478</IOffset>
+			<IOffset>1937479</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNP_EXECTRACE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937482</IOffset>
+			<IOffset>1937483</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNP_FEEDERLOG</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937486</IOffset>
+			<IOffset>1937487</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNP_MDEFS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937490</IOffset>
+			<IOffset>1937491</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55680,7 +55689,7 @@
 				<![CDATA[Group ID ( 3D and FIFO channel )]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937494</IOffset>
+			<IOffset>1937495</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55690,7 +55699,7 @@
 				<![CDATA[interpeter output port	( reserved function, not standard )]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937498</IOffset>
+			<IOffset>1937499</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55700,42 +55709,42 @@
 				<![CDATA[ads addr OF PreLineScannerHook	( reserved function, not standard )]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937502</IOffset>
+			<IOffset>1937503</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNS_ERROR</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937506</IOffset>
+			<IOffset>1937507</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNS_GROUPCOUNT</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937510</IOffset>
+			<IOffset>1937511</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNS_ITPSTATE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937514</IOffset>
+			<IOffset>1937515</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNS_ITPOPMODE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937518</IOffset>
+			<IOffset>1937519</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNS_BUFPROG</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937522</IOffset>
+			<IOffset>1937523</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55745,21 +55754,21 @@
 				<![CDATA[NC ADS Index Offsets for CHANNEL Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937526</IOffset>
+			<IOffset>1937527</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_LOADPROG</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937530</IOffset>
+			<IOffset>1937531</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_STARTPROG</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937534</IOffset>
+			<IOffset>1937535</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55769,77 +55778,77 @@
 				<![CDATA[Load NC programm by programm name]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937538</IOffset>
+			<IOffset>1937539</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_RESET</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937542</IOffset>
+			<IOffset>1937543</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_STOP</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937546</IOffset>
+			<IOffset>1937547</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_RETRY</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937550</IOffset>
+			<IOffset>1937551</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_SKIP</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937554</IOffset>
+			<IOffset>1937555</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_SAVENPV</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937558</IOffset>
+			<IOffset>1937559</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_LOADNPV</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937562</IOffset>
+			<IOffset>1937563</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_SAVEWZK</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937566</IOffset>
+			<IOffset>1937567</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_LOADWZK</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937570</IOffset>
+			<IOffset>1937571</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_GOAHEAD</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937574</IOffset>
+			<IOffset>1937575</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_CHNF_DELDTG</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937578</IOffset>
+			<IOffset>1937579</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55849,112 +55858,112 @@
 				<![CDATA[reset specified fast m-func]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937582</IOffset>
+			<IOffset>1937583</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_ID</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937586</IOffset>
+			<IOffset>1937587</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_NAME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937590</IOffset>
+			<IOffset>1937591</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_TYPE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937594</IOffset>
+			<IOffset>1937595</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_SAFCYCLETIME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937598</IOffset>
+			<IOffset>1937599</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_SVBCYCLETIME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937602</IOffset>
+			<IOffset>1937603</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_SINGLESTEP</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937606</IOffset>
+			<IOffset>1937607</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_MAXSVBENTRIES</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937610</IOffset>
+			<IOffset>1937611</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_MAXSAFENTRIES</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937614</IOffset>
+			<IOffset>1937615</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_CHNID</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937618</IOffset>
+			<IOffset>1937619</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_NRINCHN</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937622</IOffset>
+			<IOffset>1937623</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_VELOMIN</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937626</IOffset>
+			<IOffset>1937627</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_VELOJUMPC0X</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937630</IOffset>
+			<IOffset>1937631</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_VELOJUMPC0Y</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937634</IOffset>
+			<IOffset>1937635</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_VELOJUMPC0Z</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937638</IOffset>
+			<IOffset>1937639</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRP_FIFODIM</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937642</IOffset>
+			<IOffset>1937643</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -55964,84 +55973,84 @@
 				<![CDATA[NC ADS Index Offsets for GROUP State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937646</IOffset>
+			<IOffset>1937647</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRS_ERROR</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937650</IOffset>
+			<IOffset>1937651</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRS_MASTERAXIS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937654</IOffset>
+			<IOffset>1937655</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRS_SLAVEAXIS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937658</IOffset>
+			<IOffset>1937659</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRS_SVBSTATE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937662</IOffset>
+			<IOffset>1937663</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRS_SAFSTATE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937666</IOffset>
+			<IOffset>1937667</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRS_MOTIONSTATE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937670</IOffset>
+			<IOffset>1937671</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRS_CALIBRATIONSTATE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937674</IOffset>
+			<IOffset>1937675</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRS_COUPLESTATE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937678</IOffset>
+			<IOffset>1937679</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRS_COUPLETABLEID</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937682</IOffset>
+			<IOffset>1937683</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRS_SVBENTRIES</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937686</IOffset>
+			<IOffset>1937687</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRS_SAFENTRIES</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937690</IOffset>
+			<IOffset>1937691</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56051,7 +56060,7 @@
 				<![CDATA[E-stop active ?]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937694</IOffset>
+			<IOffset>1937695</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56061,56 +56070,56 @@
 				<![CDATA[NC ADS Index Offsets for GROUP Functions]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937698</IOffset>
+			<IOffset>1937699</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRF_RESET</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937702</IOffset>
+			<IOffset>1937703</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRF_STOP</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937706</IOffset>
+			<IOffset>1937707</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRF_CLEAR</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937710</IOffset>
+			<IOffset>1937711</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRF_AXCONFIG</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937714</IOffset>
+			<IOffset>1937715</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRF_SINGLEAXCONFIG</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937718</IOffset>
+			<IOffset>1937719</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRF_AXDISCONNECT</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937722</IOffset>
+			<IOffset>1937723</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_GRF_STARTFIFO</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937726</IOffset>
+			<IOffset>1937727</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56120,301 +56129,301 @@
 				<![CDATA[NC ADS Index Offsets for AXIS Parameters]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937730</IOffset>
+			<IOffset>1937731</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_ID</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937734</IOffset>
+			<IOffset>1937735</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_NAME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937738</IOffset>
+			<IOffset>1937739</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_TYPE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937742</IOffset>
+			<IOffset>1937743</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_CYCLETIME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937746</IOffset>
+			<IOffset>1937747</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_VELOREFSEARCH</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937750</IOffset>
+			<IOffset>1937751</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_VELOSYNCSEARCH</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937754</IOffset>
+			<IOffset>1937755</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_VELOSLOWMANUAL</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937758</IOffset>
+			<IOffset>1937759</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_VELOFASTMANUAL</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937762</IOffset>
+			<IOffset>1937763</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_VELOFAST</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937766</IOffset>
+			<IOffset>1937767</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_POSAREAENABLE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937770</IOffset>
+			<IOffset>1937771</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_POSAREARANGE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937774</IOffset>
+			<IOffset>1937775</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_MOTCNTRLENABLE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937778</IOffset>
+			<IOffset>1937779</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_MOTCNTRLTIME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937782</IOffset>
+			<IOffset>1937783</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_LOOPENABLE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937786</IOffset>
+			<IOffset>1937787</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_LOOPDISTANCE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937790</IOffset>
+			<IOffset>1937791</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_TARGETPOSENA</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937794</IOffset>
+			<IOffset>1937795</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_TARGETPOSRANGE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937798</IOffset>
+			<IOffset>1937799</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_TARGETPOSTIME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937802</IOffset>
+			<IOffset>1937803</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_PULSDISTPOS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937806</IOffset>
+			<IOffset>1937807</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_PULSDISTNEG</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937810</IOffset>
+			<IOffset>1937811</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_UNITFLAGS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937814</IOffset>
+			<IOffset>1937815</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_VELOMAXIMUM</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937818</IOffset>
+			<IOffset>1937819</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_MOTCNTRLRANGE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937822</IOffset>
+			<IOffset>1937823</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_PEHCONTROLENA</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937826</IOffset>
+			<IOffset>1937827</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_PEHCONTROLTIME</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937830</IOffset>
+			<IOffset>1937831</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_BACKLASHCOMPENA</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937834</IOffset>
+			<IOffset>1937835</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_BACKLASH</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937838</IOffset>
+			<IOffset>1937839</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_DATAPERSISTENCE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937842</IOffset>
+			<IOffset>1937843</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1" TaskPrio="1">.NCIDXO_AXP_HWAMSADDR</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937846</IOffset>
+			<IOffset>1937847</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_ACC</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937850</IOffset>
+			<IOffset>1937851</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_DEC</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937854</IOffset>
+			<IOffset>1937855</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_JERK</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937858</IOffset>
+			<IOffset>1937859</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_DELAY</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937862</IOffset>
+			<IOffset>1937863</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_OVERRIDETYPE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937866</IOffset>
+			<IOffset>1937867</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_ENCSCALE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937870</IOffset>
+			<IOffset>1937871</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_ENABLESOFTENDMIN</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937874</IOffset>
+			<IOffset>1937875</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_ENABLESOFTENDMAX</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937878</IOffset>
+			<IOffset>1937879</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_SOFTENDMIN</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937882</IOffset>
+			<IOffset>1937883</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_SOFTENDMAX</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937886</IOffset>
+			<IOffset>1937887</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_ENABLEPOSDIFF</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937890</IOffset>
+			<IOffset>1937891</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_POSDIFFMAX</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937894</IOffset>
+			<IOffset>1937895</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXP_GAINPOS</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937898</IOffset>
+			<IOffset>1937899</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56424,7 +56433,7 @@
 				<![CDATA[NC ADS Index Offsets for AXIS State]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937902</IOffset>
+			<IOffset>1937903</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56434,7 +56443,7 @@
 				<![CDATA[actual runtime error]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937906</IOffset>
+			<IOffset>1937907</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56444,7 +56453,7 @@
 				<![CDATA[setpoint position]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937910</IOffset>
+			<IOffset>1937911</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56454,7 +56463,7 @@
 				<![CDATA[setpoint modulo position]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937914</IOffset>
+			<IOffset>1937915</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56464,7 +56473,7 @@
 				<![CDATA[setpoint modulo turns]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937918</IOffset>
+			<IOffset>1937919</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56474,7 +56483,7 @@
 				<![CDATA[setpoint velocity]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937922</IOffset>
+			<IOffset>1937923</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56484,7 +56493,7 @@
 				<![CDATA[setpoint acceleration]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937926</IOffset>
+			<IOffset>1937927</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56494,7 +56503,7 @@
 				<![CDATA[couple state]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937930</IOffset>
+			<IOffset>1937931</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56504,14 +56513,14 @@
 				<![CDATA[read couple parameters]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937934</IOffset>
+			<IOffset>1937935</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXS_CPLFACTOR</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1937938</IOffset>
+			<IOffset>1937939</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56521,7 +56530,7 @@
 				<![CDATA[actual position]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937942</IOffset>
+			<IOffset>1937943</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56531,7 +56540,7 @@
 				<![CDATA[actual modulo position]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937946</IOffset>
+			<IOffset>1937947</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56541,7 +56550,7 @@
 				<![CDATA[actual modulo turns]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937950</IOffset>
+			<IOffset>1937951</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56551,7 +56560,7 @@
 				<![CDATA[actual velocity]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937954</IOffset>
+			<IOffset>1937955</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56561,7 +56570,7 @@
 				<![CDATA[actual acceleration]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937958</IOffset>
+			<IOffset>1937959</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56571,7 +56580,7 @@
 				<![CDATA[actual increments]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937962</IOffset>
+			<IOffset>1937963</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56581,7 +56590,7 @@
 				<![CDATA[actual position difference]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937966</IOffset>
+			<IOffset>1937967</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56591,7 +56600,7 @@
 				<![CDATA[Axis: reset]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937970</IOffset>
+			<IOffset>1937971</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56601,7 +56610,7 @@
 				<![CDATA[Axis: stop]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937974</IOffset>
+			<IOffset>1937975</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56611,7 +56620,7 @@
 				<![CDATA[Axis: clear]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937978</IOffset>
+			<IOffset>1937979</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56621,7 +56630,7 @@
 				<![CDATA[Axis: reference]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937982</IOffset>
+			<IOffset>1937983</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56631,7 +56640,7 @@
 				<![CDATA[Axis: new endposition]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937986</IOffset>
+			<IOffset>1937987</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56641,7 +56650,7 @@
 				<![CDATA[Axis: new endposition and new velocity]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937990</IOffset>
+			<IOffset>1937991</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56651,7 +56660,7 @@
 				<![CDATA[Axis: set actual position]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937994</IOffset>
+			<IOffset>1937995</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56661,7 +56670,7 @@
 				<![CDATA[Axis: set reference flag]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1937998</IOffset>
+			<IOffset>1937999</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56671,7 +56680,7 @@
 				<![CDATA[Axis: normal start]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938002</IOffset>
+			<IOffset>1938003</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56681,7 +56690,7 @@
 				<![CDATA[Axis: extended start]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938006</IOffset>
+			<IOffset>1938007</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56691,7 +56700,7 @@
 				<![CDATA[Axis: start drive output]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938010</IOffset>
+			<IOffset>1938011</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56701,7 +56710,7 @@
 				<![CDATA[Axis: stop drive output]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938014</IOffset>
+			<IOffset>1938015</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56711,7 +56720,7 @@
 				<![CDATA[Axis: change drive output]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938018</IOffset>
+			<IOffset>1938019</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56721,7 +56730,7 @@
 				<![CDATA[Axis: start compensation]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938022</IOffset>
+			<IOffset>1938023</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56731,7 +56740,7 @@
 				<![CDATA[Axis: stop compensation]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938026</IOffset>
+			<IOffset>1938027</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56741,7 +56750,7 @@
 				<![CDATA[Axis: couple master-slave]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938030</IOffset>
+			<IOffset>1938031</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56751,7 +56760,7 @@
 				<![CDATA[Axis: decouple master-slave]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938034</IOffset>
+			<IOffset>1938035</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56761,7 +56770,7 @@
 				<![CDATA[Axis: change coupleparams]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938038</IOffset>
+			<IOffset>1938039</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56771,7 +56780,7 @@
 				<![CDATA[Axis: change coupleparams f. tabs]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938042</IOffset>
+			<IOffset>1938043</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56781,7 +56790,7 @@
 				<![CDATA[Axis: stop slave]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938046</IOffset>
+			<IOffset>1938047</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56791,7 +56800,7 @@
 				<![CDATA[Axis: couple master-slave w. tabs]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938050</IOffset>
+			<IOffset>1938051</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56801,7 +56810,7 @@
 				<![CDATA[Axis: activate corr. tab]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938054</IOffset>
+			<IOffset>1938055</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56811,7 +56820,7 @@
 				<![CDATA[Axis: deactivate profile tab]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938058</IOffset>
+			<IOffset>1938059</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56821,7 +56830,7 @@
 				<![CDATA[Axis: disable]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938062</IOffset>
+			<IOffset>1938063</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56831,7 +56840,7 @@
 				<![CDATA[Axis: enable]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938066</IOffset>
+			<IOffset>1938067</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56841,7 +56850,7 @@
 				<![CDATA[Axis: disable drive output]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938070</IOffset>
+			<IOffset>1938071</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56851,14 +56860,14 @@
 				<![CDATA[Axis: enable drive output]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938074</IOffset>
+			<IOffset>1938075</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name IsDefinedInLibrary="1">.NCIDXO_AXF_RECONFIGURATE</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1938078</IOffset>
+			<IOffset>1938079</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56868,7 +56877,7 @@
 				<![CDATA[KL5101: extern latch active ?]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938082</IOffset>
+			<IOffset>1938083</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56878,7 +56887,7 @@
 				<![CDATA[KL5101: extern latch valid ?]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938086</IOffset>
+			<IOffset>1938087</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56888,7 +56897,7 @@
 				<![CDATA[KL5101: extern latch: hardware value in increments]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938090</IOffset>
+			<IOffset>1938091</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56898,7 +56907,7 @@
 				<![CDATA[KL5101: extern latch: position value in base units]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938094</IOffset>
+			<IOffset>1938095</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56908,7 +56917,7 @@
 				<![CDATA[KL5101: extern latch: hardware difference in increments]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938098</IOffset>
+			<IOffset>1938099</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56918,7 +56927,7 @@
 				<![CDATA[KL5101: extern latch: position difference in base units]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938102</IOffset>
+			<IOffset>1938103</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
@@ -56928,7 +56937,7 @@
 				<![CDATA[KL5101: activate extern latch]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>1938106</IOffset>
+			<IOffset>1938107</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 	</Symbols>

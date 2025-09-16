@@ -1,0 +1,11 @@
+(* Neue Parameter für Maschine M3 *)
+.T_NovRam.T_Parameter.T_StationWork.T_Fct_ParamCoolant.axConfigCoolantValve[1]:=TRUE;
+.T_NovRam.T_Parameter.T_StationWork.T_Fct_ParamCoolant.axConfigCoolantValve[2]:=TRUE;
+.T_NovRam.T_Parameter.T_StationWork.T_Fct_ParamCoolant.axConfigCoolantValve[3]:=TRUE;
+.T_NovRam.T_Parameter.T_StationWork.T_Fct_ParamCoolant.axConfigCoolantValve[4]:=TRUE;
+.T_NovRam.T_Parameter.T_StationWork.T_Fct_ParamCoolant.axConfigCoolantValve[5]:=TRUE;
+.T_NovRam.T_Parameter.T_StationWork.T_Fct_ParamCoolant.axConfigCoolantValve[6]:=TRUE;
+.T_NovRam.T_Parameter.T_StationWork.T_Fct_ParamCoolant.axConfigCoolantValve[7]:=TRUE;
+.T_NovRam.T_Parameter.T_StationWork.T_Fct_ParamCoolant.axConfigCoolantValve[8]:=TRUE;
+.T_NovRam.T_Parameter.T_StationWork.T_Fct_ParamCoolant.axConfigCoolantValve[9]:=TRUE;
+.T_NovRam.T_Parameter.T_StationWork.T_Fct_ParamCoolant.axConfigCoolantValve[10]:=TRUE;

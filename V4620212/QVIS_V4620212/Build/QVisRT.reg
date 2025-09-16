@@ -1,0 +1,13 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Kinz\QVisRT]
+"Project"="project.bin"
+"VI_DLL"="Demo.dll"
+"XI_DLL"=""
+"RefreshTime"=dword:000000fa
+"SaveDir"="c:\\TEMP\\SaveDir\\"
+"AutoSaveDir"="c:\\TEMP\\AutoSaveDir"
+"ExportDir"="c:\\TEMP\\ExportDir\\"
+"PositionX"=dword:00000100
+"PositionY"=dword:00000050
+

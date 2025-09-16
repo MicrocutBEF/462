@@ -1,0 +1,11 @@
+Installation: QVis-PC640x480-Demo
+Betriebsystem: WinNT
+
+
+1.) QVisRT.reg starten (Doppelklick). Anschlieﬂend best‰tigen.
+    Es werden notwendige Registratureintr‰ge gemacht.
+
+
+2.) QVisRT.exe starten
+
+	Demo l‰uft...

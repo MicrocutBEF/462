@@ -1,0 +1,15 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Kinz\QVisRT]
+"Project"="project.bin"
+"VI_DLL"="QClientTC.dll"
+"RefreshTime"=dword:000000fa
+"SaveDir"="c:\\TEMP\\SaveDir\\"
+"AutoSaveDir"="c:\\TEMP\\AutoSaveDir"
+"ExportDir"="c:\\TEMP\\ExportDir\\"
+"PositionX"=dword:00000000
+"PositionY"=dword:00000000
+"ShutdownOnExit"=dword:00000000
+"HelpApp"=""
+"HelpPath"=""
+"AlarmListTime"=dword:00001388

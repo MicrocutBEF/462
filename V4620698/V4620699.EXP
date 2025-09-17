@@ -6474,10 +6474,10 @@ END_VAR
 
 	IF T_LoadProfileParameter.T_ProzessData.rDistProgressStroke <> T_ProfileParameter.T_ProzessData.rDistProgressStroke THEN xProcessValueModified:=TRUE; END_IF
 	IF T_LoadProfileParameter.T_ProzessData.iProgressStrokeStartTorque <> T_ProfileParameter.T_ProzessData.iProgressStrokeStartTorque THEN xProcessValueModified:=TRUE; END_IF
-	IF T_LoadProfileParameter.T_ProzessData.rStopProgressStrokeOffset <> T_ProfileParameter.T_ProzessData.rStopProgressStrokeOffset THEN xProcessValueModified:=TRUE; END_IF
+	IF T_LoadProfileParameter.T_ProzessData.rProgressStrokeStopOffset <> T_ProfileParameter.T_ProzessData.rProgressStrokeStopOffset THEN xProcessValueModified:=TRUE; END_IF
 	IF T_LoadProfileParameter.T_ProzessData.iCleanNozzleMode <> T_ProfileParameter.T_ProzessData.iCleanNozzleMode THEN xProcessValueModified:=TRUE; END_IF
-	IF T_LoadProfileParameter.T_ProzessData.iOutfeedStrokeEnableControl <> T_ProfileParameter.T_ProzessData.iOutfeedStrokeEnableControl THEN xProcessValueModified:=TRUE; END_IF
-	IF T_LoadProfileParameter.T_ProzessData.iSparkOutEnableControl <> T_ProfileParameter.T_ProzessData.iSparkOutEnableControl THEN xProcessValueModified:=TRUE; END_IF
+	IF T_LoadProfileParameter.T_ProzessData.iOutfeedStrokeController <> T_ProfileParameter.T_ProzessData.iOutfeedStrokeController THEN xProcessValueModified:=TRUE; END_IF
+	IF T_LoadProfileParameter.T_ProzessData.iSparkOutController <> T_ProfileParameter.T_ProzessData.iSparkOutController THEN xProcessValueModified:=TRUE; END_IF
 END_FUNCTION_BLOCK
 
 
@@ -6661,10 +6661,10 @@ IF FIND(sTmp,':=') <> 0 THEN
 
 		ELSIF sVariableName = 'rdistprogressstroke' THEN ptrStProzessData^.rDistProgressStroke:=STRING_TO_REAL(sValue); iCountParameter:=iCountParameter + 1;
 		ELSIF sVariableName = 'iprogressstrokestarttorque' THEN ptrStProzessData^.iProgressStrokeStartTorque:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
-		ELSIF sVariableName = 'rstopprogressstrokeoffset' THEN ptrStProzessData^.rStopProgressStrokeOffset:=STRING_TO_REAL(sValue); iCountParameter:=iCountParameter + 1;
+		ELSIF sVariableName = 'rprogressstrokestopoffset' THEN ptrStProzessData^.rProgressStrokeStopOffset:=STRING_TO_REAL(sValue); iCountParameter:=iCountParameter + 1;
 		ELSIF sVariableName = 'icleannozzlemode' THEN ptrStProzessData^.iCleanNozzleMode:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
-		ELSIF sVariableName = 'ioutfeedstrokeenablecontrol' THEN ptrStProzessData^.iOutfeedStrokeEnableControl:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
-		ELSIF sVariableName = 'isparkoutenablecontrol' THEN ptrStProzessData^.iSparkOutEnableControl:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
+		ELSIF sVariableName = 'ioutfeedstrokecontroller' THEN ptrStProzessData^.iOutfeedStrokeController:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
+		ELSIF sVariableName = 'isparkoutcontroller' THEN ptrStProzessData^.iSparkOutController:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
 
 		END_IF;
 	END_IF;
@@ -7652,13 +7652,13 @@ END_VAR
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
 		sTmp:=CONCAT('087:iProgressStrokeStartTorque:=',INT_TO_STRING(ptrStProzessData^.iProgressStrokeStartTorque));
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
-		sTmp:=CONCAT('088:rStopProgressStrokeOffset:=',REAL_TO_STRING(ptrStProzessData^.rStopProgressStrokeOffset));
+		sTmp:=CONCAT('088:rProgressStrokeStopOffset:=',REAL_TO_STRING(ptrStProzessData^.rProgressStrokeStopOffset));
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
 		sTmp:=CONCAT('089:iCleanNozzleMode:=',INT_TO_STRING(ptrStProzessData^.iCleanNozzleMode));
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
-		sTmp:=CONCAT('090:ioutfeedstrokeenablecontrol:=',INT_TO_STRING(ptrStProzessData^.iOutfeedStrokeEnableControl));
+		sTmp:=CONCAT('090:ioutfeedstrokecontroller:=',INT_TO_STRING(ptrStProzessData^.iOutfeedStrokeController));
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
-		sTmp:=CONCAT('091:isparkoutenablecontrol:=',INT_TO_STRING(ptrStProzessData^.iSparkOutEnableControl));
+		sTmp:=CONCAT('091:isparkoutcontroller:=',INT_TO_STRING(ptrStProzessData^.iSparkOutController));
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
 
 	(* add empty line to set the end *)
@@ -7781,10 +7781,10 @@ END_VAR
 
 		ptrT_DefaultProfileParameter^[ii].T_ProzessData.rDistProgressStroke:=0.0;
 		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iProgressStrokeStartTorque:=0;
-		ptrT_DefaultProfileParameter^[ii].T_ProzessData.rStopProgressStrokeOffset:=0.0;
+		ptrT_DefaultProfileParameter^[ii].T_ProzessData.rProgressStrokeStopOffset:=0.0;
 		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iCleanNozzleMode:=0;
-		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iOutfeedStrokeEnableControl:=0;
-		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iSparkOutEnableControl:=0;
+		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iOutfeedStrokeController:=0;
+		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iSparkOutController:=0;
 
 	END_FOR;
 	(* Confirm Default setting *)
@@ -14674,7 +14674,7 @@ IF ptrTAxisZ^.T_CtrleSingle.xMovingForward THEN
 	rStFct_V1:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward;
 	rStFct_V2:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward/100.0;
 	xConventionalControllerEnable:=TRUE;
-ELSIF (T_Station_Parameter.T_StProcess.iSparkOutEnableControl=1 OR T_Station_Parameter.T_StProcess.iOutfeedStrokeEnableControl=1)
+ELSIF (T_Station_Parameter.T_StProcess.iSparkOutController=1 OR T_Station_Parameter.T_StProcess.iOutfeedStrokeController=1)
 	AND ptrTAxisZ^.T_CtrleSingle.xMovingBackwards THEN
 	rStFct_V1:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedBackward;
 	rStFct_V2:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedBackward/100.0;
@@ -14862,7 +14862,7 @@ ACTION	StationFunction_Ctrl_Controller_S:
 (* Drehzahlregler der S Achse  mittels der Kraftmessdose--> Konventioneller Regler aber ohne Override da das Override nicht grösser werden darf als 100
    Den Min Max Wert kann man hier auch als Max definieren, d.h. bei ansteigendem Drehmoment wird die Drehzahl höher und deshalb funktioniert das Override nicht *)
 IF (ptrTAxisZ^.T_CtrleSingle.xMovingForward
-	OR ((T_Station_Parameter.T_StProcess.iSparkOutEnableControl=1 OR T_Station_Parameter.T_StProcess.iOutfeedStrokeEnableControl=1) AND ptrTAxisZ^.T_CtrleSingle.xMovingBackwards))
+	OR ((T_Station_Parameter.T_StProcess.iSparkOutController=1 OR T_Station_Parameter.T_StProcess.iOutfeedStrokeController=1) AND ptrTAxisZ^.T_CtrleSingle.xMovingBackwards))
 	AND (T_Station_Parameter.T_StProcess.rWorkingSpindleSpeedMinMax <> 0.0) THEN
 	(* Konventionelle Regelung aber ohne Override Funktion *)
 	rStFct_V1:=	T_Station_Parameter.T_OnlineChange.rWorkingSpindleSpeed;
@@ -36522,7 +36522,7 @@ STRUCT
 (* Progressiv Stroke *)
 	rDistProgressStroke:REAL; 			(* [mm] Vertikale Distanz, welche das Intervall zwischen den Rueckzieher definiert *) (* BEF *)
 	iProgressStrokeStartTorque:INT; 	(* [%] Notwendiges Drehmoment um den ersten Rueckhub zu erzwingen und somit die progressive Hubfunktion zu starten. In Prozent bezogen auf das Hard Contact Drehmoment (WzDrehm. HC) *) (* BEF *)
-	rStopProgressStrokeOffset:REAL; 	(* [mm] Distanz zur Endposition (EndWork Position), bei der die Hubfunktion nicht mehr ausgefuehrt werden soll. *) (* BEF *)
+	rProgressStrokeStopOffset:REAL; 	(* [mm] Distanz zur Endposition (EndWork Position), bei der die Hubfunktion nicht mehr ausgefuehrt werden soll. *) (* BEF *)
 (* Abblasduese *)
 	iCleanNozzleMode:INT; 			(*0=Duese nicht eingeschaltet,1= fuer positive Z1 Geschwindigkeiten eingeschaltet, 2=fuer negative Z1 Geschwindigkeiten eingeschaltet, 3=fuer jegliche Geschwindigkeiten eingeschaltet *) (* BEF *)
 (* Positionen *)
@@ -36587,8 +36587,8 @@ STRUCT
 	rZ1AxisPosSwitchFastVel:REAL;			(* Neuer Parameter für das zurückfahren am Prozessende nach welcher Z1 Position dann mit der schnellen Geschwindigkeit umstellen soll *)
 	rZ1AxisOffsetStartRecordTorque:REAL;	(* Neuer Parameter für das zurückfahren am Prozessende nach welcher Z1 Position die Aufzeichnung für das maximale Drehmoment gestartet werden soll *)
 
-	iOutfeedStrokeEnableControl:INT; 		(* Drehmomentregler fuer die Rueckfahrt bei Prozessende, 0=Aus, 1=Konv. Regler, 2=PID, 3=Konv. und D-Regler *)
-	iSparkOutEnableControl:INT; 			(* Drehmomentregler fuer den Ausfunkprozess, 0=Aus, 1=Konv. Regler, 2=PID, 3=Konv. und D-Regler  *)
+	iOutfeedStrokeController:INT; 		(* Drehmomentregler fuer die Rueckfahrt bei Prozessende, 0=Aus, 1=Konv. Regler, 2=PID, 3=Konv. und D-Regler *)
+	iSparkOutController:INT; 			(* Drehmomentregler fuer den Ausfunkprozess, 0=Aus, 1=Konv. Regler, 2=PID, 3=Konv. und D-Regler  *)
 
 (* Neue Parameter für das Inkrementieren der Z1 Zentrier Position *)
 	xCentringEndProcIncOnOff:BOOL;		(* Hier kann definiert werden ob die Inkrementierung in der Zentrierung Aktiv sein soll oder nicht. Wenn Wert 0 eingestellt ist, dann ist es wie gehabt *)

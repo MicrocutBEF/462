@@ -1,0 +1,31 @@
+01:nodeid:=1;
+02:netid:=192.168.1.241.2.4;
+03:devicename:=AM3022_Slide_St1;
+04:hcrampdeceleration:=4400.0;
+05:hcrampjerk:=101895.0;
+06:idxGrp:=16#4000;idxOff:=16#27;Len:=16#8;Value:=250.0;(* Maximal velocity *)
+07:idxGrp:=16#4000;idxOff:=16#6;Len:=16#8;Value:=20.0;(* Velocity Ref forward *)
+08:idxGrp:=16#4000;idxOff:=16#7;Len:=16#8;Value:=20.0;(* Velocity Ref backward *)
+09:idxGrp:=16#4000;idxOff:=16#101;Len:=16#8;Value:=4400.0;(* Acceleration *)
+10:idxGrp:=16#4000;idxOff:=16#102;Len:=16#8;Value:=4400.0;(* Decceleration *)
+11:idxGrp:=16#4000;idxOff:=16#103;Len:=16#8;Value:=101895.0;(* Jerk *)
+12:idxGrp:=16#4000;idxOff:=16#A;Len:=16#8;Value:=250.0;(* Rapid traverse velocity *)
+13:idxGrp:=16#5000;idxOff:=16#B;Len:=16#2;Value:=0;(* Enable min soft position *)
+14:idxGrp:=16#5000;idxOff:=16#D;Len:=16#8;Value:=0;(* Min soft position *)
+15:idxGrp:=16#5000;idxOff:=16#C;Len:=16#2;Value:=0;(* Enable max soft position *)
+16:idxGrp:=16#5000;idxOff:=16#E;Len:=16#8;Value:=0;(* Max soft position *)
+17:idxGrp:=16#6000;idxOff:=16#10;Len:=16#2;Value:=1;(* Enable position lag *)
+18:idxGrp:=16#6000;idxOff:=16#12;Len:=16#8;Value:=10.0;(* Max Position lag *)	
+19:idxGrp:=16#5000;idxOff:=16#8;Len:=16#2;Value:=0;(* Encoder invert polarity *)
+20:idxGrp:=16#5000;idxOff:=16#6;Len:=16#8;Value:=3.81e-5;(* Encoder scaling factor *)
+21:idxGrp:=16#5000;idxOff:=16#9;Len:=16#8;Value:=1;(* Encoder modulo factor *)
+22:idxGrp:=16#5000;idxOff:=16#101;Len:=16#2;Value:=1;(* Encoder dir for ref search *)
+23:idxGrp:=16#5000;idxOff:=16#102;Len:=16#2;Value:=0;(* Encoder dir for sync impuls*)
+24:idxGrp:=16#5000;idxOff:=16#103;Len:=16#8;Value:=0;(* Encoder ref value *)
+25:idxGrp:=16#5000;idxOff:=16#106;Len:=16#2;Value:=0;(* Encoder External sync impuls *)
+26:idxGrp:=16#5000;idxOff:=16#107;Len:=16#4;Value:=5;(* Encoder ref sequence *)
+27:idxGrp:=16#7000;idxOff:=16#6;Len:=16#2;Value:=0;(* Driver invert polarity *)
+28:idxGrp:=16#7000;idxOff:=16#101;Len:=16#8;Value:=280;(* Driver Max Reference velocity *)
+29:idxGrp:=16#7000;idxOff:=16#102;Len:=16#8;Value:=0.75;(* Driver output ration *)
+30:idxGrp:=16#6000;idxOff:=16#B;Len:=16#8;Value:=1;(* Controller pre-ctrl weighting *)
+31:idxGrp:=16#6000;idxOff:=16#102;Len:=16#8;Value:=50;(* Controller Kv factor *)

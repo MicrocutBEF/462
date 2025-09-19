@@ -1,0 +1,30 @@
+01:nodeid:=4;
+02:netid:=192.168.1.241.6.1;
+03:devicename:=EC-MAX3070W_Tool_St3;
+04:scalefactor:=0;
+05:nominalspeed:=6540;
+06:idxGrp:=16#6402;idxOff:=16#0;Len:=16#2;Value:=10;(* Motor typ *)
+07:idxGrp:=16#6410;idxOff:=16#1;Len:=16#2;Value:=3390;(* Continuous current limit *)
+08:idxGrp:=16#6410;idxOff:=16#2;Len:=16#2;Value:=5320;(* Output current limit *)
+09:idxGrp:=16#6410;idxOff:=16#3;Len:=16#1;Value:=1;(* Polepair number *)
+10:idxGrp:=16#6410;idxOff:=16#4;Len:=16#2;Value:=12000;(* Maximum speed in currentmode *)
+11:idxGrp:=16#6410;idxOff:=16#5;Len:=16#2;Value:=37;(* Thermal Time Constant*)
+12:idxGrp:=16#607F;idxOff:=16#0;Len:=16#4;Value:=12000;(* Max profile velocity *)
+13:idxGrp:=16#6083;idxOff:=16#0;Len:=16#4;Value:=10000;(* Profile acceleration *)
+14:idxGrp:=16#6084;idxOff:=16#0;Len:=16#4;Value:=10000;(* Profile decceleration *)
+15:idxGrp:=16#6085;idxOff:=16#0;Len:=16#4;Value:=10000;(* Profile quickstop *)
+16:idxGrp:=16#2210;idxOff:=16#1;Len:=16#2;Value:=500;(* Encoder pulse number *)
+17:idxGrp:=16#60F6;idxOff:=16#1;Len:=16#2;Value:=3125;(* Current Regulator P-Gain *)
+18:idxGrp:=16#60F6;idxOff:=16#2;Len:=16#2;Value:=1250;(* Current Regulator I-Gain *)
+19:idxGrp:=16#60F9;idxOff:=16#1;Len:=16#2;Value:=3200;(* Speed Regulator P-Gain *)
+20:idxGrp:=16#60F9;idxOff:=16#2;Len:=16#2;Value:=300;(* Speed Regulator I-Gain *)	
+21:idxGrp:=16#6065;idxOff:=16#0;Len:=16#4;Value:=2000;(* Max Following error *)
+22:idxGrp:=16#2300;idxOff:=16#2;Len:=16#2;Value:=1;(* Scaling numerator*)
+23:idxGrp:=16#2300;idxOff:=16#3;Len:=16#2;Value:=1;(* Scaling denominator *)
+24:idxGrp:=16#2300;idxOff:=16#4;Len:=16#1;Value:=1;(* Digital position polarity *)
+25:idxGrp:=16#2070;idxOff:=16#5;Len:=16#2;Value:=1;(* Config of Dig Inpput 5 Pos limit switch *)
+26:idxGrp:=16#2070;idxOff:=16#6;Len:=16#2;Value:=0;(* Config of Dig Inpput 6 Neg limit switch *)
+27:idxGrp:=16#2071;idxOff:=16#2;Len:=16#2;Value:=57351;(* DigIn Input Funct Mask *)
+28:idxGrp:=16#2071;idxOff:=16#3;Len:=16#2;Value:=3;(* DigIn Input Funct Polarity *)
+29:idxGrp:=16#2071;idxOff:=16#4;Len:=16#2;Value:=11;(* DigIn Input Funct Exe Mask *)
+

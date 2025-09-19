@@ -6474,7 +6474,10 @@ END_VAR
 
 	IF T_LoadProfileParameter.T_ProzessData.rDistProgressStroke <> T_ProfileParameter.T_ProzessData.rDistProgressStroke THEN xProcessValueModified:=TRUE; END_IF
 	IF T_LoadProfileParameter.T_ProzessData.iProgressStrokeStartTorque <> T_ProfileParameter.T_ProzessData.iProgressStrokeStartTorque THEN xProcessValueModified:=TRUE; END_IF
+	IF T_LoadProfileParameter.T_ProzessData.rProgressStrokeStopOffset <> T_ProfileParameter.T_ProzessData.rProgressStrokeStopOffset THEN xProcessValueModified:=TRUE; END_IF
 	IF T_LoadProfileParameter.T_ProzessData.iCleanNozzleMode <> T_ProfileParameter.T_ProzessData.iCleanNozzleMode THEN xProcessValueModified:=TRUE; END_IF
+	IF T_LoadProfileParameter.T_ProzessData.iOutfeedStrokeController <> T_ProfileParameter.T_ProzessData.iOutfeedStrokeController THEN xProcessValueModified:=TRUE; END_IF
+	IF T_LoadProfileParameter.T_ProzessData.iSparkOutController <> T_ProfileParameter.T_ProzessData.iSparkOutController THEN xProcessValueModified:=TRUE; END_IF
 END_FUNCTION_BLOCK
 
 
@@ -6658,7 +6661,10 @@ IF FIND(sTmp,':=') <> 0 THEN
 
 		ELSIF sVariableName = 'rdistprogressstroke' THEN ptrStProzessData^.rDistProgressStroke:=STRING_TO_REAL(sValue); iCountParameter:=iCountParameter + 1;
 		ELSIF sVariableName = 'iprogressstrokestarttorque' THEN ptrStProzessData^.iProgressStrokeStartTorque:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
+		ELSIF sVariableName = 'rprogressstrokestopoffset' THEN ptrStProzessData^.rProgressStrokeStopOffset:=STRING_TO_REAL(sValue); iCountParameter:=iCountParameter + 1;
 		ELSIF sVariableName = 'icleannozzlemode' THEN ptrStProzessData^.iCleanNozzleMode:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
+		ELSIF sVariableName = 'ioutfeedstrokecontroller' THEN ptrStProzessData^.iOutfeedStrokeController:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
+		ELSIF sVariableName = 'isparkoutcontroller' THEN ptrStProzessData^.iSparkOutController:=STRING_TO_INT(sValue); iCountParameter:=iCountParameter + 1;
 
 		END_IF;
 	END_IF;
@@ -7646,7 +7652,13 @@ END_VAR
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
 		sTmp:=CONCAT('087:iProgressStrokeStartTorque:=',INT_TO_STRING(ptrStProzessData^.iProgressStrokeStartTorque));
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
-		sTmp:=CONCAT('088:iCleanNozzleMode:=',INT_TO_STRING(ptrStProzessData^.iCleanNozzleMode));
+		sTmp:=CONCAT('088:rProgressStrokeStopOffset:=',REAL_TO_STRING(ptrStProzessData^.rProgressStrokeStopOffset));
+		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
+		sTmp:=CONCAT('089:iCleanNozzleMode:=',INT_TO_STRING(ptrStProzessData^.iCleanNozzleMode));
+		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
+		sTmp:=CONCAT('090:ioutfeedstrokecontroller:=',INT_TO_STRING(ptrStProzessData^.iOutfeedStrokeController));
+		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
+		sTmp:=CONCAT('091:isparkoutcontroller:=',INT_TO_STRING(ptrStProzessData^.iSparkOutController));
 		ptrDataFile^[i]:=CONCAT(sTmp,';');i:=i+1;
 
 	(* add empty line to set the end *)
@@ -7769,7 +7781,10 @@ END_VAR
 
 		ptrT_DefaultProfileParameter^[ii].T_ProzessData.rDistProgressStroke:=0.0;
 		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iProgressStrokeStartTorque:=0;
+		ptrT_DefaultProfileParameter^[ii].T_ProzessData.rProgressStrokeStopOffset:=0.0;
 		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iCleanNozzleMode:=0;
+		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iOutfeedStrokeController:=0;
+		ptrT_DefaultProfileParameter^[ii].T_ProzessData.iSparkOutController:=0;
 
 	END_FOR;
 	(* Confirm Default setting *)
@@ -13178,7 +13193,6 @@ VAR
 
 	rTorquePercent: REAL;							(* IGS *)
 
-
 	TONWaitReady:TON;							(* IGS *)
 	rStFct_V1:REAL;								(* IGS *)
 	rStFct_V2:REAL;								(* IGS *)
@@ -13193,12 +13207,31 @@ VAR
 	rTorqueMin_Min:REAL;							(* IGS *)
 	rStFct_CalcZSpeed:REAL;						(* IGS *)
 
-	(* Progressiv Stroke *)
-	xProgressStrokeReady:BOOL;					(* BEF *)
-	xProgressStrokeRunning:BOOL;					(* BEF *)
-	iStepProgressStroke:INT;						(* BEF *)
+	(* Progressive Stroke *)
+	xStFct_ProgressStrokeReady:BOOL;				(* BEF *)
+	xStFct_ProgressStrokeRunning:BOOL;			(* BEF *)
+	iStFct_StepProgressStroke:INT;					(* BEF *)
 	rStFct_ProgressStrokePosition:REAL;			(* BEF *)
 
+	(* Spark Out *)
+	xStFct_InitStepSparkOut:BOOL;					(* BEF *)
+	xStFct_SparkOutRunning:BOOL;					(* BEF *)
+	iStFct_StepSparkOut:INT;						(* BEF *)
+	xStFct_ActiveChgForceDeflection:BOOL;			(* BEF *)
+	xStFct_SetForceDeflection:BOOL;				(* BEF *)
+	xStFct_InitSetForceDeflection:BOOL;				(* BEF *)
+	iStFct_TmpCountHub:INT;						(* BEF *)
+	xStFct_BlockCounter:BOOL;						(* BEF *)
+	xStFct_RepeatProcess:BOOL;					(* BEF *)
+	xStFct_InitSparkOutVar:BOOL;					(* BEF *)
+
+	xStFct_SparkOutDone:BOOL;					(* BEF *)
+
+	(* Controllers *)
+	rStFct_CtrlInputWorkingSpeed:REAL;				(* BEF *) (* General speed, can be positive or negative *)
+
+	(* Outfeed Stroke *)
+	xStFct_OutfeedStrokeRunning:BOOL; 				(* BEF *)
 
 	(* .HW_Axis_DC *)
 (*	iStepBubbler:INT;															(* IGS3 *)
@@ -13566,7 +13599,7 @@ IF xStartFunction AND (iStationFunctionNr = 5) AND (iStFct_StepPrc = 3) THEN
 END_IF;
 (***************************************************************************************************************************************************)
 (* Auffangen HC beim ausfunken *)
-IF xStartFunction AND (iStationFunctionNr = 5) AND (iStFct_StepPrc = 9) AND ptrTAxisZ^.T_CtrleSingle.xMovingForward THEN
+IF xStartFunction AND (iStationFunctionNr = 5) AND (iStFct_StepPrc = 9 OR iStFct_StepPrc = 50) AND ptrTAxisZ^.T_CtrleSingle.xMovingForward THEN
 	IF ptrTCylToolDeflection^.T_CtrleCyl.xStatePosOn THEN
 		T_Station_Work.THWWorkStation.TCtrlWork.xHCSparkOut:=TRUE;
 	END_IF;
@@ -14655,44 +14688,58 @@ END_ACTION
 
 ACTION	StationFunction_Ctrl_Controller_1:
 (* Geschwindigkeitsregelung der Z1 Achse mittels der Kraftmessdose--> Konventioneller Regler *)
+(* All speeds are positive since the controller 1 is used with position commands *)
 IF ptrTAxisZ^.T_CtrleSingle.xMovingForward THEN
-	(* Konventionelle Regelung aber mit Override Funktion *)
 	rStFct_V1:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward;
 	rStFct_V2:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward/100.0;
-	rStFct_S1:=	0.5;
-	rStFct_S2:=	T_Station_Parameter.T_OnlineChange.rTorqueLevelHC;
-	CASE T_ExchgParam.bToolSpindleActive OF
-	1:	(* Maxon Spindel *)
-		rStFct_M:=	T_Station_Parameter.T_TorqueSystem.rActual_Torque;		(* Maxon Spindel ist aktiv *)
-	2:	(* Beckhoff Spindel L *)
-		rStFct_M:=	T_Station_Parameter.T_TorqueSystem_L.rActual_Torque;	(* Beckhoff Spindel ist aktiv *)
-	3:	(* Beckhoff Spindel M *)
-		rStFct_M:=	T_Station_Parameter.T_TorqueSystem_M.rActual_Torque;	(* Beckhoff Spindel ist aktiv *)
-	END_CASE;
-	IF ((rStFct_S2 - rStFct_S1) <> 0.0) THEN
-		rStFct_CalcZSpeed:=	rStFct_V1 -
-							((rStFct_V1 - rStFct_V2) * ((rStFct_M - rStFct_S1)/(rStFct_S2 - rStFct_S1)));
-	END_IF;
-	IF ptrTSensorTorque^.T_CtrleCyl.xStatePosOff THEN
-		IF (((rStFct_CalcZSpeed / rStFct_V1) *100.0) >= 0) THEN
-			ptrTAxisZ^.T_CtrleSingle.dwOverride:=REAL_TO_DWORD((rStFct_CalcZSpeed / rStFct_V1) *100.0);
-		ELSE
-			ptrTAxisZ^.T_CtrleSingle.dwOverride:=1;
-		END_IF;
+ELSIF T_Station_Parameter.T_StProcess.iSparkOutController=1
+	AND T_Station_Work.THWWorkStation.TCtrlWork.xSparkOutActive
+	AND ptrTAxisZ^.T_CtrleSingle.xMovingBackwards THEN
+		rStFct_V1:=	T_Station_Parameter.T_StProcess.rSparkOutStrokeSpeed;
+		rStFct_V2:=	T_Station_Parameter.T_StProcess.rSparkOutStrokeSpeed/100.0;
+ELSIF T_Station_Parameter.T_StProcess.iOutfeedStrokeController=1
+	AND xStFct_OutfeedStrokeRunning
+	AND ptrTAxisZ^.T_CtrleSingle.xMovingBackwards THEN
+		rStFct_V1:=	rOutfeedStrokeAxisSpeed;
+		rStFct_V2:=	rOutfeedStrokeAxisSpeed/100.0;
+ELSE
+	RETURN;
+END_IF
+
+(* Konventionelle Regelung aber mit Override Funktion *)
+rStFct_S1:=	0.5;
+rStFct_S2:=	T_Station_Parameter.T_OnlineChange.rTorqueLevelHC;
+CASE T_ExchgParam.bToolSpindleActive OF
+1:	(* Maxon Spindel *)
+	rStFct_M:=	T_Station_Parameter.T_TorqueSystem.rActual_Torque;		(* Maxon Spindel ist aktiv *)
+2:	(* Beckhoff Spindel L *)
+	rStFct_M:=	T_Station_Parameter.T_TorqueSystem_L.rActual_Torque;	(* Beckhoff Spindel ist aktiv *)
+3:	(* Beckhoff Spindel M *)
+	rStFct_M:=	T_Station_Parameter.T_TorqueSystem_M.rActual_Torque;	(* Beckhoff Spindel ist aktiv *)
+END_CASE;
+IF ((rStFct_S2 - rStFct_S1) <> 0.0) THEN
+	rStFct_CalcZSpeed:=	rStFct_V1 -
+						((rStFct_V1 - rStFct_V2) * ((rStFct_M - rStFct_S1)/(rStFct_S2 - rStFct_S1)));
+END_IF;
+IF ptrTSensorTorque^.T_CtrleCyl.xStatePosOff THEN
+	IF (((rStFct_CalcZSpeed / rStFct_V1) *100.0) >= 0) THEN
+		ptrTAxisZ^.T_CtrleSingle.dwOverride:=REAL_TO_DWORD((rStFct_CalcZSpeed / rStFct_V1) *100.0);
 	ELSE
-		ptrTAxisZ^.T_CtrleSingle.dwOverride:=100;
-	END_IF;
-	IF (ptrTAxisZ^.T_CtrleSingle.dwOverride > 100) THEN
-		ptrTAxisZ^.T_CtrleSingle.dwOverride:=100;
-	ELSIF (ptrTAxisZ^.T_CtrleSingle.dwOverride < 1) THEN
 		ptrTAxisZ^.T_CtrleSingle.dwOverride:=1;
 	END_IF;
-	ptrTAxisZ^.T_CtrleSingle.dwOverride:=REAL_TO_DWORD((DWORD_TO_REAL(ptrTAxisZ^.T_CtrleSingle.dwOverride)/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride));	(* Einstellung der Geschwindigkeit über das Poti *)
-	IF (ptrTAxisZ^.T_CtrleSingle.dwOverride > 100) THEN
-		ptrTAxisZ^.T_CtrleSingle.dwOverride:=100;
-	ELSIF (ptrTAxisZ^.T_CtrleSingle.dwOverride < 1) THEN
-		ptrTAxisZ^.T_CtrleSingle.dwOverride:=1;
-	END_IF;
+ELSE
+	ptrTAxisZ^.T_CtrleSingle.dwOverride:=100;
+END_IF;
+IF (ptrTAxisZ^.T_CtrleSingle.dwOverride > 100) THEN
+	ptrTAxisZ^.T_CtrleSingle.dwOverride:=100;
+ELSIF (ptrTAxisZ^.T_CtrleSingle.dwOverride < 1) THEN
+	ptrTAxisZ^.T_CtrleSingle.dwOverride:=1;
+END_IF;
+ptrTAxisZ^.T_CtrleSingle.dwOverride:=REAL_TO_DWORD((DWORD_TO_REAL(ptrTAxisZ^.T_CtrleSingle.dwOverride)/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride));	(* Einstellung der Geschwindigkeit über das Poti *)
+IF (ptrTAxisZ^.T_CtrleSingle.dwOverride > 100) THEN
+	ptrTAxisZ^.T_CtrleSingle.dwOverride:=100;
+ELSIF (ptrTAxisZ^.T_CtrleSingle.dwOverride < 1) THEN
+	ptrTAxisZ^.T_CtrleSingle.dwOverride:=1;
 END_IF;
 END_ACTION
 
@@ -14746,7 +14793,10 @@ END_ACTION
 
 ACTION	StationFunction_Ctrl_Controller_3:
 (* Geschwindigkeitsregelung der Z1 Achse mittels der Kraftmessdose--> Konventioneller Regler mit D Anteil und schnellerer Reaktionszeit so wie beim PID *)
-IF (iStFct_StepPrc = 3) AND NOT(xProgressStrokeRunning) THEN
+IF ((iStFct_StepPrc = 3) AND NOT(xStFct_ProgressStrokeRunning))
+	OR ((iStFct_StepPrc = 50) AND T_Station_Work.THWWorkStation.TCtrlWork.xSparkOutActive)
+	OR ((iStFct_StepPrc = 60) AND xStFct_OutfeedStrokeRunning) THEN
+
 	TONCalcTorque(IN:=TRUE,PT:=REAL_TO_TIME(INT_TO_REAL(T_Station_Parameter.T_StProcess.iZ_D_FilterM)));
 	diStepCount:=diStepCount + 1;
 	rTorqueSpindleSensorSave:=rTorqueSpindleSensorSave + ptrTSensorTorque^.T_CtrleCyl.T_Analog.rPosIn;
@@ -14757,9 +14807,20 @@ IF (iStFct_StepPrc = 3) AND NOT(xProgressStrokeRunning) THEN
 		rTorqueSpindleSensorSave:=0.0;
 	END_IF;
 	IF (T_Station_Parameter.T_StProcess.iWorkControlType = 3) THEN
-		(* Konventionelle Regelung mit D-Regler mit Override Funktion *)
-		rStFct_V1:=	(T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);	(* Einstellung der Geschwindigkeit über das Poti *)
-		rStFct_V2:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward/100.0;
+		IF T_Station_Work.THWWorkStation.TCtrlWork.xSparkOutActive OR xStFct_OutfeedStrokeRunning THEN
+			IF rStFct_CtrlInputWorkingSpeed >=0 THEN
+				rStFct_V1:=	rStFct_CtrlInputWorkingSpeed;
+				rStFct_V2:=	rStFct_CtrlInputWorkingSpeed/100.0;
+			(* Change sign only for controller *)
+			ELSE
+				rStFct_V1:=	-rStFct_CtrlInputWorkingSpeed;
+				rStFct_V2:=	-rStFct_CtrlInputWorkingSpeed/100.0;
+			END_IF
+		ELSE (* Default *)
+			(* Konventionelle Regelung mit D-Regler mit Override Funktion *)
+			rStFct_V1:=	(T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);	(* Einstellung der Geschwindigkeit über das Poti *)
+			rStFct_V2:=	T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward/100.0;
+		END_IF
 		rStFct_S1:=	0.5;
 		rStFct_S2:=	T_Station_Parameter.T_OnlineChange.rTorqueLevelHC;
 		CASE T_ExchgParam.bToolSpindleActive OF
@@ -14776,8 +14837,8 @@ IF (iStFct_StepPrc = 3) AND NOT(xProgressStrokeRunning) THEN
 		T_CtrlPara_D.rOutMinLimit:=rStFct_V2;
 		rActualValue:=(rStFct_V1/rStFct_S2)*rTorqueSpindleSensor;		(* Drehmoment skalieren auf die Geschwindigkeit *)
 		FBDCONTROL(	rActualValue:= rActualValue,
-								T_CtrlPara:= T_CtrlPara_D);				
-		
+								T_CtrlPara:= T_CtrlPara_D);
+
 		IF ((rStFct_S2 - rStFct_S1) <> 0.0) THEN
 			rStFct_CalcZSpeed_D:=	rStFct_V1 -
 								((rStFct_V1 - rStFct_V2) * ((rStFct_M - rStFct_S1)/(rStFct_S2 - rStFct_S1)));
@@ -14789,7 +14850,12 @@ IF (iStFct_StepPrc = 3) AND NOT(xProgressStrokeRunning) THEN
 		IF (rStFct_CalcZSpeed >= rStFct_V1) THEN
 			rStFct_CalcZSpeed:=rStFct_V1;
 		END_IF
-		T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * -558349.25) ;
+		(* Change output speed according to working speed *)
+		IF (T_Station_Work.THWWorkStation.TCtrlWork.xSparkOutActive OR xStFct_OutfeedStrokeRunning) AND rStFct_CtrlInputWorkingSpeed <=0 THEN
+			T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * 558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25 *)
+		ELSE
+			T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * -558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25, Note the sign *)
+		END_IF
 	END_IF;
 ELSE
 	diStepCount:=0;
@@ -14835,7 +14901,9 @@ END_ACTION
 ACTION	StationFunction_Ctrl_Controller_S:
 (* Drehzahlregler der S Achse  mittels der Kraftmessdose--> Konventioneller Regler aber ohne Override da das Override nicht grösser werden darf als 100
    Den Min Max Wert kann man hier auch als Max definieren, d.h. bei ansteigendem Drehmoment wird die Drehzahl höher und deshalb funktioniert das Override nicht *)
-IF ptrTAxisZ^.T_CtrleSingle.xMovingForward AND (T_Station_Parameter.T_StProcess.rWorkingSpindleSpeedMinMax <> 0.0) THEN
+IF (ptrTAxisZ^.T_CtrleSingle.xMovingForward
+	OR ((T_Station_Parameter.T_StProcess.iSparkOutController=1 OR T_Station_Parameter.T_StProcess.iOutfeedStrokeController=1) AND ptrTAxisZ^.T_CtrleSingle.xMovingBackwards))
+	AND (T_Station_Parameter.T_StProcess.rWorkingSpindleSpeedMinMax <> 0.0) THEN
 	(* Konventionelle Regelung aber ohne Override Funktion *)
 	rStFct_V1:=	T_Station_Parameter.T_OnlineChange.rWorkingSpindleSpeed;
 	rStFct_V2:=	T_Station_Parameter.T_StProcess.rWorkingSpindleSpeedMinMax;
@@ -14943,9 +15011,11 @@ IF xStFct_SetEnd THEN
 	END_IF;
 	xBlockCheckLimitSwitch:=FALSE;
 	xBlockSetFastVelZAxis:=FALSE;
-	xProgressStrokeReady:=FALSE;
-	xProgressStrokeRunning:=FALSE;
-	iStepProgressStroke:=1;
+	xStFct_ProgressStrokeReady:=FALSE;
+	xStFct_ProgressStrokeRunning:=FALSE;
+	iStFct_StepProgressStroke:=1;
+	xStFct_SparkOutDone:=FALSE;
+	xStFct_OutfeedStrokeRunning:=FALSE;
 END_IF;
 END_ACTION
 
@@ -15096,6 +15166,8 @@ IF (xStFct_Start OR xStFct_StartMainCtr) AND NOT(xStFct_SetEnd) AND NOT(xStFct_H
 		xSetSlowToFastSpeed:=FALSE;
 		rStFct_SetZHCPosition:=0.0;
 		xStFct_ResetSparkOutProcess:=TRUE;
+		StationFunction_Ctrl_SparkOutType3;
+		xStFct_ResetSparkOutProcess:=TRUE;
 		fbStFct_SparkOutProcess(	xStart:= xStFct_StartSparkOutProcess,
 									xReset:= xStFct_ResetSparkOutProcess,
 									TCylToolDeflection:=ptrTCylToolDeflection^,
@@ -15105,9 +15177,11 @@ IF (xStFct_Start OR xStFct_StartMainCtr) AND NOT(xStFct_SetEnd) AND NOT(xStFct_H
 		xBlockSetFastVelZAxis:=FALSE;
 		xBlockActivateOAxis:=FALSE;
 		xSetDefaultSpeedS:=FALSE;
-		xProgressStrokeReady:=FALSE;
-		xProgressStrokeRunning:=FALSE;
-		iStepProgressStroke:=1;
+		xStFct_ProgressStrokeReady:=FALSE;
+		xStFct_ProgressStrokeRunning:=FALSE;
+		iStFct_StepProgressStroke:=1;
+		xStFct_SparkOutDone:=FALSE;
+		xStFct_OutfeedStrokeRunning:=FALSE;
 	END_IF;
 	IF xStFct_Stop AND NOT(xStFct_TmpStop) THEN
 		xStFct_TmpStop:=TRUE;
@@ -15138,40 +15212,40 @@ ACTION	StationFunction_Ctrl_ProgressStrokeType1:
 IF T_Station_Parameter.T_StProcess.iWorkControlType > 1
 	OR T_Station_Parameter.T_StProcess.rDistProgressStroke < 1.0
 	OR T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque = 0 THEN
-	xProgressStrokeReady:=FALSE;
-	xProgressStrokeRunning:=FALSE;
-	iStepProgressStroke:=1;
+	xStFct_ProgressStrokeReady:=FALSE;
+	xStFct_ProgressStrokeRunning:=FALSE;
+	iStFct_StepProgressStroke:=1;
 	RETURN;
 END_IF
 
 (* Progressive stroke only active in step 3 *)
 IF (iStFct_StepPrc <> 3) THEN
-	xProgressStrokeRunning:=FALSE;
-	iStepProgressStroke:=1;
+	xStFct_ProgressStrokeRunning:=FALSE;
+	iStFct_StepProgressStroke:=1;
 	RETURN;
 END_IF
 
 (* Enable entire progressive stroke function -> first return stroke *)
-IF NOT(xProgressStrokeReady) AND ptrTAxisS^.T_LiveValue.diActualTorqueCalc > (T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque*T_Station_Parameter.T_OnlineChange.rTorqueLevelHC) THEN
-	xProgressStrokeReady:=TRUE;
-	xProgressStrokeRunning:=TRUE;
-	iStepProgressStroke:=1;
+IF NOT(xStFct_ProgressStrokeReady) AND ptrTAxisS^.T_LiveValue.diActualTorqueCalc > (T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque*T_Station_Parameter.T_OnlineChange.rTorqueLevelHC) THEN
+	xStFct_ProgressStrokeReady:=TRUE;
+	xStFct_ProgressStrokeRunning:=TRUE;
+	iStFct_StepProgressStroke:=1;
 (* Process with special stroke function *)
-ELSIF xProgressStrokeReady THEN
+ELSIF xStFct_ProgressStrokeReady THEN
 	(* Start new return stroke if current position in limits *)
-	IF NOT(xProgressStrokeRunning)
+	IF NOT(xStFct_ProgressStrokeRunning)
 		AND ptrTAxisZ^.T_LiveValue.lrActualPosition > (rStFct_ProgressStrokePosition + ABS(T_Station_Parameter.T_StProcess.rDistProgressStroke))
-		AND ptrTAxisZ^.T_LiveValue.lrActualPosition < (garPositionEndProcCalc[1] - ABS(T_Station_Parameter.T_StProcess.rDistProgressStroke)/2.0) THEN
-		xProgressStrokeRunning:=TRUE;
-		iStepProgressStroke:=1;
-	ELSIF xProgressStrokeRunning THEN
-		CASE iStepProgressStroke OF
+		AND ptrTAxisZ^.T_LiveValue.lrActualPosition < (garPositionEndProcCalc[1] - ABS(T_Station_Parameter.T_StProcess.rProgressStrokeStopOffset)) THEN
+		xStFct_ProgressStrokeRunning:=TRUE;
+		iStFct_StepProgressStroke:=1;
+	ELSIF xStFct_ProgressStrokeRunning THEN
+		CASE iStFct_StepProgressStroke OF
 		1: 	(* Stop Z axis motion *)
 			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND NOT(ptrTAxisZ^.T_CtrleSingle.xDone) AND
 		   		 NOT(ptrTAxisZ^.T_CtrleSingle.xNotMoving) AND (ptrTAxisZ^.T_CtrleSingle.iFunction <> 12) THEN (* BEF: braucht es diese Konditionen??? was wenn FALSE? *)
 				ptrTAxisZ^.T_CtrleSingle.iFunction:=5;
 				ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
-				iStepProgressStroke:=iStepProgressStroke + 1;
+				iStFct_StepProgressStroke:=iStFct_StepProgressStroke + 1;
 			END_IF
 		2: 	(* Waiting until Z axis stopped *)
 			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
@@ -15180,9 +15254,9 @@ ELSIF xProgressStrokeReady THEN
 				T_Station_Work.TCtrlOnlineChange.xLockChange_Z_WorkSpeedForward:=TRUE;
 				T_Station_Work.TCtrlOnlineChange.xLockChange_S_WorkSpindleSpeed:=TRUE;
 				rStFct_ProgressStrokePosition:=ptrTAxisZ^.T_LiveValue.lrActualPosition;
-				(*xStFct_StartMainPrc:=FALSE;*) (* BEF: Wofür ist diese Variable gut???  *)
+				xStFct_StartMainPrc:=FALSE;
 				xStFct_InitStep:=FALSE;
-				iStepProgressStroke:=iStepProgressStroke + 1;
+				iStFct_StepProgressStroke:=iStFct_StepProgressStroke + 1;
 			END_IF;
 		3:	(* Pull back Z axis, make sure to stay within the start and end position  *)
 			IF NOT(xStFct_InitStep) THEN
@@ -15199,9 +15273,9 @@ ELSIF xProgressStrokeReady THEN
 				ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
 			END_IF;
 			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
-				(*xStFct_StartMainPrc:=FALSE;*)
+				xStFct_StartMainPrc:=FALSE;
 				xStFct_InitStep:=FALSE;
-				iStepProgressStroke:=iStepProgressStroke + 1;
+				iStFct_StepProgressStroke:=iStFct_StepProgressStroke + 1;
 			END_IF;
 		4: 	(* Move Z axis to last stroke position point with offset at fast speed *)
 			IF NOT(xStFct_InitStep) THEN
@@ -15215,7 +15289,7 @@ ELSIF xProgressStrokeReady THEN
 				(* Die Z Achse kann wieder weiterfahren im Langsamgang *)
 				(*xStFct_StartMainPrc:=FALSE;*)
 				xStFct_InitStep:=FALSE;
-				iStepProgressStroke:=iStepProgressStroke+1;
+				iStFct_StepProgressStroke:=iStFct_StepProgressStroke+1;
 			END_IF;
 		5: 	(* Move Z axis to last saved stroke position at slow speed *)
 			IF NOT(xStFct_InitStep) THEN
@@ -15226,9 +15300,9 @@ ELSIF xProgressStrokeReady THEN
 				ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
 			END_IF;
 			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
-				(*xStFct_StartMainPrc:=FALSE;*)
+				xStFct_StartMainPrc:=FALSE;
 				xStFct_InitStep:=FALSE;
-				iStepProgressStroke:=iStepProgressStroke + 1;
+				iStFct_StepProgressStroke:=iStFct_StepProgressStroke + 1;
 			END_IF;
 		6: 	(* Start absolut movement of Z axis at working speed *)
 			ptrTAxisZ^.T_CtrleSingle.iFunction:=7;	(* Absolut mouvement *)
@@ -15240,92 +15314,92 @@ ELSIF xProgressStrokeReady THEN
 			END_IF;
 			ptrTAxisZ^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward;
 			ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
-			iStepProgressStroke:=10;
+			iStFct_StepProgressStroke:=10;
 		10: 	(* Finish procress *)
-			xProgressStrokeRunning:=FALSE;
-			iStepProgressStroke:=1;
+			xStFct_ProgressStrokeRunning:=FALSE;
+			iStFct_StepProgressStroke:=1;
 		END_CASE
 	ELSE
-		xProgressStrokeRunning:=FALSE;
-		iStepProgressStroke:=1;
+		xStFct_ProgressStrokeRunning:=FALSE;
+		iStFct_StepProgressStroke:=1;
 	END_IF
 ELSE
-	xProgressStrokeReady:=FALSE;
-	xProgressStrokeRunning:=FALSE;
-	iStepProgressStroke:=1;
+	xStFct_ProgressStrokeReady:=FALSE;
+	xStFct_ProgressStrokeRunning:=FALSE;
+	iStFct_StepProgressStroke:=1;
 END_IF;
 END_ACTION
 
-ACTION	StationFunction_Ctrl_ProgressStrokeType2:
+ACTION	StationFunction_Ctrl_ProgressStrokeType3:
 (* Disable progressive stroke behaviour *)
 IF T_Station_Parameter.T_StProcess.iWorkControlType <> 3
 	OR T_Station_Parameter.T_StProcess.rDistProgressStroke < 1.0
 	OR T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque = 0 THEN
-	xProgressStrokeReady:=FALSE;
-	xProgressStrokeRunning:=FALSE;
-	iStepProgressStroke:=1;
+	xStFct_ProgressStrokeReady:=FALSE;
+	xStFct_ProgressStrokeRunning:=FALSE;
+	iStFct_StepProgressStroke:=1;
 	RETURN;
 END_IF
 
 (* Progressive stroke only active in step 3 *)
 IF (iStFct_StepPrc <> 3) THEN
-	xProgressStrokeRunning:=FALSE;
-	iStepProgressStroke:=1;
+	xStFct_ProgressStrokeRunning:=FALSE;
+	iStFct_StepProgressStroke:=1;
 	RETURN;
 END_IF
 
 (* Enable entire progressive stroke function -> first return stroke *)
-IF NOT(xProgressStrokeReady) AND ptrTAxisS^.T_LiveValue.diActualTorqueCalc > (T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque*T_Station_Parameter.T_OnlineChange.rTorqueLevelHC) THEN
-	xProgressStrokeReady:=TRUE;
-	xProgressStrokeRunning:=TRUE;
-	iStepProgressStroke:=1;
+IF NOT(xStFct_ProgressStrokeReady) AND ptrTAxisS^.T_LiveValue.diActualTorqueCalc > (T_Station_Parameter.T_StProcess.iProgressStrokeStartTorque*T_Station_Parameter.T_OnlineChange.rTorqueLevelHC) THEN
+	xStFct_ProgressStrokeReady:=TRUE;
+	xStFct_ProgressStrokeRunning:=TRUE;
+	iStFct_StepProgressStroke:=1;
 (* Process with special stroke function *)
-ELSIF xProgressStrokeReady THEN
+ELSIF xStFct_ProgressStrokeReady THEN
 	(* Start new return stroke if current position in limits *)
-	IF NOT(xProgressStrokeRunning)
+	IF NOT(xStFct_ProgressStrokeRunning)
 		AND ptrTAxisZ^.T_LiveValue.lrActualPosition > (rStFct_ProgressStrokePosition + ABS(T_Station_Parameter.T_StProcess.rDistProgressStroke))
-		AND ptrTAxisZ^.T_LiveValue.lrActualPosition < (garPositionEndProcCalc[1] - ABS(T_Station_Parameter.T_StProcess.rDistProgressStroke)/2.0) THEN
-		xProgressStrokeRunning:=TRUE;
-		iStepProgressStroke:=1;
-	ELSIF xProgressStrokeRunning THEN
-		CASE iStepProgressStroke OF
+		AND ptrTAxisZ^.T_LiveValue.lrActualPosition < (garPositionEndProcCalc[1] - ABS(T_Station_Parameter.T_StProcess.rProgressStrokeStopOffset)) THEN
+		xStFct_ProgressStrokeRunning:=TRUE;
+		iStFct_StepProgressStroke:=1;
+	ELSIF xStFct_ProgressStrokeRunning THEN
+		CASE iStFct_StepProgressStroke OF
 		1: 	(* Set backward speed *)
 			rStFct_ProgressStrokePosition:=ptrTAxisZ^.T_LiveValue.lrActualPosition;
-			rStFct_CalcZSpeed:=(T_Station_Parameter.T_StProcess.rCentringBackStrokeSpeed/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride); (* BEF Wie kann ich sicher sein, dass die Achse rückwärts fährt *)
+			rStFct_CalcZSpeed:=(T_Station_Parameter.T_StProcess.rCentringBackStrokeSpeed/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);
 			T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * 558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25 *)
 			T_Station_Work.TCtrlOnlineChange.xLockChange_Z_WorkSpeedBackward:=ptrTAxisZ^.T_CtrleSingle.xNotMoving;
-			iStepProgressStroke:=iStepProgressStroke + 1;
+			iStFct_StepProgressStroke:=iStFct_StepProgressStroke + 1;
 		2:	(* Set fast forward speed once back stroke max position reached *)
 			IF (ptrTAxisZ^.T_LiveValue.lrActualPosition <= grZ_WorkStartPos)
 				OR ptrTAxisZ^.T_LiveValue.lrActualPosition < (rStFct_ProgressStrokePosition - ABS(T_Station_Parameter.T_StProcess.rCentringBackStrokeOffsetAfterFirstHC)) THEN
 				rStFct_CalcZSpeed:=(T_Station_Parameter.T_StProcess.rCentringPosSpeedFastZ1Axis/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);
-				T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * 558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25 *)
-				iStepProgressStroke:=iStepProgressStroke + 1;
+				T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * -558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25, Note the sign *)
+				iStFct_StepProgressStroke:=iStFct_StepProgressStroke + 1;
 			END_IF;
 		3:	(* Set slow forward speed once back to stroke position with offset *)
 			IF ptrTAxisZ^.T_LiveValue.lrActualPosition > (rStFct_ProgressStrokePosition - ABS(T_Station_Parameter.T_StProcess.rCentringOffsetBeforeLastHC)) THEN
 				rStFct_CalcZSpeed:=(T_Station_Parameter.T_StProcess.rCentringPosSpeedSlowZ1Axis/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);
-				T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * 558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25 *)
-				iStepProgressStroke:=iStepProgressStroke + 1;
+				T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * -558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25, Note the sign *)
+				iStFct_StepProgressStroke:=iStFct_StepProgressStroke + 1;
 			END_IF;
 		4:	(* Set working speed -> use controller values *)
 			IF ptrTAxisZ^.T_LiveValue.lrActualPosition > rStFct_ProgressStrokePosition THEN
 				rStFct_CalcZSpeed:=(T_Station_Parameter.T_OnlineChange.rWorkingSpeedForward/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);	(* Einstellung der Geschwindigkeit über das Poti *)
-				T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * 558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25 *)
-				iStepProgressStroke:=10;
+				T_Z_St1_Ctrle.diVelocityCommandValue:=LREAL_TO_DINT(rStFct_CalcZSpeed * -558349.25) ; (* 11166985 --> 20mm/s --> 1mm/s = 558349.25, Note the sign *)
+				iStFct_StepProgressStroke:=10;
 			END_IF;
 		10: 	(* Finish procress *)
-			xProgressStrokeRunning:=FALSE;
-			iStepProgressStroke:=1;
+			xStFct_ProgressStrokeRunning:=FALSE;
+			iStFct_StepProgressStroke:=1;
 		END_CASE
 	ELSE
-		xProgressStrokeRunning:=FALSE;
-		iStepProgressStroke:=1;
+		xStFct_ProgressStrokeRunning:=FALSE;
+		iStFct_StepProgressStroke:=1;
 	END_IF
 ELSE
-	xProgressStrokeReady:=FALSE;
-	xProgressStrokeRunning:=FALSE;
-	iStepProgressStroke:=1;
+	xStFct_ProgressStrokeReady:=FALSE;
+	xStFct_ProgressStrokeRunning:=FALSE;
+	iStFct_StepProgressStroke:=1;
 END_IF;
 END_ACTION
 
@@ -15333,6 +15407,226 @@ ACTION	StationFunction_Ctrl_Reset:
 IF xStFct_Reset AND NOT(xStFct_SetEnd) THEN
 	xStFct_End:=FALSE;
 	xStFct_SetEnd:=TRUE;
+END_IF;
+END_ACTION
+
+ACTION	StationFunction_Ctrl_SparkOutType3:
+IF xStFct_ResetSparkOutProcess THEN
+	xStFct_ResetSparkOutProcess:=FALSE;
+	xStFct_StartSparkOutProcess:=FALSE;
+
+	xStFct_InitSparkOutVar:=FALSE;
+	xStFct_InitStepSparkOut:=FALSE;
+	xStFct_SparkOutRunning:=FALSE;
+	xStFct_RepeatProcess:=FALSE;
+	iStFct_StepSparkOut:=1;
+	iStFct_TmpCountHub:=0;
+	xStFct_BlockCounter:=FALSE;
+
+	xStFct_ActiveChgForceDeflection:=FALSE;
+	xStFct_SetForceDeflection:=FALSE;
+	xStFct_InitSetForceDeflection:=FALSE;
+	RETURN;
+END_IF;
+
+IF T_Station_Parameter.T_StProcess.iSparkOutController=3 AND xStFct_StartSparkOutProcess THEN
+	IF NOT(xStFct_InitSparkOutVar) THEN
+		xStFct_InitSparkOutVar:=TRUE;
+		xStFct_InitStepSparkOut:=FALSE;
+		xStFct_SparkOutRunning:=FALSE;
+		xStFct_RepeatProcess:=FALSE;
+		iStFct_StepSparkOut:=1;
+		iStFct_TmpCountHub:=0;
+		xStFct_BlockCounter:=FALSE;
+	
+		xStFct_ActiveChgForceDeflection:=FALSE;
+		xStFct_SetForceDeflection:=FALSE;
+		xStFct_InitSetForceDeflection:=FALSE;
+	END_IF;
+
+	CASE iStFct_StepSparkOut OF
+		1:	IF NOT(xStFct_InitStepSparkOut) THEN
+				xStFct_InitStepSparkOut:=TRUE;
+				xStFct_SparkOutRunning:=TRUE;
+				xStFct_BlockCounter:=FALSE;
+				IF (T_Station_Parameter.T_StProcess.iSparkOutStrokeCount > 0) AND (T_Station_Parameter.T_StProcess.rSparkOutStrokeLength <> 0) THEN
+					IF (T_Station_Parameter.T_StProcess.rSparkOutForceDeflection <> 0.0) THEN xStFct_ActiveChgForceDeflection:=TRUE; ELSE xStFct_ActiveChgForceDeflection:=FALSE; END_IF;
+					IF NOT(xStFct_ActiveChgForceDeflection) THEN
+						xStFct_InitStepSparkOut:=FALSE;
+						iStFct_StepSparkOut:=iStFct_StepSparkOut + 1;
+						RETURN;
+					END_IF;
+					IF xStFct_ActiveChgForceDeflection THEN
+						xStFct_SetForceDeflection:=TRUE;
+						ptrTCylToolDeflection^.T_CtrleCyl.T_Analog.rForceIn:=(T_Station_Parameter.T_OnlineChange.rForceDeflection/100.0) * T_Station_Parameter.T_StProcess.rSparkOutForceDeflection;
+					ELSE
+						xStFct_SetForceDeflection:=FALSE;
+					END_IF;
+				ELSE
+					xStFct_RepeatProcess:=FALSE;
+					xStFct_InitSparkOutVar:=FALSE;
+					xStFct_InitStepSparkOut:=FALSE;
+					xStFct_SparkOutRunning:=FALSE;
+					RETURN;
+				END_IF;
+			END_IF;
+			IF NOT(xStFct_SetForceDeflection) THEN
+				xStFct_InitStepSparkOut:=FALSE;
+				iStFct_StepSparkOut:=iStFct_StepSparkOut + 1;
+			END_IF;
+		(* First stroke movement spark out *)
+		2:	IF NOT(xStFct_InitStepSparkOut) THEN
+				xStFct_InitStepSparkOut:=TRUE;
+				(* Move Absolut backward or forward *)
+				IF T_Station_Parameter.T_StProcess.rSparkOutStrokeLength <= 0 THEN
+					rStFct_CtrlInputWorkingSpeed:=(-T_Station_Parameter.T_StProcess.rSparkOutStrokeSpeed/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);
+				ELSE
+					rStFct_CtrlInputWorkingSpeed:=(T_Station_Parameter.T_StProcess.rSparkOutStrokeSpeed/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);
+				END_IF
+			END_IF;
+			IF ptrTAxisZ^.T_CtrleSingle.xMovingForward THEN
+				IF ptrTCylToolDeflection^.T_CtrleCyl.xStatePosOn OR IxToolDeflection2_St1 THEN
+					wStFct_Status:=1;	(* 1 = < Wz Auslenk. Sensor > *)
+					xStFct_InitStepSparkOut:=FALSE;
+					iStFct_StepSparkOut:=iStFct_StepSparkOut + 2;
+					RETURN;
+				END_IF;
+				IF ptrTCylToolTorqueHC^.T_CtrleCyl.xStatePosOn OR ptrTSensorTorque^.T_CtrleCyl.xStatePosOn THEN
+					wStFct_Status:=2;	(* 2 = < Wz Drehmom. HC> *)
+					xStFct_InitStepSparkOut:=FALSE;
+					iStFct_StepSparkOut:=iStFct_StepSparkOut + 2;
+					RETURN;
+				END_IF
+				IF (ptrTCylToolDeflection^.T_CtrleCyl.xStatePosOn OR IxToolDeflection2_St1) AND (ptrTCylToolTorqueHC^.T_CtrleCyl.xStatePosOn OR ptrTSensorTorque^.T_CtrleCyl.xStatePosOn) THEN
+					wStFct_Status:=3;	(* 3 = < Wz Auslenk.+Wz Drehm.HC > *)
+					xStFct_InitStepSparkOut:=FALSE;
+					iStFct_StepSparkOut:=iStFct_StepSparkOut + 2;
+					RETURN;
+				END_IF;
+				IF ptrTCylToolDeflection^.T_CtrleCyl.xStatePosOn1 OR ptrTSensorTorque^.T_CtrleCyl.xStatePosOn1 THEN
+					xStFct_BlockCounter:=TRUE;
+				END_IF;
+			END_IF;
+			IF ((T_Station_Parameter.T_StProcess.rSparkOutStrokeLength >= 0) AND (ptrTAxisZ^.T_LiveValue.lrActualPosition >= garPositionEndProcCalc[1] + T_Station_Parameter.T_StProcess.rSparkOutStrokeLength))
+				OR ((T_Station_Parameter.T_StProcess.rSparkOutStrokeLength < 0) AND (ptrTAxisZ^.T_LiveValue.lrActualPosition <= garPositionEndProcCalc[1] + T_Station_Parameter.T_StProcess.rSparkOutStrokeLength)) THEN
+				xStFct_InitStepSparkOut:=FALSE;
+				iStFct_StepSparkOut:=iStFct_StepSparkOut + 1;
+			END_IF;
+		(* Movement back to original position (second movement) *)
+		3:	IF NOT(xStFct_InitStepSparkOut) THEN
+				xStFct_InitStepSparkOut:=TRUE;
+				(* Move Absolut forward or backward *)
+				IF T_Station_Parameter.T_StProcess.rSparkOutStrokeLength <= 0 THEN
+					rStFct_CtrlInputWorkingSpeed:=(T_Station_Parameter.T_StProcess.rSparkOutStrokeSpeed/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);
+				ELSE
+					rStFct_CtrlInputWorkingSpeed:=(-T_Station_Parameter.T_StProcess.rSparkOutStrokeSpeed/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);
+				END_IF
+			END_IF;
+			IF ptrTAxisZ^.T_CtrleSingle.xMovingForward THEN
+				IF ptrTCylToolDeflection^.T_CtrleCyl.xStatePosOn OR IxToolDeflection2_St1 THEN
+					wStFct_Status:=1;	(* 1 = < Wz Auslenk. Sensor > *)
+					xStFct_InitStepSparkOut:=FALSE;
+					iStFct_StepSparkOut:=iStFct_StepSparkOut + 1;
+					RETURN;
+				END_IF;
+				IF ptrTCylToolTorqueHC^.T_CtrleCyl.xStatePosOn OR ptrTSensorTorque^.T_CtrleCyl.xStatePosOn THEN
+					wStFct_Status:=2;	(* 2 = < Wz Drehmom. HC> *)
+					xStFct_InitStepSparkOut:=FALSE;
+					iStFct_StepSparkOut:=iStFct_StepSparkOut + 1;
+					RETURN;
+				END_IF
+				IF (ptrTCylToolDeflection^.T_CtrleCyl.xStatePosOn OR IxToolDeflection2_St1) AND (ptrTCylToolTorqueHC^.T_CtrleCyl.xStatePosOn OR ptrTSensorTorque^.T_CtrleCyl.xStatePosOn) THEN
+					wStFct_Status:=3;	(* 3 = < Wz Auslenk.+Wz Drehm.HC > *)
+					xStFct_InitStepSparkOut:=FALSE;
+					iStFct_StepSparkOut:=iStFct_StepSparkOut + 1;
+					RETURN;
+				END_IF;
+				IF ptrTCylToolDeflection^.T_CtrleCyl.xStatePosOn1 OR ptrTSensorTorque^.T_CtrleCyl.xStatePosOn1 THEN
+					xStFct_BlockCounter:=TRUE;
+				END_IF;
+			END_IF;
+			IF ((T_Station_Parameter.T_StProcess.rSparkOutStrokeLength >= 0) AND (ptrTAxisZ^.T_LiveValue.lrActualPosition <= garPositionEndProcCalc[1]))
+				OR ((T_Station_Parameter.T_StProcess.rSparkOutStrokeLength < 0) AND (ptrTAxisZ^.T_LiveValue.lrActualPosition >= garPositionEndProcCalc[1])) THEN
+				IF NOT(xStFct_BlockCounter) THEN
+					iStFct_TmpCountHub:=iStFct_TmpCountHub + 1;
+				END_IF;
+				xStFct_BlockCounter:=FALSE;
+				xStFct_InitStepSparkOut:=FALSE;
+				rStFct_CtrlInputWorkingSpeed:=0;
+				IF (iStFct_TmpCountHub >= T_Station_Parameter.T_StProcess.iSparkOutStrokeCount) THEN
+					xStFct_RepeatProcess:=FALSE;
+					IF NOT(xStFct_ActiveChgForceDeflection) THEN
+						xStFct_InitSparkOutVar:=FALSE;
+						xStFct_SparkOutRunning:=FALSE;
+						xStFct_StartSparkOutProcess:=FALSE;
+						(* END OF NORMAL PROCESS (NO DEFLECTION FORCE) *)
+					ELSE
+						iStFct_StepSparkOut:=5;
+					END_IF;
+				ELSE
+					iStFct_StepSparkOut:=2;
+				END_IF;
+			END_IF;
+		(* Stop spark out due to HC *)
+		4:	IF NOT(xStFct_InitStepSparkOut) THEN
+				xStFct_InitStepSparkOut:=TRUE;
+				rStFct_CtrlInputWorkingSpeed:=0;
+				(*IF NOT(ptrTAxisZ^.T_CtrleSingle.xNotMoving) THEN
+					rLastOverLimitPosition:=ptrTAxisZ^.T_LiveValue.lrActualPosition;
+					ptrTAxisZ^.T_CtrleSingle.iFunction:=5;
+					ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+					RETURN;
+				END_IF
+				IF NOT(ptrTAxisZ^.T_CtrleSingle.xDone) THEN
+					xInitStep:=FALSE;
+					RETURN;
+				END_IF;*)
+			END_IF;
+			IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
+				xStFct_InitSparkOutVar:=FALSE;
+				xStFct_RepeatProcess:=TRUE;
+				IF NOT(xStFct_ActiveChgForceDeflection) THEN
+					xStFct_InitStepSparkOut:=FALSE;
+					xStFct_SparkOutRunning:=FALSE;
+					xStFct_StartSparkOutProcess:=FALSE;
+					(* END OF PROCESS WITH HC (NO DEFLECTION FORCE) *)
+				ELSE
+					iStFct_StepSparkOut:=5;
+				END_IF;
+			END_IF;
+		(* Set deflection back to original value *)
+		5:	IF NOT(xStFct_InitStepSparkOut) THEN
+				xStFct_InitStepSparkOut:=TRUE;
+				IF xStFct_ActiveChgForceDeflection THEN
+					xStFct_SetForceDeflection:=TRUE;
+					ptrTCylToolDeflection^.T_CtrleCyl.T_Analog.rForceIn:=T_Station_Parameter.T_OnlineChange.rForceDeflection;
+				ELSE
+					xStFct_SetForceDeflection:=FALSE;
+				END_IF;
+			END_IF;
+			IF NOT(xStFct_SetForceDeflection) THEN
+				xStFct_InitSparkOutVar:=FALSE;
+				xStFct_InitStepSparkOut:=FALSE;
+				xStFct_SparkOutRunning:=FALSE;
+
+				xStFct_StartSparkOutProcess:=FALSE;
+				(* END OF PROCESS WITH DEFLECTION FORCE *)
+			END_IF;
+	END_CASE;
+
+	IF xStFct_SetForceDeflection THEN
+		IF NOT(xStFct_InitSetForceDeflection) THEN
+			IF NOT(ptrTCylToolDeflection^.T_CtrleCyl.xExecute) AND ptrTCylToolDeflection^.T_CtrleCyl.xDone THEN
+				xStFct_InitSetForceDeflection:=TRUE;
+				ptrTCylToolDeflection^.T_CtrleCyl.iFunction:=4;
+				ptrTCylToolDeflection^.T_CtrleCyl.xExecute:=TRUE;
+			END_IF;
+		END_IF;
+		IF NOT(ptrTCylToolDeflection^.T_CtrleCyl.xExecute) AND ptrTCylToolDeflection^.T_CtrleCyl.xDone AND xStFct_InitSetForceDeflection THEN
+			xStFct_InitSetForceDeflection:=FALSE;
+			xStFct_SetForceDeflection:=FALSE;
+		END_IF;
+	END_IF;
 END_IF;
 END_ACTION
 
@@ -16215,22 +16509,29 @@ IF xStFct_StartMainPrc AND NOT(xStFct_SetEnd) AND NOT(xStFct_HardwareError) AND 
 	StationFunction_Ctrl_CalcProcWork;
 (***************************************************************************************************************************************************)
 (* Regler für die Bearbeitung *)
-IF (T_Station_Parameter.T_StProcess.iWorkControlType <= 1) THEN
-	StationFunction_Ctrl_Controller_1;
-ELSIF (T_Station_Parameter.T_StProcess.iWorkControlType = 2) THEN
-	StationFunction_Ctrl_Controller_2;
-ELSE
-	StationFunction_Ctrl_Controller_3;
-END_IF;
-StationFunction_Ctrl_Controller_S;
-StationFunction_Ctrl_Controller_O;
+	IF (T_Station_Parameter.T_StProcess.iWorkControlType <= 1) THEN
+		StationFunction_Ctrl_Controller_1;
+	ELSIF (T_Station_Parameter.T_StProcess.iWorkControlType = 2) THEN
+		StationFunction_Ctrl_Controller_2;
+	ELSE
+		StationFunction_Ctrl_Controller_3;
+	END_IF;
+	StationFunction_Ctrl_Controller_S;
+	StationFunction_Ctrl_Controller_O;
 (***************************************************************************************************************************************************)
 (* Abhandlung von Progressivhub  *)
-IF T_Station_Parameter.T_StProcess.iWorkControlType <= 1 THEN
-	StationFunction_Ctrl_ProgressStrokeType1;
-ELSIF T_Station_Parameter.T_StProcess.iWorkControlType = 3 THEN
-	StationFunction_Ctrl_ProgressStrokeType2;
-END_IF;
+	IF T_Station_Parameter.T_StProcess.iWorkControlType <= 1 THEN
+		StationFunction_Ctrl_ProgressStrokeType1;
+	ELSIF T_Station_Parameter.T_StProcess.iWorkControlType = 3 THEN
+		StationFunction_Ctrl_ProgressStrokeType3;
+	END_IF;
+(***************************************************************************************************************************************************)
+(* Abhandlung von Ausfunken  *)
+	IF T_Station_Parameter.T_StProcess.iWorkControlType <= 1 THEN
+		StationFunction_Ctrl_ProgressStrokeType1;
+	ELSIF T_Station_Parameter.T_StProcess.iWorkControlType = 3 THEN
+		StationFunction_Ctrl_ProgressStrokeType3;
+	END_IF;
 (***************************************************************************************************************************************************)
 (* Berechnung der Schnittgeschwindigkeit *)
 	fbStFct_CalcCuttingSpeed(	rActualPosition:=ptrTAxisZ^.T_LiveValue.lrActualPosition,
@@ -16352,7 +16653,8 @@ END_IF;
 	END_IF;
 (***************************************************************************************************************************************************)
 (* Prozessende Ausfunkprozedur *)
-	fbStFct_SparkOutProcess(	lrHubLength:= T_Station_Parameter.T_StProcess.rSparkOutStrokeLength,
+	IF T_Station_Parameter.T_StProcess.iSparkOutController <= 2 THEN
+		fbStFct_SparkOutProcess(	lrHubLength:= T_Station_Parameter.T_StProcess.rSparkOutStrokeLength,
 								iCountHub:= T_Station_Parameter.T_StProcess.iSparkOutStrokeCount,
 								T_Station_Parameter:= T_Station_Parameter,
 								xStart:= xStFct_StartSparkOutProcess,
@@ -16362,6 +16664,9 @@ END_IF;
 								xToolTorqueSparkOut:=ptrTCylToolTorqueHC^.T_CtrleCyl.xStatePosOn1 OR ptrTSensorTorque^.T_CtrleCyl.xStatePosOn1,
 								TCylToolDeflection:=ptrTCylToolDeflection^,
 								TAxisZ:= ptrTAxisZ^);
+	ELSE
+		StationFunction_Ctrl_SparkOutType3;
+	END_IF
 (***************************************************************************************************************************************************)
 (* Überwachung auf die Axiale Auslenkung *)
 	IF xStFct_ToolDeflectionActiv THEN
@@ -16649,12 +16954,16 @@ END_IF;
 					(* Endposition erreicht-->Ausfunkprozedur starten *)
 					T_Station_Work.TCtrlOnlineChange.xLockChange_Z_WorkSpeedForward:=TRUE;
 					xStFct_StopSlide:=FALSE;
-					iStFct_StepPrc:=9;
 					xStFct_InitStep:=FALSE;
+					IF T_Station_Parameter.T_StProcess.iSparkOutController<=2 THEN
+						iStFct_StepPrc:=9; (* Use standard spark out with or without controller 1 *)
+					ELSE
+						iStFct_StepPrc:=50; (* Use spark out with fast controller 3 *)
+					END_IF
 				ELSE
 					(* Beim neuen Ablauf darf die Max Endposition nicht erreicht werden *)
 					xStFct_StopSlide:=FALSE;
-					iStFct_StepPrc:=50;
+					iStFct_StepPrc:=90;
 					xStFct_InitStep:=FALSE;
 				END_IF;
 			END_IF;
@@ -16662,7 +16971,7 @@ END_IF;
 			IF ((ptrTAxisZ^.T_LiveValue.lrActualPosition >= garPositionEndProcCalc[1]) AND NOT(gxProcessCylindricalAreaActive)) OR (xEndPosReachZylindricalProcess AND gxProcessCylindricalAreaActive) THEN
 				xStFct_StartMainPrc:=FALSE;
 				xStFct_InitStep:=FALSE;
-				iStFct_StepPrc:=30;
+				iStFct_StepPrc:=30; (* Reset Z axis in no matter what controller is selected for spark out -> make sure the axis is stationary *)
 			END_IF;
 		END_IF;
 	4:	(* Abwarten bis die HubAchse stillsteht *)
@@ -16735,7 +17044,7 @@ END_IF;
 			xStFct_InitStep:=FALSE;
 			iStFct_StepPrc:=3;
 		END_IF;
-	9:	(* Vorwärtsbewegung wieder starten *)
+	9:	(* Ausfunken starten *)
 		IF NOT(xStFct_InitStep) THEN
 			xStFct_InitStep:=TRUE;
 			xStFct_StartSparkOutProcess:=TRUE;
@@ -16745,6 +17054,7 @@ END_IF;
 			T_Station_Work.THWWorkStation.TCtrlWork.xSparkOutActive:=TRUE;
 		END_IF;
 		IF NOT(xStFct_StartSparkOutProcess) AND fbStFct_SparkOutProcess.xEnd AND NOT(fbStFct_SparkOutProcess.xBlockProcess) AND NOT(fbStFct_SparkOutProcess.xRepeatProcess) THEN
+			xStFct_SparkOutDone:=TRUE;
 			T_Station_Work.THWWorkStation.TCtrlWork.xSparkOutActive:=FALSE;
 			T_Station_Work.TCtrlOnlineChange.xLockChange_S_WorkSpindleSpeed:=TRUE;
 			T_Station_Work.TCtrlOnlineChange.xLockChangeCylToolDeflectionForce:=FALSE;
@@ -16754,7 +17064,11 @@ END_IF;
 			(*IF (T_Station_Parameter.T_StProcess.rOutfeedSpindleSpeed > 0) THEN	*)	(* IGS1 neu mit umgekehrter Geschwindigkeit ausfahren zuerst Spindel stoppen, geht nicht anders, mit Dave besprochen *)
 				iStFct_StepPrc:=20;
 			ELSE
-				iStFct_StepPrc:=iStFct_StepPrc + 1;
+				IF T_Station_Parameter.T_StProcess.iOutfeedStrokeController <=2 THEN
+					iStFct_StepPrc:=10; (* Standard outfeed stroke with or without controller 1 *)
+				ELSE
+					iStFct_StepPrc:=60; (* Outfeed stroke with fast control *)
+				END_IF
 			END_IF;
 			xStFct_InitStep:=FALSE;
 			RETURN;
@@ -16791,6 +17105,7 @@ END_IF;
 		END_IF;
 		IF NOT(xStFct_InitStep) THEN
 			xStFct_InitStep:=TRUE;
+			xStFct_OutfeedStrokeRunning:=TRUE;
 			T_Station_Work.THWWorkStation.TCtrlWork.xWorkingFinished:=TRUE;
 			(* Auswertung der Qualität des Teiles *)
 			IF NOT(xStFct_MinTimeProcessReady) THEN
@@ -16836,6 +17151,7 @@ END_IF;
 	11:	(* Prozess beendet, HubAchse kann wieder auf LadePosition gesetzt *)
 		IF NOT(xStFct_InitStep) THEN
 			xStFct_InitStep:=TRUE;
+			xStFct_OutfeedStrokeRunning:=FALSE;
 			ptrTAxisZ^.T_CtrleSingle.iFunction:=7;	(* Absolut Bewegung *)
 			ptrTAxisZ^.T_CtrleSingle.lrPosition:=grZ_LoadPos;	(* AxisSlide auf LadePosition setzen *)
 			ptrTAxisZ^.T_CtrleSingle.lrVelocity:=rOutfeedStrokeAxisSpeed;
@@ -16966,7 +17282,13 @@ END_IF;
 		IF NOT(ptrTAxisS^.T_CtrleSingle.xExecute) AND ptrTAxisS^.T_CtrleSingle.xDone THEN
 			xStFct_StartMainPrc:=FALSE;
 			xStFct_InitStep:=FALSE;
-			iStFct_StepPrc:=10;
+			IF T_Station_Parameter.T_StProcess.iOutfeedStrokeController <=2 AND T_Station_Parameter.T_StProcess.iSparkOutController = 3 THEN
+				iStFct_StepPrc:=30; (* Z axis need to be reset if coming from fast control and go to position control *)
+			ELSIF T_Station_Parameter.T_StProcess.iOutfeedStrokeController <=2 THEN
+				iStFct_StepPrc:=10; (* Standard outfeed stroke with or without controller 1 *)
+			ELSE
+				iStFct_StepPrc:=60; (* Outfeed stroke with fast control *)
+			END_IF
 		END_IF;
 
 	30:	(* Bei Drehzahlregler passt der Sollwert der Position nicht mehr mit dem Ist Wert und deshalb muss ein Reset durchgeführt werden *)
@@ -16990,15 +17312,19 @@ END_IF;
 			TONWaitMovement(IN:=FALSE);
 			xStFct_StartMainPrc:=FALSE;
 			xStFct_InitStep:=FALSE;
-			IF NOT(gxProcessCylindricalAreaActive) THEN
-				iStFct_StepPrc:=9;
+			IF gxProcessCylindricalAreaActive AND NOT(xEndPosReachZylindricalProcess) THEN
+				(* Beim neuen Ablauf darf die Max Endposition nicht erreicht werden *)
+				iStFct_StepPrc:=90;
 			ELSE
-				IF NOT(xEndPosReachZylindricalProcess) THEN
-					(* Beim neuen Ablauf darf die Max Endposition nicht erreicht werden *)
-					iStFct_StepPrc:=50;
+				IF NOT(xStFct_SparkOutDone) AND T_Station_Parameter.T_StProcess.iSparkOutController <= 2 THEN
+					iStFct_StepPrc:=9; 		(* Use standard spark out with or without controller 1 *)
+				ELSIF NOT(xStFct_SparkOutDone) AND T_Station_Parameter.T_StProcess.iSparkOutController = 3 THEN
+					iStFct_StepPrc:=50; 	(* Use spark out with fast controller 3 *)
+				ELSIF T_Station_Parameter.T_StProcess.iOutfeedStrokeController <= 2 THEN
+					iStFct_StepPrc:=10;	 (* Use standard outfeed stroke  with or without controller 1 *)
 				ELSE
-					iStFct_StepPrc:=9;
-				END_IF;
+					iStFct_StepPrc:=60;	 (* Use outfeed stroke with fast controller 3 *)
+				END_IF
 			END_IF;
 		END_IF;
 
@@ -17016,11 +17342,154 @@ END_IF;
 				xStFct_StartMainPrc:=FALSE;
 				xStFct_InitStep:=FALSE;
 				iStFct_StepPrc:=3;
-			END_IF
+			END_IF;
 		END_IF;
 
-	(* Dies gilt für den neuen Ablauf und setzt die Z Achse zurück auf die LadePos und gibt einen Fehler aus *)
-	50:	IF (T_Station_Parameter.T_StProcess.rZ1AxisPosSwitchOAxisOff >= garPositionEndProcCalc[1])
+	50: 	(* Ausfunken mit schnellem Regler *)
+		IF NOT(xStFct_InitStep) THEN
+			xStFct_InitStep:=TRUE;
+			xStFct_StartSparkOutProcess:=TRUE;
+			T_Station_Work.TCtrlOnlineChange.xLockChange_S_WorkSpindleSpeed:=TRUE;
+			T_Station_Work.TCtrlOnlineChange.xLockChangeCylToolDeflectionForce:=TRUE;
+			T_Station_Work.TCtrlOnlineChange.xLockChangeCylToolTorqueLevel:=TRUE;
+			T_Station_Work.THWWorkStation.TCtrlWork.xSparkOutActive:=TRUE;
+		END_IF;
+		IF NOT(xStFct_StartSparkOutProcess) AND NOT(xStFct_SparkOutRunning) AND NOT(xStFct_RepeatProcess) THEN
+			xStFct_SparkOutDone:=TRUE;
+			T_Z_St1_Ctrle.diVelocityCommandValue:=0; (* Make sure Z axis is not moving anymore *)
+			T_Station_Work.THWWorkStation.TCtrlWork.xSparkOutActive:=FALSE;
+			T_Station_Work.TCtrlOnlineChange.xLockChange_S_WorkSpindleSpeed:=TRUE;
+			T_Station_Work.TCtrlOnlineChange.xLockChangeCylToolDeflectionForce:=FALSE;
+			T_Station_Work.TCtrlOnlineChange.xLockChangeCylToolTorqueLevel:=FALSE;
+			IF ((T_Station_Parameter.T_OnlineChange.rWorkingSpindleSpeed > 0) AND (T_Station_Parameter.T_StProcess.rOutfeedSpindleSpeed < 0))
+			OR ((T_Station_Parameter.T_OnlineChange.rWorkingSpindleSpeed < 0) AND (T_Station_Parameter.T_StProcess.rOutfeedSpindleSpeed > 0)) THEN
+			(*IF (T_Station_Parameter.T_StProcess.rOutfeedSpindleSpeed > 0) THEN	*)	(* IGS1 neu mit umgekehrter Geschwindigkeit ausfahren zuerst Spindel stoppen, geht nicht anders, mit Dave besprochen *)
+				iStFct_StepPrc:=20;
+			ELSE
+				IF T_Station_Parameter.T_StProcess.iOutfeedStrokeController <= 2 THEN
+					iStFct_StepPrc:=30; (* Reset Z axis *)
+				ELSE
+					iStFct_StepPrc:=60; (* Outfeed stroke with fast control *)
+				END_IF;
+			END_IF;
+			xStFct_StartMainPrc:=FALSE;
+			xStFct_InitStep:=FALSE;
+			RETURN;
+		END_IF;
+		IF NOT(xStFct_StartSparkOutProcess) AND NOT(xStFct_SparkOutRunning) AND xStFct_RepeatProcess THEN
+			T_Station_Work.THWWorkStation.TCtrlWork.xSparkOutActive:=FALSE;
+			T_Station_Work.TCtrlOnlineChange.xLockChangeCylToolDeflectionForce:=FALSE;
+			T_Station_Work.TCtrlOnlineChange.xLockChangeCylToolTorqueLevel:=FALSE;
+			(*wStFct_Status:=fbStFct_SparkOutProcess.wStatus;*)
+
+			(*IF (rStFct_TmpDiffOverLimitPosition <> 0) THEN
+				T_Station_Work.THWWorkStation.TCtrlWork.rDiffOverLimitPosition:=ptrTAxisZ^.T_LiveValue.lrActualPosition - T_Station_Work.THWWorkStation.TCtrlWork.rLastOverLimitPosition;
+			END_IF;
+			rStFct_SetZHCPosition:=fbStFct_SparkOutProcess.rLastOverLimitPosition;
+			T_Station_Work.THWWorkStation.TCtrlWork.rLastOverLimitPosition:=fbStFct_SparkOutProcess.rLastOverLimitPosition;
+			rStFct_TmpDiffOverLimitPosition:=T_Station_Work.THWWorkStation.TCtrlWork.rLastOverLimitPosition;*)
+
+			T_Station_Work.THWWorkStation.TCtrlWork.xDeflectionLastHC:=FALSE;
+			T_Station_Work.THWWorkStation.TCtrlWork.xTorqueLastHC:=FALSE;
+			IF (wStFct_Status = 1) OR (wStFct_Status = 3) THEN
+				T_Station_Work.THWWorkStation.TCtrlWork.iOverLimitCounter:=T_Station_Work.THWWorkStation.TCtrlWork.iOverLimitCounter + 1;
+				T_Station_Work.THWWorkStation.TCtrlWork.xDeflectionLastHC:=TRUE;
+			END_IF;
+			IF (wStFct_Status = 2) OR (wStFct_Status = 3) THEN
+				T_Station_Work.THWWorkStation.TCtrlWork.iOverLimitCounterTorque:=T_Station_Work.THWWorkStation.TCtrlWork.iOverLimitCounterTorque + 1;
+				T_Station_Work.THWWorkStation.TCtrlWork.xTorqueLastHC:=TRUE;
+			END_IF;
+			xStFct_StartMainPrc:=FALSE;
+			xStFct_InitStep:=FALSE;
+			iStFct_StepPrc:=40;
+		END_IF;
+
+	60: 	(* Rückfahrt Prozessende mit schnellem Regler *)
+		IF (T_Station_Parameter.T_StProcess.rZ1AxisPosSwitchOAxisOff >= garPositionEndProcCalc[1])
+		OR ((ptrTAxisZ^.T_LiveValue.lrActualPosition <= T_Station_Parameter.T_StProcess.rZ1AxisPosSwitchOAxisOff)
+		OR (ABS(ptrTAxisZ^.T_LiveValue.lrActualPosition - T_Station_Parameter.T_StProcess.rPositionLoad) <= 10.0)) THEN
+			QxFastStrokeOn_St1:=FALSE;
+		END_IF;
+		IF NOT(xStFct_InitStep) THEN
+			xStFct_InitStep:=TRUE;
+			xStFct_OutfeedStrokeRunning:=TRUE;
+			T_Station_Work.THWWorkStation.TCtrlWork.xWorkingFinished:=TRUE;
+			(* Auswertung der Qualität des Teiles *)
+			IF NOT(xStFct_MinTimeProcessReady) THEN
+				(* Prozess hat Mindest Zeit nicht überschritten *)
+				T_Station_Work.THWWorkStation.TCtrlWork.bPartQuality:=3;	(* < niO min Zeit > *)
+			ELSIF (T_Station_Work.THWWorkStation.TCtrlWork.iOverLimitCounter = 0) AND (T_Station_Work.THWWorkStation.TCtrlWork.iOverLimitCounterTorque = 0) THEN
+				(* Bearbeitungsprozess hatte keinen Ausschlag, MindestZeit wurde aber überschritten *)
+				T_Station_Work.THWWorkStation.TCtrlWork.bPartQuality:=2;	(* < iO kein HC > *)
+				IF T_Station_Parameter.T_StProcess.xPositionEndProcIncOnOff THEN
+					garPositionEndProcCalc[1]:=garPositionEndProcCalc[1] + T_Station_Parameter.T_StProcess.rPositionEndProInc;	(* EndPos Inkrementieren *)
+				END_IF;
+			ELSIF (T_Station_Work.THWWorkStation.TCtrlWork.iOverLimitCounter <> 0) OR (T_Station_Work.THWWorkStation.TCtrlWork.iOverLimitCounterTorque <> 0) THEN
+				(* Bearbeitungsprozess hatte mindestens einen Ausschlag, MindestZeit wurde aber überschritten *)
+				T_Station_Work.THWWorkStation.TCtrlWork.bPartQuality:=1;	(* < iO HC > *)
+				IF T_Station_Parameter.T_StProcess.xPositionEndProcIncOnOff THEN
+					garPositionEndProcCalc[1]:=garPositionEndProcCalc[1] + T_Station_Parameter.T_StProcess.rPositionEndProInc;	(* EndPos Inkrementieren *)
+				END_IF;
+			END_IF;
+
+			rStFct_CtrlInputWorkingSpeed:=(-T_Station_Parameter.T_StProcess.rSpeedZAxisForBackward/100.0) * BYTE_TO_REAL(T_ExchgParam.byOverride);
+
+			(* Spindel mit Ausfahrgeschwindigkeit *)
+			IF ptrTAxisS^.T_CtrleSingle.xNotMoving THEN
+				ptrTAxisS^.T_CtrleSingle.iFunction:=6;	(* Move Velocity *)
+			ELSE
+				ptrTAxisS^.T_CtrleSingle.iFunction:=12;	(* Move Velocity *)
+			END_IF;
+			ptrTAxisS^.T_CtrleSingle.lrVelocity:=T_Station_Parameter.T_StProcess.rOutfeedSpindleSpeed;
+			ptrTAxisS^.T_CtrleSingle.xExecute:=TRUE;
+			IF NOT(ptrTAxisBubbler^.T_CtrleDCAxis.xNotMoving) THEN
+				(* Abstreifer ZU *)
+				QxCylStripperClose_St1:=TRUE;
+				QxCylStripperOpen_St1:=FALSE;
+			END_IF
+		END_IF;
+		IF ptrTAxisZ^.T_LiveValue.lrActualPosition <= grZ_LoadPos THEN
+			rStFct_CtrlInputWorkingSpeed:=0.0;
+			T_Z_St1_Ctrle.diVelocityCommandValue:=0; (* Make sure Z axis is not moving anymore *)
+
+			 IF ptrTAxisS^.T_CtrleSingle.xExecute AND ptrTAxisS^.T_CtrleSingle.xDone THEN
+				xStFct_StartMainPrc:=FALSE;
+				xStFct_InitStep:=FALSE;
+				iStFct_StepPrc:=iStFct_StepPrc + 1;
+			END_IF;
+		END_IF;
+
+	61: 	(* Prozess end, reset Z axis *)
+		IF NOT(xStFct_InitStep) THEN
+			xStFct_InitStep:=TRUE;
+			xStFct_OutfeedStrokeRunning:=FALSE;
+			ptrTAxisZ^.T_CtrleSingle.iFunction:=1;
+			ptrTAxisZ^.T_CtrleSingle.xExecute:=TRUE;
+			IF NOT(ptrTAxisBubbler^.T_CtrleDCAxis.xNotMoving) THEN
+				(* Abstreifer ZU *)
+				QxCylStripperClose_St1:=TRUE;
+				QxCylStripperOpen_St1:=FALSE;
+			END_IF
+		END_IF;
+		IF NOT(ptrTAxisZ^.T_CtrleSingle.xExecute) AND ptrTAxisZ^.T_CtrleSingle.xDone THEN
+			xStFct_StartMainPrc:=FALSE;
+			xStFct_InitStep:=FALSE;
+			iStFct_StepPrc:=0;
+			xStFct_SetEnd:=TRUE;
+			IF xProcessDone THEN
+				IF (NOT(ptrTAxisS^.T_CtrleSingle.xNotMoving) OR NOT(ptrTAxisS^.T_CtrleSingle.xDone)) AND
+				     NOT((ptrTAxisS^.T_CtrleSingle.iFunction = 5) AND NOT(ptrTAxisS^.T_CtrleSingle.xDone)) AND NOT(ptrTAxisS^.T_CtrleSingle.xErr) THEN
+					ptrTAxisS^.T_CtrleSingle.iFunction:=5;
+					ptrTAxisS^.T_CtrleSingle.xExecute:=TRUE;
+				END_IF;
+			END_IF;
+			(* Abstreifer AUF *)
+			QxCylStripperClose_St1:=FALSE;
+			QxCylStripperOpen_St1:=TRUE;
+		END_IF;
+
+		(* Dies gilt für den neuen Ablauf und setzt die Z Achse zurück auf die LadePos und gibt einen Fehler aus *)
+	90:	IF (T_Station_Parameter.T_StProcess.rZ1AxisPosSwitchOAxisOff >= garPositionEndProcCalc[1])
 		OR ((ptrTAxisZ^.T_LiveValue.lrActualPosition <= T_Station_Parameter.T_StProcess.rZ1AxisPosSwitchOAxisOff)
 		OR (ABS(ptrTAxisZ^.T_LiveValue.lrActualPosition - T_Station_Parameter.T_StProcess.rPositionLoad) <= 10.0)) THEN
 			QxFastStrokeOn_St1:=FALSE;
@@ -17052,12 +17521,13 @@ END_IF;
 			iStFct_StepPrc:=iStFct_StepPrc + 1;
 		END_IF;
 
-	51:	(* Abstreifer AUF *)
+	91:	(* Abstreifer AUF *)
 		QxCylStripperClose_St1:=FALSE;
 		QxCylStripperOpen_St1:=TRUE;
 		QxFastStrokeOn_St1:=FALSE;
 		xStFct_HardwareError:=TRUE;
 		diStFct_TmpErrorNr:=44;		(* Beim zylindrischer Teil wurde die Max EndPos erreicht *)
+
 	END_CASE;
 END_IF;
 (******************************************************************************************************************************************)
@@ -19014,6 +19484,7 @@ END_IF;
 (******************************************************************************************************************************************)
 StationFunction_Ctrl_End;
 END_ACTION
+
 
 
 
@@ -36494,6 +36965,7 @@ STRUCT
 (* Progressiv Stroke *)
 	rDistProgressStroke:REAL; 			(* [mm] Vertikale Distanz, welche das Intervall zwischen den Rueckzieher definiert *) (* BEF *)
 	iProgressStrokeStartTorque:INT; 	(* [%] Notwendiges Drehmoment um den ersten Rueckhub zu erzwingen und somit die progressive Hubfunktion zu starten. In Prozent bezogen auf das Hard Contact Drehmoment (WzDrehm. HC) *) (* BEF *)
+	rProgressStrokeStopOffset:REAL; 	(* [mm] Distanz zur Endposition (EndWork Position), bei der die Hubfunktion nicht mehr ausgefuehrt werden soll. *) (* BEF *)
 (* Abblasduese *)
 	iCleanNozzleMode:INT; 			(*0=Duese nicht eingeschaltet,1= fuer positive Z1 Geschwindigkeiten eingeschaltet, 2=fuer negative Z1 Geschwindigkeiten eingeschaltet, 3=fuer jegliche Geschwindigkeiten eingeschaltet *) (* BEF *)
 (* Positionen *)
@@ -36554,9 +37026,12 @@ STRUCT
 	rZ_D_Kd:REAL;
 	iZ_D_FilterM:INT;
 
-	rOutfeedStrokeAxisSpeedSlow:REAL;		(* Neuer Parameter für das zurückfahren am Prozessende wo man eine langsame Geschwindigkeit definieren kann und nach dem abfahren des Offset mit der normalen Geschwindigkeit zurückfährt *)
+	rOutfeedStrokeAxisSpeedSlow:REAL;	(* Neuer Parameter für das zurückfahren am Prozessende wo man eine langsame Geschwindigkeit definieren kann und nach dem abfahren des Offset mit der normalen Geschwindigkeit zurückfährt *)
 	rZ1AxisPosSwitchFastVel:REAL;			(* Neuer Parameter für das zurückfahren am Prozessende nach welcher Z1 Position dann mit der schnellen Geschwindigkeit umstellen soll *)
-	rZ1AxisOffsetStartRecordTorque:REAL;		(* Neuer Parameter für das zurückfahren am Prozessende nach welcher Z1 Position die Aufzeichnung für das maximale Drehmoment gestartet werden soll *)
+	rZ1AxisOffsetStartRecordTorque:REAL;	(* Neuer Parameter für das zurückfahren am Prozessende nach welcher Z1 Position die Aufzeichnung für das maximale Drehmoment gestartet werden soll *)
+
+	iOutfeedStrokeController:INT; 		(* Drehmomentregler fuer die Rueckfahrt bei Prozessende, 0=Aus, 1=Konv. Regler, 2=PID, 3=Konv. und D-Regler *)
+	iSparkOutController:INT; 			(* Drehmomentregler fuer den Ausfunkprozess, 0=Aus, 1=Konv. Regler, 2=PID, 3=Konv. und D-Regler  *)
 
 (* Neue Parameter für das Inkrementieren der Z1 Zentrier Position *)
 	xCentringEndProcIncOnOff:BOOL;		(* Hier kann definiert werden ob die Inkrementierung in der Zentrierung Aktiv sein soll oder nicht. Wenn Wert 0 eingestellt ist, dann ist es wie gehabt *)
@@ -36564,8 +37039,8 @@ STRUCT
 
 (* Neue Parameter für den Regler für die Spindel S Achse und der O Achse *)
 	rWorkingSpindleSpeedMinMax:REAL;	(* Spindel Regler ist Aktiv wenn dieser Wert nicht gleich Null ist *)
-	rO_Ctrl_TorquePercent_OFF:REAL;	(* Schnellhub Regler --> Wenn dieser Schwellwert des Drehmomentes erreicht wird, dann wird der Schnellhub ausgeschaltet und mittels der Hilfe der Hysterese Offset wieder eingeschaltet wird *)
-	rO_Ctrl_HystereseOffset:REAL;		(* Schnellhub Regler Aktiv wenn dieser Parameter nicht den Wert Null ist. Ist der Wert Positiv, dann muss das Drehmoment ansteigen damit es den Schnellhub wieder einschaltet. Wert Negativ dann muss es abklingen damit es wieder einschaltet *)
+	rO_Ctrl_TorquePercent_OFF:REAL;		(* Schnellhub Regler --> Wenn dieser Schwellwert des Drehmomentes erreicht wird, dann wird der Schnellhub ausgeschaltet und mittels der Hilfe der Hysterese Offset wieder eingeschaltet wird *)
+	rO_Ctrl_HystereseOffset:REAL;			(* Schnellhub Regler Aktiv wenn dieser Parameter nicht den Wert Null ist. Ist der Wert Positiv, dann muss das Drehmoment ansteigen damit es den Schnellhub wieder einschaltet. Wert Negativ dann muss es abklingen damit es wieder einschaltet *)
 
 (* Neue Parameter für Abbruchkriterium für den Zylindrischen Bereich *)
 	rZPositionCylindricalArea:REAL;			(* Hier bestimmt man für die Z Achse wo der Zylindrische Bereich des Werkzeuges anfängt. Wenn der Wert Null beträgt dann gilt der konventionelle Ablauf *)
@@ -37295,7 +37770,7 @@ VAR_GLOBAL CONSTANT
 	csiMaxPage:INT:=60;
 	(* Profile *)
 	csiMaxProfile:INT:=100;
-	csiMaxProfileParameter:INT:=88;		(* BEF alt: 85 *) (* PUM alt: 78 *) (* PUM alt: 75 *) (* PUM alt: 61 *) (* PUM alt: 60 *) (* PUM alt: 53 *) (* IGS3 alt: 42 *)(* IGS2 alt: 38 *)(* IGS alt 36 *)
+	csiMaxProfileParameter:INT:=91;		(* BEF alt: 85 *) (* PUM alt: 78 *) (* PUM alt: 75 *) (* PUM alt: 61 *) (* PUM alt: 60 *) (* PUM alt: 53 *) (* IGS3 alt: 42 *)(* IGS2 alt: 38 *)(* IGS alt 36 *)
 (* Page number definition *)
 	gT_PageNumber:ST_VISUPAGENUMBER;
 (* Anzahl maximal Wstk für Aufzeichnung *)

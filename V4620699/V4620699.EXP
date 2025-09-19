@@ -37545,9 +37545,9 @@ STRUCT
 	xKey_Enter:BOOL;
 	xKey_Escape:BOOL;
 	xLoadingProcessDone:BOOL;
-	sSWVersion:STRING(10):='V4620698';		(* V4620698.pro *)
-	sQVisVersion:STRING(10):='V462069801';	(* V4620698_01.qpr-->wird per NovRAM definiert *)
-	sHWVersion:STRING(10):='V462069801';		(* V4620698_01.tsm *)
+	sSWVersion:STRING(10):='V4620699';		(* V4620699.pro *)
+	sQVisVersion:STRING(10):='V462069902';	(* V4620699_02.qpr-->wird per NovRAM definiert *)
+	sHWVersion:STRING(10):='V462069902';		(* V4620699_02.tsm *)
 	sIPAddress:STRING(23):='xxx.xxx.xxx.xxx.xxx.xxx';
 	sSubNetMask:STRING(23):='xxx.xxx.xxx.xxx.xxx.xxx';
 	sGatewayAddress:STRING(23):='xxx.xxx.xxx.xxx.xxx.xxx';
